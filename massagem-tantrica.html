@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Massagem Tântrica – Guia Completo</title>
+  <style>
+    /* ── reset & base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Georgia', serif;
+      background: #0d0d0d;
+      color: #e8dcc8;
+      line-height: 1.75;
+    }
+
+    /* ── hero ── */
+    header {
+      position: relative;
+      text-align: center;
+      padding: 80px 24px 60px;
+      background: linear-gradient(160deg, #1a0a00 0%, #3b1200 50%, #1a0a00 100%);
+      overflow: hidden;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 0%, rgba(180, 90, 0, .25) 0%, transparent 70%);
+    }
+
+    header .mandala {
+      font-size: 4rem;
+      display: block;
+      margin-bottom: 18px;
+      filter: drop-shadow(0 0 12px rgba(200, 130, 30, .6));
+    }
+
+    header h1 {
+      font-size: clamp(2rem, 5vw, 3.6rem);
+      font-weight: normal;
+      letter-spacing: .05em;
+      color: #d4a05a;
+      text-shadow: 0 2px 18px rgba(200, 120, 20, .5);
+      position: relative;
+    }
+
+    header p.subtitle {
+      margin-top: 16px;
+      font-size: 1.1rem;
+      color: #b89060;
+      letter-spacing: .08em;
+      position: relative;
+    }
+
+    /* ── nav ── */
+    nav {
+      background: #1a0a00;
+      border-bottom: 1px solid #3b1800;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    nav ul li a {
+      display: block;
+      padding: 14px 20px;
+      color: #c8965a;
+      text-decoration: none;
+      font-size: .88rem;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      transition: color .25s, background .25s;
+    }
+
+    nav ul li a:hover {
+      color: #f0c070;
+      background: rgba(180, 100, 20, .15);
+    }
+
+    /* ── main layout ── */
+    main {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+    }
+
+    /* ── sections ── */
+    section {
+      margin-top: 64px;
+      scroll-margin-top: 70px;
+    }
+
+    section h2 {
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      font-weight: normal;
+      color: #d4a05a;
+      border-left: 4px solid #8b4513;
+      padding-left: 16px;
+      margin-bottom: 28px;
+    }
+
+    section p {
+      margin-bottom: 18px;
+      color: #ddd0ba;
+    }
+
+    /* ── highlight box ── */
+    .box {
+      background: linear-gradient(135deg, #1e0e02, #2a1200);
+      border: 1px solid #5a2e0a;
+      border-radius: 10px;
+      padding: 28px 32px;
+      margin: 32px 0;
+      position: relative;
+    }
+
+    .box::before {
+      content: attr(data-icon);
+      position: absolute;
+      top: -18px;
+      left: 24px;
+      font-size: 1.8rem;
+      background: #0d0d0d;
+      padding: 0 8px;
+    }
+
+    .box h3 {
+      color: #c8965a;
+      font-size: 1.1rem;
+      font-weight: normal;
+      letter-spacing: .04em;
+      margin-bottom: 12px;
+    }
+
+    /* ── cards grid ── */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 24px;
+      margin-top: 32px;
+    }
+
+    .card {
+      background: linear-gradient(160deg, #1e0e02, #2e1504);
+      border: 1px solid #5a2e0a;
+      border-radius: 12px;
+      padding: 28px 24px;
+      transition: transform .3s, box-shadow .3s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 28px rgba(180, 90, 10, .3);
+    }
+
+    .card .icon {
+      font-size: 2rem;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .card h3 {
+      color: #d4a05a;
+      font-size: 1.05rem;
+      font-weight: normal;
+      margin-bottom: 10px;
+      letter-spacing: .03em;
+    }
+
+    .card p {
+      font-size: .92rem;
+      color: #c8b898;
+      margin: 0;
+    }
+
+    /* ── timeline ── */
+    .timeline {
+      position: relative;
+      padding-left: 36px;
+      margin-top: 32px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 10px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, #8b4513, transparent);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 36px;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -30px;
+      top: 6px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #c8702a;
+      box-shadow: 0 0 8px rgba(200, 112, 42, .6);
+    }
+
+    .timeline-item .year {
+      font-size: .8rem;
+      color: #c8702a;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .timeline-item h3 {
+      color: #d4a05a;
+      font-size: 1rem;
+      font-weight: normal;
+      margin-bottom: 8px;
+    }
+
+    .timeline-item p {
+      font-size: .92rem;
+      color: #c8b898;
+      margin: 0;
+    }
+
+    /* ── quote ── */
+    blockquote {
+      border-left: 3px solid #8b4513;
+      margin: 32px 0;
+      padding: 16px 24px;
+      font-style: italic;
+      color: #b8a080;
+      background: rgba(139, 69, 19, .07);
+      border-radius: 0 8px 8px 0;
+    }
+
+    blockquote cite {
+      display: block;
+      margin-top: 10px;
+      font-size: .85rem;
+      color: #9a7850;
+      font-style: normal;
+    }
+
+    /* ── list ── */
+    ul.styled {
+      list-style: none;
+      margin: 16px 0 0 0;
+    }
+
+    ul.styled li {
+      padding: 8px 0 8px 28px;
+      position: relative;
+      color: #ddd0ba;
+      border-bottom: 1px solid rgba(90, 46, 10, .3);
+    }
+
+    ul.styled li:last-child { border-bottom: none; }
+
+    ul.styled li::before {
+      content: '✦';
+      position: absolute;
+      left: 0;
+      color: #c8702a;
+      font-size: .8rem;
+      top: 10px;
+    }
+
+    /* ── disclaimer ── */
+    .disclaimer {
+      margin-top: 64px;
+      padding: 24px 28px;
+      border: 1px solid #3b1800;
+      border-radius: 10px;
+      background: rgba(30, 10, 0, .6);
+      font-size: .88rem;
+      color: #907050;
+    }
+
+    .disclaimer strong { color: #c8702a; }
+
+    /* ── footer ── */
+    footer {
+      text-align: center;
+      padding: 32px 24px;
+      background: #0a0500;
+      color: #604030;
+      font-size: .82rem;
+      letter-spacing: .06em;
+    }
+
+    footer span { color: #c8702a; }
+
+    /* ── scroll to top ── */
+    #toTop {
+      position: fixed;
+      bottom: 32px;
+      right: 32px;
+      background: #8b4513;
+      color: #f0d0a0;
+      border: none;
+      border-radius: 50%;
+      width: 46px;
+      height: 46px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .3s, transform .3s;
+      box-shadow: 0 4px 16px rgba(0,0,0,.5);
+    }
+
+    #toTop.visible { opacity: 1; pointer-events: auto; }
+    #toTop:hover { transform: translateY(-3px); }
+
+    /* ── responsive ── */
+    @media (max-width: 600px) {
+      nav ul li a { font-size: .78rem; padding: 12px 12px; }
+      .box { padding: 22px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Hero ── -->
+  <header>
+    <span class="mandala">🌸</span>
+    <h1>Massagem Tântrica</h1>
+    <p class="subtitle">História · Origens · Finalidade · Tipos · O Corpo Feminino</p>
+  </header>
+
+  <!-- ── Navigation ── -->
+  <nav>
+    <ul>
+      <li><a href="#historia">História</a></li>
+      <li><a href="#origens">Origens</a></li>
+      <li><a href="#finalidade">Finalidade</a></li>
+      <li><a href="#corpo-feminino">Corpo Feminino</a></li>
+      <li><a href="#tipos">Tipos</a></li>
+      <li><a href="#beneficios">Benefícios</a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <!-- ── O que é ── -->
+    <section id="intro">
+      <h2>O que é a Massagem Tântrica?</h2>
+      <p>
+        A massagem tântrica é uma prática corporal e espiritual derivada dos ensinamentos do <strong>Tantra</strong> — uma filosofia milenar que enxerga o corpo humano como um templo sagrado e a energia sexual como uma força vital capaz de curar, transformar e elevar a consciência.
+      </p>
+      <p>
+        Diferentemente de massagens terapêuticas convencionais que focam apenas na musculatura, a massagem tântrica integra toque consciente, respiração, visualização e trabalho com os <em>chakras</em> (centros energéticos do corpo) para liberar bloqueios físicos, emocionais e energéticos.
+      </p>
+      <div class="box" data-icon="🪷">
+        <h3>Tantra: muito além da sexualidade</h3>
+        <p>
+          O Tantra é frequentemente mal interpretado no Ocidente como sinônimo de práticas sexuais. Na sua essência, trata-se de uma visão de mundo que celebra a totalidade da experiência humana — corpo, mente e espírito — reconhecendo que a energia vital (<em>shakti</em>) presente em cada ser é a mesma energia que permeia o universo.
+        </p>
+      </div>
+    </section>
+
+    <!-- ── História ── -->
+    <section id="historia">
+      <h2>História da Massagem Tântrica</h2>
+      <p>
+        As raízes do Tantra remontam a pelo menos <strong>5.000 anos</strong>, originando-se nas civilizações do Vale do Indo (atual Paquistão e noroeste da Índia). Os primeiros textos conhecidos que descrevem práticas tântricas datam de aproximadamente <strong>500 d.C.</strong>, embora a tradição oral seja muito anterior.
+      </p>
+      <p>
+        Os Tantras são textos sagrados escritos em sânscrito que dialogam com Shiva e Shakti — a dualidade divina masculino-feminina — e prescrevem rituais de purificação corporal, meditação e práticas de toque consciente como caminhos para a iluminação.
+      </p>
+
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="year">~3000 a.C.</div>
+          <h3>Civilização do Vale do Indo</h3>
+          <p>Artefatos encontrados em Mohenjo-daro e Harappa sugerem cultos à deusa-mãe e rituais de fertilidade que influenciariam a visão tântrica do corpo feminino como fonte de vida e energia sagrada.</p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="year">~500–1200 d.C.</div>
+          <h3>Era de Ouro dos Textos Tântricos</h3>
+          <p>Surgem os grandes tratados: <em>Vijnana Bhairava Tantra</em>, <em>Kularnava Tantra</em> e, mais tarde, o <em>Kama Sutra</em> de Vatsyayana. Esses textos descrevem técnicas de toque, respiração e meditação que integram o corpo feminino como portal para o sagrado.</p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="year">~1200–1800 d.C.</div>
+          <h3>Expansão pelo Oriente</h3>
+          <p>O Tantra se dissemina pelo Tibete (originando o Vajrayana/Tantra Budista), Nepal, China e Japão, adaptando-se às culturas locais. O toque ritualístico no corpo feminino permanece central em muitas dessas tradições.</p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="year">Século XIX–XX</div>
+          <h3>Chegada ao Ocidente</h3>
+          <p>Pesquisadores como John Woodroffe (Sir Arthur Avalon) traduzem textos tântricos para o inglês. Na década de 1970–80, terapeutas ocidentais como Annie Sprinkle e Joseph Kramer fundam o <em>Sexological Bodywork</em>, integrando princípios tântricos à psicoterapia corporal.</p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="year">Século XXI</div>
+          <h3>Neo-Tantra e Reconhecimento Terapêutico</h3>
+          <p>A massagem tântrica ganha reconhecimento crescente em contextos de terapia somática, cura de trauma sexual e saúde holística. Escolas especializadas surgem na Europa, nos EUA e no Brasil, formando praticantes com ênfase ética e terapêutica.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── Origens Geográficas ── -->
+    <section id="origens">
+      <h2>Origens Geográficas — Onde Era Mais Praticada</h2>
+      <p>
+        Embora o Tantra tenha nascido na Índia, a prática se dispersou por toda a Ásia, adaptando-se às culturas locais e assumindo diferentes formas rituais.
+      </p>
+
+      <div class="cards">
+
+        <div class="card">
+          <span class="icon">🇮🇳</span>
+          <h3>Índia</h3>
+          <p>Berço do Tantra. Templos como Khajuraho e Konark exibem esculturas eróticas que celebram a fusão do divino com o humano. O corpo feminino era venerado como manifestação da deusa Shakti — princípio ativo do universo.</p>
+        </div>
+
+        <div class="card">
+          <span class="icon">🏔️</span>
+          <h3>Nepal e Tibete</h3>
+          <p>O Vajrayana tibetano incorporou práticas tântricas ao Budismo. Rituais de visualização e toque consciente eram parte de cerimônias espirituais, e a energia feminina (Prajna) era honrada como sabedoria iluminada.</p>
+        </div>
+
+        <div class="card">
+          <span class="icon">🌸</span>
+          <h3>Japão</h3>
+          <p>O Tantra Budista chegou ao Japão como <em>Shingon</em>. Práticas de toque ritualístico influenciaram técnicas como o <em>Nuru</em> e outros rituais de banho e massagem presentes na cultura japonesa até hoje.</p>
+        </div>
+
+        <div class="card">
+          <span class="icon">🌺</span>
+          <h3>Bali e Sudeste Asiático</h3>
+          <p>Em Bali, o corpo feminino é venerado em danças sagradas e rituais de cura. Práticas de toque e respiração sincronizada ainda são usadas em cerimônias de purificação feminina (<em>melukat</em>).</p>
+        </div>
+
+        <div class="card">
+          <span class="icon">🌍</span>
+          <h3>Brasil e América Latina</h3>
+          <p>Desde os anos 2000, o Brasil tornou-se um dos países com maior número de praticantes e escolas de massagem tântrica na América Latina, integrando tradições orientais com abordagens terapêuticas modernas.</p>
+        </div>
+
+        <div class="card">
+          <span class="icon">🇩🇪</span>
+          <h3>Europa (Alemanha e Reino Unido)</h3>
+          <p>Berlim e Londres são centros importantes do neo-tantra ocidental. Institutos como o <em>Institut für angewandte Sexualwissenschaft</em> oferecem formações profissionais com foco terapêutico e ético.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── Finalidade ── -->
+    <section id="finalidade">
+      <h2>Finalidade da Massagem Tântrica</h2>
+      <p>
+        A finalidade original da massagem tântrica nunca foi puramente erótica — embora a energia sexual seja reconhecida como sagrada e central. O objetivo maior é a <strong>integração e a expansão da consciência</strong> através do corpo.
+      </p>
+
+      <blockquote>
+        "O corpo é o templo mais perfeito. Ao despertar cada célula com consciência e amor, abrimos as portas para o divino que habita em nós."
+        <cite>— Tradição do Tantra Kashmira</cite>
+      </blockquote>
+
+      <div class="box" data-icon="🎯">
+        <h3>Objetivos principais</h3>
+        <ul class="styled">
+          <li>Despertar e circular a energia vital (<em>kundalini / prana</em>) por todo o corpo</li>
+          <li>Libertar bloqueios emocionais e traumas armazenados na musculatura e nos tecidos</li>
+          <li>Reconectar a pessoa com seu corpo, sensações e prazer de forma saudável</li>
+          <li>Ampliar a capacidade orgásmica e a percepção corporal</li>
+          <li>Promover estados meditativos profundos e expansão da consciência</li>
+          <li>Equilibrar os chakras e harmonizar os campos energéticos</li>
+          <li>Favorecer a cura de disfunções sexuais e traumas relacionados à sexualidade</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ── Corpo Feminino ── -->
+    <section id="corpo-feminino">
+      <h2>A Massagem Tântrica no Corpo Feminino</h2>
+      <p>
+        No Tantra, a mulher representa <strong>Shakti</strong> — a energia primordial criadora do universo. Por isso, o corpo feminino é tratado com reverência especial: ele não é objeto de prazer alheio, mas um <em>campo sagrado de energia</em> que, quando despertado conscientemente, irradia cura e sabedoria.
+      </p>
+      <p>
+        Diferentemente de uma abordagem focada apenas em resultados externos, a massagem tântrica feminina parte do interior para o exterior — da respiração para a sensação, do centro para a periferia.
+      </p>
+
+      <div class="box" data-icon="🌙">
+        <h3>Princípios centrais no trabalho com o corpo feminino</h3>
+        <ul class="styled">
+          <li><strong>Consentimento e autonomia:</strong> a mulher conduz o ritmo e os limites da sessão a todo momento</li>
+          <li><strong>Yoni (vulva e útero) como centro sagrado:</strong> o toque nessa região é sempre precedido de preparação corporal profunda e profundo respeito</li>
+          <li><strong>Ciclos e polaridades:</strong> a energia feminina é cíclica; o trabalho respeita e celebra esse movimento natural</li>
+          <li><strong>Desarmadura emocional:</strong> o corpo feminino frequentemente armazena tensões, vergonhas e traumas — o toque consciente convida à liberação sem julgamento</li>
+          <li><strong>Prazer como saúde:</strong> o prazer feminino não é luxo, mas indicador de vitalidade física e emocional</li>
+        </ul>
+      </div>
+
+      <p>
+        Sessões voltadas ao corpo feminino geralmente incluem: massagem corporal abrangente (costas, quadris, abdômen, seios quando consentido), trabalho com respiração e som, meditação guiada e, em contextos especializados, o <strong>toque yônico</strong> — uma prática delicada voltada à cura e ao despertar energético da região pélvica.
+      </p>
+
+      <div class="box" data-icon="⚡">
+        <h3>O que é o Toque Yônico?</h3>
+        <p>
+          O toque yônico (<em>yoni massage</em>) é uma prática tântrica voltada especificamente para a região genital feminina. Seu propósito não é sexual no sentido convencional — ele visa liberar tensões musculares profundas no assoalho pélvico, dissolver bloqueios emocionais (muitas vezes relacionados a traumas, vergonha ou partos), restaurar a sensibilidade e promover um profundo relaxamento e reconexão da mulher com sua própria sexualidade. Deve ser realizado por profissionais devidamente formados, sempre com consentimento explícito e contínuo.
+        </p>
+      </div>
+    </section>
+
+    <!-- ── Tipos ── -->
+    <section id="tipos">
+      <h2>Tipos de Massagem Tântrica</h2>
+      <p>
+        Ao longo dos séculos e nas diferentes culturas, diversas modalidades de massagem tântrica foram desenvolvidas. Abaixo, as principais praticadas atualmente, com descrição de seus focos e técnicas.
+      </p>
+
+      <div class="cards">
+
+        <div class="card">
+          <span class="icon">🌊</span>
+          <h3>Massagem Tântrica Clássica</h3>
+          <p>Inspirada nos textos vedas e tântricos indianos. Combina toque intuitivo, circulação de energia pelo corpo inteiro e trabalho com chakras. É a base de todas as demais modalidades.</p>
+        </div>
+
+        <div class="card">
+          <span class="icon">🔥</span>
+          <h3>Massagem Lingam & Yoni</h3>
+          <p>Trabalho específico com os órgãos genitais (Lingam = masculino; Yoni = feminino). No corpo feminino, o <em>yoni massage</em> foca na liberação de tensões pélvicas, cura de traumas e despertar sensorial — sempre com foco terapêutico.</p>
+        </div>
+
+        <div class="card">
+          <span class="icon">🌀</span>
+          <h3>Massagem de Ativação Kundalini</h3>
+          <p>Técnica que usa toque vibracional e respiração intensa para despertar a energia kundalini — representada por uma serpente adormecida na base da coluna — e conduzi-la pelos chakras até a coroa da cabeça.</p>
+        </div>
+
+        <div class="card">
+          <span class="icon">💆</span>
+          <h3>Body-to-Body (Nuru)</h3>
+          <p>Originária do Japão, utiliza o contato amplo entre os corpos da massagista e da receptora, com óleos naturais. Estimula receptores táteis profundos, promovendo relaxamento intenso e reconexão somática.</p>
+        </div>
+
+        <div class="card">
+          <span class="icon">🕯️</span>
+          <h3>Massagem com Velas de Cera Morna</h3>
+          <p>Técnica sensorial que combina calor suave de cera derretida (a baixa temperatura) com toque e respiração. Desperta a sensibilidade da pele e favorece estados alterados de consciência e relaxamento profundo.</p>
+        </div>
+
+        <div class="card">
+          <span class="icon">🫁</span>
+          <h3>Massagem com Respiração Holotrópica</h3>
+          <p>Combina técnicas tântricas de toque com respiração holotrópica (respiração intensa e ritmada). Pode induzir estados expandidos de consciência, facilitando a liberação emocional profunda e a integração de memórias corporais.</p>
+        </div>
+
+        <div class="card">
+          <span class="icon">🌿</span>
+          <h3>Massagem Ayurvédica Tântrica</h3>
+          <p>Une o sistema de medicina tradicional indiana (Ayurveda) com princípios tântricos. Usa óleos medicinais quentes (<em>abhyanga</em>), determinados de acordo com o dosha (constituição energética) da mulher, para harmonizar corpo e energia.</p>
+        </div>
+
+        <div class="card">
+          <span class="icon">🔮</span>
+          <h3>Trabalho com Chakras</h3>
+          <p>Sessões que combinam toque suave, cristais, sons e visualizações para equilibrar os sete centros energéticos. No corpo feminino, há ênfase especial no chakra raiz (segurança), sacral (criatividade e sexualidade) e cardíaco (amor próprio).</p>
+        </div>
+
+        <div class="card">
+          <span class="icon">🎶</span>
+          <h3>Massagem com Som (Nada Yoga)</h3>
+          <p>Incorpora o uso de tigelas tibetanas, diapasões e mantras entoados durante o toque. As vibrações sonoras penetram nos tecidos, desbloqueando tensões que o toque físico sozinho não alcança.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── Benefícios ── -->
+    <section id="beneficios">
+      <h2>Benefícios para a Mulher</h2>
+      <p>
+        Quando conduzida com ética, preparo técnico e respeito, a massagem tântrica pode trazer benefícios significativos para a saúde integral feminina.
+      </p>
+
+      <div class="cards">
+
+        <div class="card">
+          <span class="icon">🧘</span>
+          <h3>Físicos</h3>
+          <p>Alívio de tensões musculares crônicas, especialmente no assoalho pélvico; melhora da circulação sanguínea e linfática; redução de cólicas menstruais; aumento da vitalidade e disposição.</p>
+        </div>
+
+        <div class="card">
+          <span class="icon">💛</span>
+          <h3>Emocionais</h3>
+          <p>Liberação de bloqueios emocionais e traumas; redução de ansiedade e estresse; fortalecimento da autoestima e do amor próprio; maior capacidade de confiar e se abrir para a intimidade.</p>
+        </div>
+
+        <div class="card">
+          <span class="icon">⚡</span>
+          <h3>Sexuais</h3>
+          <p>Aumento da consciência e sensibilidade corporal; melhora de disfunções como anorgasmia, vaginismo e baixo desejo; expansão da capacidade de prazer e orgasmo; cura de traumas sexuais com suporte especializado.</p>
+        </div>
+
+        <div class="card">
+          <span class="icon">✨</span>
+          <h3>Espirituais</h3>
+          <p>Experiências de expansão da consciência; reconexão com a dimensão sagrada do próprio corpo; aprofundamento meditativo; sensação de completude e inteireza.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── Aviso ── -->
+    <div class="disclaimer">
+      <strong>⚠️ Nota importante:</strong> A massagem tântrica com fins terapêuticos deve ser realizada por profissionais devidamente formados e certificados por escolas reconhecidas. Busque sempre referências, verifique a formação do(a) praticante e certifique-se de que a sessão ocorre em ambiente seguro, com contrato de consentimento claro e respeito absoluto à sua autonomia e aos seus limites. A prática não substitui tratamentos médicos ou psicoterapêuticos convencionais.
+    </div>
+
+  </main>
+
+  <!-- ── Footer ── -->
+  <footer>
+    <p>Projeto-01 &nbsp;·&nbsp; Conteúdo educativo e cultural &nbsp;·&nbsp; Elaborado com <span>♥</span></p>
+  </footer>
+
+  <!-- ── Scroll to top ── -->
+  <button id="toTop" title="Voltar ao topo" aria-label="Voltar ao topo">↑</button>
+
+  <script>
+    // smooth scroll for nav links
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(link.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+
+    // scroll-to-top button
+    const toTop = document.getElementById('toTop');
+    window.addEventListener('scroll', () => {
+      toTop.classList.toggle('visible', window.scrollY > 400);
+    });
+    toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  </script>
+
+</body>
+</html>
