@@ -1,0 +1,1275 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MASSAGENS — E-Book Completo de Experiências Tântricas</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --gold:   #d4a05a;
+      --amber:  #c8702a;
+      --brown:  #8b4513;
+      --deep:   #5a2e0a;
+      --rose:   #c8607a;
+      --rose2:  #a04060;
+      --violet: #7a50a0;
+      --teal:   #3a8070;
+      --bg:     #0d0d0d;
+      --bg2:    #1a0a00;
+      --bg3:    #2a1200;
+      --text:   #e8dcc8;
+      --muted:  #c0b090;
+      --faint:  #7a6040;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Georgia', serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.85;
+    }
+
+    /* ── HERO ── */
+    header {
+      position: relative;
+      text-align: center;
+      padding: 100px 24px 80px;
+      background: linear-gradient(160deg, #130800 0%, #3b1200 40%, #1a0530 70%, #130800 100%);
+      overflow: hidden;
+    }
+    header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 30% 0%, rgba(200,96,122,.18) 0%, transparent 60%),
+        radial-gradient(ellipse at 70% 0%, rgba(180,90,0,.28) 0%, transparent 60%);
+    }
+    header::after {
+      content: 'E · B O O K   T Â N T R I C O';
+      position: absolute;
+      bottom: 14px;
+      right: 28px;
+      font-size: .65rem;
+      letter-spacing: .35em;
+      color: rgba(200,112,42,.3);
+      font-family: 'Courier New', monospace;
+      font-weight: bold;
+    }
+    .hero-mandala {
+      font-size: 5rem;
+      display: block;
+      margin-bottom: 22px;
+      filter: drop-shadow(0 0 22px rgba(200,100,130,.65));
+      position: relative;
+    }
+    header h1 {
+      font-size: clamp(2.4rem, 6vw, 4.2rem);
+      font-weight: normal;
+      letter-spacing: .12em;
+      color: var(--gold);
+      text-shadow: 0 2px 28px rgba(200,120,20,.65);
+      position: relative;
+    }
+    header .hero-tagline {
+      margin-top: 16px;
+      font-size: 1.05rem;
+      color: #b89060;
+      letter-spacing: .1em;
+      font-style: italic;
+      position: relative;
+    }
+    .hero-pills {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 14px;
+      margin-top: 42px;
+      position: relative;
+    }
+    .pill {
+      background: rgba(139,69,19,.22);
+      border: 1px solid var(--deep);
+      border-radius: 20px;
+      padding: 8px 20px;
+      font-size: .78rem;
+      color: var(--muted);
+      letter-spacing: .08em;
+    }
+    .pill strong { color: var(--gold); }
+
+    /* ── NAV ── */
+    nav {
+      background: var(--bg2);
+      border-bottom: 1px solid #2e1000;
+      position: sticky;
+      top: 0;
+      z-index: 200;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    nav ul li a {
+      display: block;
+      padding: 13px 16px;
+      color: #c8965a;
+      text-decoration: none;
+      font-size: .78rem;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      transition: color .2s, background .2s;
+    }
+    nav ul li a:hover { color: #f0c070; background: rgba(180,100,20,.15); }
+
+    /* ── LAYOUT ── */
+    main { max-width: 920px; margin: 0 auto; padding: 0 24px 120px; }
+
+    /* ── INTRO ── */
+    .intro-wrap {
+      margin-top: 72px;
+      background: linear-gradient(135deg, #1e0e02, #1a0528);
+      border: 1px solid var(--deep);
+      border-radius: 14px;
+      padding: 36px 40px;
+    }
+    .intro-wrap h2 {
+      color: var(--gold);
+      font-size: 1.35rem;
+      font-weight: normal;
+      letter-spacing: .05em;
+      margin-bottom: 16px;
+    }
+    .intro-wrap p { color: #d0c0a8; margin-bottom: 14px; }
+    .intro-wrap p:last-child { margin-bottom: 0; }
+
+    /* ── SECTION ── */
+    section {
+      margin-top: 100px;
+      scroll-margin-top: 56px;
+    }
+
+    /* ── CHAPTER HEADER ── */
+    .ch-header {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      margin-bottom: 40px;
+    }
+    .ch-icon {
+      font-size: 3rem;
+      filter: drop-shadow(0 0 12px rgba(200,100,130,.5));
+      flex-shrink: 0;
+    }
+    .ch-text {}
+    .ch-badge {
+      display: inline-block;
+      font-family: 'Courier New', monospace;
+      font-size: .68rem;
+      letter-spacing: .2em;
+      color: var(--amber);
+      border: 1px solid var(--brown);
+      padding: 3px 12px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+    .ch-text h2 {
+      font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+      font-weight: normal;
+      color: var(--gold);
+      letter-spacing: .04em;
+    }
+
+    /* ── SECTION TITLE VARIANTS ── */
+    section.sensitive .ch-text h2 { color: #e8a8b8; }
+    section.muscular .ch-text h2  { color: #d4a05a; }
+    section.extase .ch-text h2    { color: #c8b080; }
+    section.yoni .ch-text h2      { color: #d0a0c8; }
+
+    section.sensitive .ch-badge { color: #e070a0; border-color: #a04060; }
+    section.muscular .ch-badge  { color: var(--amber); border-color: var(--brown); }
+    section.extase .ch-badge    { color: #c8b060; border-color: #805020; }
+    section.yoni .ch-badge      { color: #c080c0; border-color: #804080; }
+
+    /* ── SECTION DIVIDER ── */
+    .chapter-sep {
+      text-align: center;
+      color: var(--deep);
+      margin: 80px 0 0;
+      font-size: 1.4rem;
+      letter-spacing: .5em;
+    }
+
+    /* ── H3 ── */
+    section > h3 {
+      font-size: clamp(1rem, 2.5vw, 1.3rem);
+      font-weight: normal;
+      color: var(--amber);
+      margin: 40px 0 14px;
+      padding-bottom: 6px;
+      border-bottom: 1px dashed rgba(139,69,19,.4);
+    }
+
+    /* ── PARAGRAPHS ── */
+    section p {
+      margin-bottom: 18px;
+      color: #ddd0ba;
+    }
+
+    /* ── BLOCK (highlight card) ── */
+    .block {
+      background: linear-gradient(135deg, #1e0e02, #2a1200);
+      border: 1px solid var(--deep);
+      border-radius: 12px;
+      padding: 28px 34px;
+      margin: 28px 0;
+      position: relative;
+    }
+    .block.rose-tint {
+      background: linear-gradient(135deg, #1e0818, #2a0e20);
+      border-color: #80204a;
+    }
+    .block.violet-tint {
+      background: linear-gradient(135deg, #120818, #200e28);
+      border-color: #5a3080;
+    }
+    .block-label {
+      font-family: 'Courier New', monospace;
+      font-size: .68rem;
+      letter-spacing: .2em;
+      color: var(--amber);
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      display: block;
+    }
+    .block.rose-tint  .block-label { color: #e070a0; }
+    .block.violet-tint .block-label { color: #b080e0; }
+    .block h3 {
+      color: var(--gold);
+      font-size: 1rem;
+      font-weight: normal;
+      margin-bottom: 12px;
+    }
+    .block p { color: #d0c0a8; margin-bottom: 12px; }
+    .block p:last-child { margin-bottom: 0; }
+
+    /* ── TIP / WARN / ALERT ── */
+    .tip, .warn, .alert, .sacred {
+      border-radius: 10px;
+      padding: 18px 24px;
+      margin: 24px 0;
+      font-size: .93rem;
+    }
+    .tip {
+      background: rgba(20,60,20,.4);
+      border-left: 4px solid #4a9a4a;
+      color: #b0d8b0;
+    }
+    .warn {
+      background: rgba(80,40,0,.5);
+      border-left: 4px solid var(--amber);
+      color: #d8b888;
+    }
+    .alert {
+      background: rgba(80,10,10,.5);
+      border-left: 4px solid #c04040;
+      color: #d89090;
+    }
+    .sacred {
+      background: rgba(80,20,60,.35);
+      border-left: 4px solid #c060a0;
+      color: #daaac8;
+    }
+    .tip    strong { color: #7acf7a; }
+    .warn   strong { color: var(--gold); }
+    .alert  strong { color: #e07070; }
+    .sacred strong { color: #e080c0; }
+
+    /* ── STYLED LIST ── */
+    ul.styled, ol.styled {
+      margin: 16px 0;
+      padding-left: 0;
+      list-style: none;
+    }
+    ul.styled li, ol.styled li {
+      padding: 7px 0 7px 28px;
+      position: relative;
+      color: #ddd0ba;
+      border-bottom: 1px solid rgba(90,46,10,.25);
+      font-size: .95rem;
+    }
+    ul.styled li:last-child, ol.styled li:last-child { border-bottom: none; }
+    ul.styled li::before {
+      content: '✦';
+      position: absolute;
+      left: 0;
+      color: var(--amber);
+      font-size: .75rem;
+      top: 10px;
+    }
+    ol.styled { counter-reset: sc; }
+    ol.styled li { counter-increment: sc; }
+    ol.styled li::before {
+      content: counter(sc) '.';
+      position: absolute;
+      left: 0;
+      color: var(--amber);
+      font-size: .85rem;
+      font-weight: bold;
+      top: 8px;
+    }
+
+    /* ── QUOTE ── */
+    blockquote.sacred-quote {
+      border-left: 3px solid var(--rose);
+      margin: 28px 0;
+      padding: 16px 24px;
+      font-style: italic;
+      color: #c8a8b8;
+      background: rgba(200,96,122,.07);
+      border-radius: 0 8px 8px 0;
+    }
+    blockquote.sacred-quote cite {
+      display: block;
+      margin-top: 10px;
+      font-size: .82rem;
+      color: #9a7090;
+      font-style: normal;
+      letter-spacing: .04em;
+    }
+
+    /* ── STEPS / TIMELINE ── */
+    .steps {
+      position: relative;
+      padding-left: 40px;
+      margin-top: 28px;
+    }
+    .steps::before {
+      content: '';
+      position: absolute;
+      left: 13px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, #8b4513, transparent);
+    }
+    .step {
+      position: relative;
+      margin-bottom: 32px;
+    }
+    .step::before {
+      content: '';
+      position: absolute;
+      left: -31px;
+      top: 7px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--amber);
+      box-shadow: 0 0 8px rgba(200,112,42,.6);
+    }
+    .step .step-label {
+      font-size: .75rem;
+      color: var(--amber);
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+      font-family: 'Courier New', monospace;
+    }
+    .step h4 {
+      color: var(--gold);
+      font-size: 1rem;
+      font-weight: normal;
+      margin-bottom: 8px;
+    }
+    .step p {
+      font-size: .93rem;
+      color: #c8b898;
+      margin: 0;
+    }
+
+    /* ── CARDS GRID ── */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 22px;
+      margin-top: 28px;
+    }
+    .card {
+      background: linear-gradient(160deg, #1e0e02, #2e1504);
+      border: 1px solid var(--deep);
+      border-radius: 12px;
+      padding: 26px 22px;
+      transition: transform .3s, box-shadow .3s;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 28px rgba(180,90,10,.3);
+    }
+    .card.rose-card {
+      background: linear-gradient(160deg, #1e0818, #2e1028);
+      border-color: #6a2040;
+    }
+    .card.rose-card:hover { box-shadow: 0 8px 28px rgba(200,80,120,.25); }
+    .card.violet-card {
+      background: linear-gradient(160deg, #130818, #1e1028);
+      border-color: #4a2068;
+    }
+    .card.violet-card:hover { box-shadow: 0 8px 28px rgba(120,60,180,.25); }
+    .card .c-icon {
+      font-size: 2rem;
+      margin-bottom: 12px;
+      display: block;
+    }
+    .card h3 {
+      color: var(--gold);
+      font-size: 1rem;
+      font-weight: normal;
+      margin-bottom: 10px;
+      letter-spacing: .03em;
+    }
+    .card.rose-card h3   { color: #e8a8c8; }
+    .card.violet-card h3 { color: #c8a8e8; }
+    .card p {
+      font-size: .9rem;
+      color: #c8b898;
+      margin: 0;
+    }
+
+    /* ── TABLE ── */
+    table.tantric {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      font-size: .88rem;
+    }
+    table.tantric th {
+      background: var(--bg3);
+      color: var(--gold);
+      padding: 12px 16px;
+      text-align: left;
+      font-weight: normal;
+      letter-spacing: .06em;
+      border-bottom: 2px solid var(--deep);
+    }
+    table.tantric td {
+      padding: 10px 16px;
+      color: var(--muted);
+      border-bottom: 1px solid rgba(90,46,10,.3);
+    }
+    table.tantric tr:nth-child(even) td { background: rgba(26,8,0,.4); }
+
+    /* ── SUMMARY ── */
+    .summary {
+      background: rgba(90,46,10,.18);
+      border: 1px solid var(--deep);
+      border-radius: 12px;
+      padding: 26px 30px;
+      margin-top: 48px;
+    }
+    .summary.rose-summary {
+      background: rgba(100,30,60,.18);
+      border-color: #6a2040;
+    }
+    .summary.violet-summary {
+      background: rgba(60,20,80,.18);
+      border-color: #4a2068;
+    }
+    .summary h4 {
+      color: var(--gold);
+      font-size: 1rem;
+      font-weight: normal;
+      margin-bottom: 14px;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+    .summary.rose-summary   h4 { color: #e8a8c8; }
+    .summary.violet-summary h4 { color: #c8a8e8; }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 44px 24px;
+      background: #080300;
+      color: #604030;
+      font-size: .82rem;
+      letter-spacing: .07em;
+      border-top: 1px solid #2a1000;
+    }
+    footer span { color: var(--amber); }
+    footer .footer-logo {
+      font-size: 2rem;
+      display: block;
+      margin-bottom: 14px;
+      filter: drop-shadow(0 0 8px rgba(200,100,40,.4));
+    }
+
+    /* ── SCROLL TOP ── */
+    #toTop {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: var(--brown);
+      color: #f0d0a0;
+      border: none;
+      font-size: 1.1rem;
+      cursor: pointer;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .3s, transform .3s;
+      box-shadow: 0 4px 16px rgba(0,0,0,.5);
+    }
+    #toTop.visible { opacity: 1; pointer-events: auto; }
+    #toTop:hover   { transform: translateY(-3px); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 640px) {
+      nav ul li a        { font-size: .7rem; padding: 10px 9px; }
+      .block             { padding: 20px 18px; }
+      .intro-wrap        { padding: 24px 20px; }
+      .ch-header         { flex-direction: column; text-align: center; }
+      table.tantric th,
+      table.tantric td   { padding: 8px 10px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════ HERO ═══════════════════ -->
+<header>
+  <span class="hero-mandala">🌺</span>
+  <h1>MASSAGENS</h1>
+  <p class="hero-tagline">Arte, Sensação e Sagrado — Quatro Jornadas para o Corpo e a Alma</p>
+  <div class="hero-pills">
+    <div class="pill"><strong>4</strong> Experiências Completas</div>
+    <div class="pill"><strong>Toque</strong> Consciente &amp; Sagrado</div>
+    <div class="pill"><strong>Corpo · Mente · Energia</strong></div>
+    <div class="pill">Uso Profissional · Português Brasileiro</div>
+  </div>
+</header>
+
+<!-- ═══════════════════ NAV ═══════════════════ -->
+<nav>
+  <ul>
+    <li><a href="#intro">Introdução</a></li>
+    <li><a href="#sensitive">🌸 Sensitive</a></li>
+    <li><a href="#muscular">💪 Muscular &amp; Energética</a></li>
+    <li><a href="#extase">🔥 Êxtase Total</a></li>
+    <li><a href="#yoni">🌙 Yoni</a></li>
+  </ul>
+</nav>
+
+<main>
+
+<!-- ═══════════════════ INTRODUÇÃO ═══════════════════ -->
+<div class="intro-wrap" id="intro">
+  <h2>✨ Bem-vinda ao Universo das Massagens Sagradas</h2>
+  <p>
+    Este e-book reúne quatro experiências de massagem profundamente distintas em técnica, intenção e camada de profundidade — mas unidas por um princípio fundamental: o corpo é sagrado, o toque é linguagem e cada sessão é um ritual de cura, prazer e expansão da consciência.
+  </p>
+  <p>
+    De uma abordagem suave e sensorial (<strong>Sensitive</strong>), passando pelo trabalho integrado de musculatura e fluxo energético (<strong>Muscular e Energética</strong>), chegando ao mergulho profundo nos sentidos e na intensidade (<strong>Êxtase Total</strong>), até o trabalho sagrado e terapêutico voltado à feminilidade essencial (<strong>Yoni Massagem</strong>) — cada capítulo oferece uma descrição completa: filosofia, técnica por técnica, preparação do ambiente, scripts de comunicação e orientações éticas.
+  </p>
+  <p>
+    Cada massagem pode ser vivenciada como experiência única ou integrada em uma jornada sequencial. A ordem apresentada neste e-book segue um arco natural: do externo para o interno, da superfície para a profundidade, do corpo para a alma.
+  </p>
+</div>
+
+<!-- ═══════════════════ CAP 1 — SENSITIVE ═══════════════════ -->
+<section id="sensitive" class="sensitive">
+  <div class="ch-header">
+    <span class="ch-icon">🌸</span>
+    <div class="ch-text">
+      <span class="ch-badge">Capítulo 1 · Sensitive Massagem</span>
+      <h2>Sensitive Massagem</h2>
+    </div>
+  </div>
+
+  <div class="block rose-tint">
+    <span class="block-label">Essência desta Massagem</span>
+    <p>
+      A Sensitive Massagem é a porta de entrada mais gentil ao universo do toque consciente. Sua filosofia parte de uma premissa simples e poderosa: <em>a pele é o maior órgão sensorial do corpo humano</em> — e quando tocada com presença e intenção, ela se torna portal de transformação. Esta é uma massagem para quem deseja sentir, antes de qualquer outra coisa.
+    </p>
+  </div>
+
+  <h3>1.1 — Filosofia e Propósito</h3>
+  <p>
+    Em diversas tradições de cura oriental — do Ayurveda indiano ao Do-In japonês — a pele é considerada a fronteira entre o mundo interno e o externo. Cada receptor tátil é uma janela pela qual a energia entra e sai do corpo. A Sensitive Massagem honra essa visão ao trabalhar com toques de pressão mínima e máxima presença: as mãos do profissional são instrumentos finos, capazes de perceber a textura da pele, a temperatura, a tensão superficial e até o ritmo celular do corpo que está sendo tocado.
+  </p>
+  <p>
+    O propósito desta massagem é triplo: despertar a sensibilidade corporal adormecida, criar um espaço de segurança e receptividade, e iniciar o processo de reconexão da pessoa com seu próprio corpo — especialmente em casos de dissociação, estresse crônico ou bloqueios relacionados à autoimagem.
+  </p>
+
+  <blockquote class="sacred-quote">
+    "Quando uma mão toca com amor e atenção plena, ela não apenas toca a pele — ela toca a memória do corpo, o campo emocional e a dimensão espiritual de quem recebe."
+    <cite>— Tradição do Toque Sagrado Tântrico</cite>
+  </blockquote>
+
+  <h3>1.2 — Preparação do Ambiente</h3>
+  <p>
+    Para a Sensitive Massagem, o ambiente precisa ser um casulo de segurança e suavidade. A cada detalhe sensorial, o sistema nervoso da cliente avalia inconscientemente: "Posso relaxar aqui?"
+  </p>
+  <ul class="styled">
+    <li><strong>Luz:</strong> Velas de cera de soja ou beeswax — mínimo 3, máximo 5. Nenhuma lâmpada direta. A luminosidade deve ser tênue o suficiente para que os olhos descansem completamente</li>
+    <li><strong>Temperatura:</strong> 27–28°C. A cliente ficará em contato íntimo com o ar da sala; qualquer frescor é perturbador nesta modalidade</li>
+    <li><strong>Aroma:</strong> Lavanda pura em difusor ultrassônico (3 gotas por 100 ml de água). Em alternativa: camomila romana + neroli. Evitar aromas intensos ou amadeirados pesados</li>
+    <li><strong>Som:</strong> Frequências binaurais delta/theta (2–7 Hz); sons oceânicos suaves; silêncio parcial com apenas ruído branco de baixa frequência. Volume: 30–35 dB</li>
+    <li><strong>Superfície:</strong> Maca coberta com lençol de algodão egípcio, fio 400+, levemente aquecido. Nenhum tecido sintético — a pele da cliente sentirá qualquer aspereza</li>
+    <li><strong>Pétalas e flores:</strong> Dispersas na entrada da sala e no acesso à maca — elemento visual que ativa o estado de receptividade antes mesmo do toque</li>
+  </ul>
+
+  <div class="tip">
+    <strong>💡 Toque Profissional:</strong> Prepare uma toalha úmida morna com uma gota de lavanda para receber as mãos da cliente na entrada da sala. Esse gesto simples já inicia o processo de rendição sensorial antes do primeiro toque formal.
+  </div>
+
+  <h3>1.3 — Óleos e Texturas Recomendados</h3>
+  <table class="tantric">
+    <thead>
+      <tr><th>Óleo de Base</th><th>Essencial</th><th>Proporção</th><th>Efeito</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Jojoba orgânica</td><td>Lavanda + Ylang-ylang</td><td>30 ml + 2 + 1 gotas</td><td>Relaxamento profundo; receptividade emocional</td></tr>
+      <tr><td>Amêndoa doce</td><td>Rosa absoluta + Sândalo</td><td>30 ml + 1 + 2 gotas</td><td>Abertura do coração; sensação de ser amada</td></tr>
+      <tr><td>Coco fracionado</td><td>Neroli + Camomila romana</td><td>30 ml + 2 + 1 gotas</td><td>Suavidade extrema; pele hipersensível</td></tr>
+    </tbody>
+  </table>
+  <p>
+    <strong>Quantidade:</strong> 40–60 ml para a sessão completa. Aqueça a 36°C antes de aplicar. O óleo deve deslizar como seda sobre a pele — nunca criar resistência.
+  </p>
+
+  <h3>1.4 — Técnicas e Sequência de Toque</h3>
+  <p>
+    A Sensitive Massagem utiliza um vocabulário de toque distinto das massagens convencionais: aqui, a intenção substitui a força, a presença substitui a velocidade.
+  </p>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-label">Fase 1 · 0–5 min</div>
+      <h4>Chegada das Mãos — O Primeiro Toque</h4>
+      <p>Com a cliente em decúbito dorsal (de costas), posicione ambas as mãos abertas e imóveis sobre o tórax — uma sobre o coração, uma sobre o abdômen. Permaneça assim por 60–90 segundos, em completo silêncio. Esse gesto estabelece a comunicação energética inicial e sinaliza: "Estou aqui. Você está segura."</p>
+    </div>
+    <div class="step">
+      <div class="step-label">Fase 2 · 5–20 min</div>
+      <h4>Varredura Sensorial — Toque de Pluma</h4>
+      <p>Utilize apenas a ponta dos dedos ou a palma inteira levemente curvada para realizar longas varreduras ao longo do corpo — do pescoço aos tornozelos — com pressão equivalente ao peso de uma pluma. O ritmo é lento, de 20–30 cm por segundo. Repetir 3–4 vezes por região antes de avançar. Esse toque ativa os receptores CT (C-Tactile) da pele, responsáveis pela sensação de afeto e prazer social.</p>
+    </div>
+    <div class="step">
+      <div class="step-label">Fase 3 · 20–40 min</div>
+      <h4>Toque em Onda — Deslizamento Contínuo</h4>
+      <p>Com as palmas cheias e o óleo aplicado, realize movimentos longos e contínuos como ondas do mar: começa nos pés, sobe pelas pernas, quadris, costas, ombros, desce pelos braços e retorna pelos flancos. O movimento nunca para — é um fluxo ininterrupto que cria a sensação de que o corpo flutua. Pressão: leve a média (não mais que 1–2 kg/cm²).</p>
+    </div>
+    <div class="step">
+      <div class="step-label">Fase 4 · 40–60 min</div>
+      <h4>Toque Pontual — Respiração da Pele</h4>
+      <p>Alterne entre movimentos amplos e pausas pontuais: pressione suavemente um ponto (exemplo: base do crânio, entre as omoplatas, sacro) e permaneça imóvel por 10–20 segundos antes de continuar. Esses pontos de pausa permitem que o sistema nervoso integre o toque anterior e aprofunde o relaxamento. Evite qualquer gesto abrupto ou quebra de contato.</p>
+    </div>
+    <div class="step">
+      <div class="step-label">Fase 5 · 60–75 min</div>
+      <h4>Integração — Toque de Despedida</h4>
+      <p>Retorne ao toque inicial: mãos abertas e imóveis sobre o coração e o abdômen. Permaneça por 2–3 minutos. Em seguida, deslize as mãos lentamente para fora do corpo — como se o toque fosse sendo absorvido pela pele da cliente. Cubra-a com a manta macia. Silêncio total por mais 5 minutos antes de qualquer palavra.</p>
+    </div>
+  </div>
+
+  <h3>1.5 — Script de Comunicação</h3>
+  <div class="block rose-tint">
+    <span class="block-label">O que dizer — e o que não dizer</span>
+    <p><strong>Abertura (antes de começar):</strong> "Vou colocar minhas mãos sobre você agora. Não há nada que você precise fazer — apenas receber. Permita que seu corpo seja guiado pela sensação. Se algo não estiver confortável, diga uma palavra e eu me adapto."</p>
+    <p><strong>Durante a sessão:</strong> Use o mínimo de palavras possível. O silêncio é parte da técnica. Se necessário, apenas: "Respire..." ou "Deixa ir..."</p>
+    <p><strong>Encerramento:</strong> "A sessão foi concluída. Permita-se ficar aqui por alguns momentos. Não há pressa. Quando sentir vontade, pode abrir os olhos devagar..."</p>
+    <p><strong>Evitar:</strong> Perguntas frequentes sobre como a cliente está sentindo; afirmações entusiasmadas que quebram o estado meditativo; qualquer comentário sobre o corpo da cliente.</p>
+  </div>
+
+  <h3>1.6 — Contraindicações e Limites</h3>
+  <ul class="styled">
+    <li>Lesões de pele ativas (feridas, queimaduras, infecções cutâneas) na área a ser massageada</li>
+    <li>Hipersensibilidade cutânea severa ou condições como fibromialgia em fase aguda (requer adaptações)</li>
+    <li>Estado emocional de crise aguda (ansiedade severa, episódio dissociativo intenso) — priorizar apoio verbal primeiro</li>
+    <li>Alergia aos componentes do blend de óleos — sempre realizar teste de patch 24h antes</li>
+  </ul>
+
+  <div class="summary rose-summary">
+    <h4>📌 Essência da Sensitive Massagem</h4>
+    <ul class="styled">
+      <li>Filosofia: a pele como portal de transformação; toque mínimo, presença máxima</li>
+      <li>Ambiente: temperatura 27–28°C, luz de velas, lavanda em difusor, superfície de algodão premium</li>
+      <li>Óleos: jojoba ou amêndoa com lavanda, rosa ou neroli; 40–60 ml aquecidos a 36°C</li>
+      <li>Técnicas: chegada das mãos → varredura de pluma → toque em onda → pausas pontuais → integração</li>
+      <li>Duração ideal: 75–90 minutos</li>
+      <li>Indicação: iniciantes ao toque consciente; processos de reconexão corporal; cura de dissociação</li>
+    </ul>
+  </div>
+</section>
+
+<div class="chapter-sep">· · · · ·</div>
+
+<!-- ═══════════════════ CAP 2 — MUSCULAR E ENERGÉTICA ═══════════════════ -->
+<section id="muscular" class="muscular">
+  <div class="ch-header">
+    <span class="ch-icon">💪</span>
+    <div class="ch-text">
+      <span class="ch-badge">Capítulo 2 · Muscular &amp; Energética</span>
+      <h2>Massagem Muscular e Energética</h2>
+    </div>
+  </div>
+
+  <div class="block">
+    <span class="block-label">Essência desta Massagem</span>
+    <p>
+      A Massagem Muscular e Energética integra dois mundos que frequentemente são tratados de forma separada: a fisioterapia do tecido — o trabalho profundo sobre músculos, fáscias e pontos de tensão — com o trabalho energético tântrico sobre os nadis (canais energéticos) e chakras. O resultado é uma massagem que atua simultaneamente no corpo físico <em>e</em> no corpo sutil.
+    </p>
+    <p>
+      Esta é a modalidade ideal para profissionais que atendem clientes com demandas concretas de alívio muscular (tensão crônica, dores lombares, ombros contraídos) e que, ao mesmo tempo, desejam elevar a experiência para além do resultado físico imediato.
+    </p>
+  </div>
+
+  <h3>2.1 — A Integração entre Músculo e Energia</h3>
+  <p>
+    Nas tradições orientais de medicina e cura, cada grupo muscular é associado a um estado emocional e a um fluxo de energia específico. A medicina tradicional chinesa, por exemplo, estabelece que os músculos do ombro e pescoço retêm energia de preocupação e responsabilidade excessiva; o quadril carrega energia de sexualidade bloqueada, medo e controle; as panturrilhas guardam o peso das responsabilidades que o indivíduo sente que precisa "sustentar".
+  </p>
+  <p>
+    Ao trabalhar um músculo tenso não apenas como tecido a ser relaxado, mas como um <em>guardião de emoção e memória</em>, o profissional ativa simultaneamente a liberação física e a integração emocional — criando um efeito muito mais profundo e duradouro do que o alívio muscular isolado.
+  </p>
+
+  <blockquote class="sacred-quote">
+    "O corpo não mente. Cada contração muscular crônica é uma história não contada. O toque profundo é a permissão para que essa história encontre sua conclusão."
+    <cite>— Tradição da Terapia Bioenergética</cite>
+  </blockquote>
+
+  <h3>2.2 — Mapa Muscular-Energético</h3>
+  <table class="tantric">
+    <thead>
+      <tr><th>Região Muscular</th><th>Emoção Associada</th><th>Chakra</th><th>Liberação Esperada</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Trapézio / Pescoço</td><td>Responsabilidade excessiva, medo de errar</td><td>Garganta (5°)</td><td>Choro, suspiros profundos, sensação de leveza</td></tr>
+      <tr><td>Ombros / Peitorais</td><td>Autoproteção, fechamento emocional</td><td>Coração (4°)</td><td>Expansão do peito, sensação de abertura</td></tr>
+      <tr><td>Diafragma / Abdômen</td><td>Ansiedade, controle, medo do futuro</td><td>Plexo Solar (3°)</td><td>Respiração que aprofunda espontaneamente, calor no centro</td></tr>
+      <tr><td>Lombar / Sacro</td><td>Insegurança, falta de suporte</td><td>Raiz (1°) / Sacral (2°)</td><td>Peso que dissolve, sensação de enraizamento</td></tr>
+      <tr><td>Quadris / Psoas</td><td>Sexualidade bloqueada, trauma pélvico</td><td>Sacral (2°)</td><td>Tremores liberatórios, calor, pulsação pélvica</td></tr>
+      <tr><td>Panturrilhas / Pés</td><td>Peso das responsabilidades, desconexão do presente</td><td>Raiz (1°)</td><td>Sensação de aterramento, formigamento nos pés</td></tr>
+    </tbody>
+  </table>
+
+  <h3>2.3 — Preparação do Ambiente</h3>
+  <p>
+    Esta massagem exige um ambiente que suporte tanto o trabalho corporal (que requer mobilidade e acesso a todas as regiões do corpo) quanto o estado energético expandido.
+  </p>
+  <ul class="styled">
+    <li><strong>Superfície:</strong> Maca firme, altura regulável entre 65–75 cm (mais baixa para permitir pressão sobre a lombar). Espuma de alta densidade D-40 ou superior</li>
+    <li><strong>Temperatura:</strong> 26–27°C. Ligeiramente mais fresca que a Sensitive — o trabalho mais intenso aquece o corpo da cliente naturalmente</li>
+    <li><strong>Aroma:</strong> Blend energizante-relaxante: eucalipto + lavanda + vetiver. Ou: alecrim + sândalo (mais yang/ativo, ideal para início)</li>
+    <li><strong>Som:</strong> Frequências binaurais alfa (8–12 Hz) com percussão suave ao fundo — como tambores xamânicos em volume muito baixo. Alternativa: tigelas tibetanas em loop. Volume: 40–45 dB</li>
+    <li><strong>Iluminação:</strong> Levemente mais intensa que a Sensitive — 60–80 lux. O profissional precisa enxergar bem a musculatura para trabalhar com precisão</li>
+  </ul>
+
+  <h3>2.4 — Óleos para Trabalho Profundo</h3>
+  <table class="tantric">
+    <thead>
+      <tr><th>Blend</th><th>Composição</th><th>Fase</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Aquecimento Muscular</td><td>Amêndoa doce 30ml + Eucalipto 2g + Alecrim 2g + Pimenta-negra 1g</td><td>Abertura e aquecimento</td></tr>
+      <tr><td>Trabalho Profundo</td><td>Uva 30ml + Vetiver 2g + Sândalo 2g + Incenso 1g</td><td>Massagem profunda</td></tr>
+      <tr><td>Integração Energética</td><td>Jojoba 30ml + Ylang-ylang 2g + Rosa absoluta 1g</td><td>Encerramento e síntese</td></tr>
+    </tbody>
+  </table>
+
+  <div class="warn">
+    <strong>⚠️ Atenção:</strong> Pimenta-negra e eucalipto não devem ser usados em peles muito sensíveis, próximos a mucosas ou em clientes com histórico de reação a óleos terpênicos. Realize anamnese completa antes de selecionar o blend.
+  </div>
+
+  <h3>2.5 — Técnicas Musculares</h3>
+  <div class="cards">
+    <div class="card">
+      <span class="c-icon">🌊</span>
+      <h3>Effleurage Profundo</h3>
+      <p>Deslizamentos longos com toda a palma e pressão crescente — 2 a 4 kg/cm². Aquece o tecido, distribui o óleo e prepara a musculatura para o trabalho mais intenso. Sempre no sentido do fluxo sanguíneo (em direção ao coração).</p>
+    </div>
+    <div class="card">
+      <span class="c-icon">👐</span>
+      <h3>Pétrissage (Amassamento)</h3>
+      <p>Elevação e compressão rítmica do tecido muscular com ambas as mãos em movimentos alternados. Ideal para trapézio, glúteos e músculos das coxas. Libera aderências e aumenta circulação local.</p>
+    </div>
+    <div class="card">
+      <span class="c-icon">🔘</span>
+      <h3>Pressão em Pontos-Gatilho</h3>
+      <p>Compressão sustentada (7–10 segundos) em nódulos de tensão muscular hipersensíveis. Libera espasmos neuromusculares crônicos. Combine com instrução para a cliente respirar profundamente no ponto de pressão.</p>
+    </div>
+    <div class="card">
+      <span class="c-icon">〰️</span>
+      <h3>Fricção Transversal</h3>
+      <p>Movimentos curtos perpendiculares às fibras musculares com os polegares ou nós dos dedos. Dissolve aderências de fáscia e pontos de calcificação. Aplicar em: borda medial da escápula, inserção do glúteo, banda iliotibial.</p>
+    </div>
+    <div class="card">
+      <span class="c-icon">🫳</span>
+      <h3>Técnica de Energia Muscular (MET)</h3>
+      <p>Combinação de contração isométrica da cliente (resistência leve do profissional) seguida de alongamento passivo. Aumenta amplitude de movimento e libera tensão reflexa. Aplicável em pescoço, iliopsoas e isquiotibiais.</p>
+    </div>
+    <div class="card">
+      <span class="c-icon">⚡</span>
+      <h3>Vibração e Tremor</h3>
+      <p>Movimentos vibratórios rápidos com a palma ou os dedos sobre grupos musculares específicos. Estimula proprioceptores e induz liberação de tensão residual. Particularmente eficaz na lombar e nos glúteos.</p>
+    </div>
+  </div>
+
+  <h3>2.6 — Integração Energética</h3>
+  <p>
+    Após cada grupo muscular trabalhado com técnica manual, o profissional realiza uma passagem energética: as palmas se movem lentamente a 2–5 cm acima da pele, varrendo a região do chakra associado. Esse gesto conecta o trabalho físico com o campo sutil, ancorando a liberação muscular na dimensão energética.
+  </p>
+  <div class="block">
+    <span class="block-label">Sequência de Varredura Energética por Chakra</span>
+    <ol class="styled">
+      <li><strong>Chakra Raiz (Muladhara):</strong> Palmas sobre o sacro e a base da coluna → intenção de enraizamento e segurança → 30 segundos</li>
+      <li><strong>Chakra Sacral (Svadhisthana):</strong> Palmas sobre o baixo abdômen e o sacro → intenção de fluidez e criatividade → 30 segundos</li>
+      <li><strong>Chakra Plexo Solar (Manipura):</strong> Uma palma sobre o abdômen, uma sobre a lombar → intenção de força e autonomia → 30 segundos</li>
+      <li><strong>Chakra Cardíaco (Anahata):</strong> Palmas sobre o peito e entre as escápulas → intenção de amor e abertura → 45 segundos</li>
+      <li><strong>Chakra Garganta (Vishuddha):</strong> Uma palma levemente sobre a garganta, uma na nuca → intenção de expressão e liberação → 20 segundos</li>
+      <li><strong>Fechamento do Campo:</strong> Varredura descendente suave de toda a extensão do corpo, dos pés à cabeça e de volta, 3 vezes → lacra e integra o trabalho</li>
+    </ol>
+  </div>
+
+  <h3>2.7 — Sequência Completa da Sessão</h3>
+  <div class="steps">
+    <div class="step">
+      <div class="step-label">0–10 min</div>
+      <h4>Abertura e Escaneamento</h4>
+      <p>Effleurage leve em todo o corpo. Profissional escaneia com as mãos as regiões de maior tensão e calor. Identifica os focos prioritários da sessão em tempo real.</p>
+    </div>
+    <div class="step">
+      <div class="step-label">10–35 min</div>
+      <h4>Trabalho Muscular — Costas e Lombar</h4>
+      <p>Pétrissage e pressão em pontos-gatilho na musculatura paravertebral, trapézio e lombar. Fricção transversal na borda medial das escápulas. Integração energética do chakra raiz e cardíaco após o trabalho.</p>
+    </div>
+    <div class="step">
+      <div class="step-label">35–55 min</div>
+      <h4>Membros Inferiores — Pernas e Quadris</h4>
+      <p>Effleurage profundo e pétrissage em coxas e panturrilhas. MET em isquiotibiais. Pressão no psoas (acesso lateral). Integração energética do chakra sacral e raiz.</p>
+    </div>
+    <div class="step">
+      <div class="step-label">55–75 min</div>
+      <h4>Frente do Corpo — Abdômen e Peitorais</h4>
+      <p>Trabalho suave no abdômen (sentido horário, descompressão do diafragma). Effleurage e pétrissage no peitoral maior. Integração energética dos chakras plexo solar, sacral e cardíaco.</p>
+    </div>
+    <div class="step">
+      <div class="step-label">75–90 min</div>
+      <h4>Encerramento Energético</h4>
+      <p>Sequência completa de varredura energética por todos os chakras. Toque final: palmas imóveis sobre o coração por 2 minutos. Cobertura com manta. 10 minutos de silêncio para integração.</p>
+    </div>
+  </div>
+
+  <div class="tip">
+    <strong>💡 Dica do Profissional:</strong> Ao trabalhar um ponto de tensão muscular, peça à cliente que respire em direção ao ponto — "Inspire e imagine que o ar chega exatamente aqui..." — e na expiração, aumente levemente a pressão. Essa sincronização neurológica acelera a dissolução do espasmo em até 40%.
+  </div>
+
+  <div class="summary">
+    <h4>📌 Essência da Massagem Muscular e Energética</h4>
+    <ul class="styled">
+      <li>Integra trabalho profundo em tecido muscular com varredura energética por chakras</li>
+      <li>Cada músculo carrega emoção: liberar o músculo é liberar a emoção guardada nele</li>
+      <li>Técnicas: effleurage profundo, pétrissage, pressão em pontos-gatilho, fricção, MET, vibração</li>
+      <li>Óleos: blends ativos (alecrim, eucalipto) na abertura; óleos terrosos (vetiver, sândalo) no fechamento</li>
+      <li>Duração ideal: 90–120 minutos</li>
+      <li>Indicação: tensão muscular crônica; estresse acumulado; bloqueios físico-emocionais; atletas e profissionais com alta demanda corporal</li>
+    </ul>
+  </div>
+</section>
+
+<div class="chapter-sep">· · · · ·</div>
+
+<!-- ═══════════════════ CAP 3 — ÊXTASE TOTAL ═══════════════════ -->
+<section id="extase" class="extase">
+  <div class="ch-header">
+    <span class="ch-icon">🔥</span>
+    <div class="ch-text">
+      <span class="ch-badge">Capítulo 3 · Êxtase Total</span>
+      <h2>Êxtase Total</h2>
+    </div>
+  </div>
+
+  <div class="block">
+    <span class="block-label">Essência desta Massagem</span>
+    <p>
+      A Êxtase Total é a experiência mais imersiva e multissensorial deste e-book. Ela não é simplesmente uma massagem mais intensa — é uma <em>orquestração de sensações</em>: temperatura, toque, aroma, som, respiração e movimento energético atuando simultaneamente para conduzir a cliente a estados alterados de consciência marcados por prazer profundo, dissolução do ego e expansão da percepção corporal.
+    </p>
+    <p>
+      O nome não é hipérbole: quando aplicada com maestria, essa modalidade pode produzir estados que neurocientistas descrevem como <em>flow</em> somático — a consciência totalmente absorvida na experiência do corpo, sem julgamento, sem passado, sem futuro. Apenas o eterno presente do sentir.
+    </p>
+  </div>
+
+  <h3>3.1 — Fundamentos da Êxtase Total</h3>
+  <p>
+    A palavra <em>êxtase</em> vem do grego <em>ékstasis</em> — "estar fora de si", "sair do estado habitual". Na filosofia tântrica, o êxtase não é um estado de desvario emocional, mas um estado de <em>expansão</em>: a consciência se expande além dos limites habituais do eu condicionado e toca algo maior. O corpo, paradoxalmente, é o meio: através da intensidade sensorial controlada e da dissolução dos bloqueios, a pessoa não escapa do corpo — ela se aprofunda nele até transcendê-lo.
+  </p>
+  <p>
+    Neurocientificamente, esse estado é caracterizado por: alta atividade do sistema nervoso parassimpático (relaxamento profundo), liberação maciça de endorfinas e ocitocina, redução da atividade do córtex pré-frontal medial (responsável pelo ego e autocensura), e aumento na produção de ondas cerebrais alfa e theta.
+  </p>
+
+  <blockquote class="sacred-quote">
+    "No cume da experiência sensorial consciente, o corpo e o universo tornam-se um. Esse é o estado que os tântricos chamavam de <em>Samadhi</em> — não ausência de sensação, mas plenitude absoluta de presença."
+    <cite>— Ensinamentos do Tantra Kashmira, Séc. IX d.C.</cite>
+  </blockquote>
+
+  <h3>3.2 — Pré-requisitos e Contrato de Experiência</h3>
+  <p>
+    A Êxtase Total é uma experiência para clientes que já possuem familiaridade com toque consciente. Não é indicada para primeiros atendimentos. Antes de iniciar, o profissional deve:
+  </p>
+  <ul class="styled">
+    <li><strong>Anamnese aprofundada:</strong> Histórico emocional, experiências traumáticas, limites pessoais (físicos e emocionais), expectativas reais da cliente</li>
+    <li><strong>Contrato de experiência verbal e escrito:</strong> O que será feito, o que não será feito, a palavra de segurança (ex.: "pausa") que interrompe tudo imediatamente</li>
+    <li><strong>Calibração de intensidade:</strong> A cliente define previamente a escala de intensidade desejada (1 a 5) para cada elemento: pressão do toque, temperatura, aroma, volume sonoro</li>
+    <li><strong>Sessão prévia obrigatória:</strong> No mínimo uma sessão anterior de Sensitive ou Muscular e Energética para que a cliente conheça o profissional e estabeleça confiança</li>
+  </ul>
+
+  <div class="alert">
+    <strong>⚠️ Ética Inegociável:</strong> A Êxtase Total, por envolver estados alterados de consciência, exige ainda mais rigor ético do profissional. A cliente em estado de êxtase somático é extremamente vulnerável. Qualquer aproveitamento dessa vulnerabilidade — toque além do combinado, sugestões inapropriadas, manipulação emocional — é violação grave e crime. O profissional deve manter lucidez, presença e integridade absolutas durante toda a sessão, mesmo enquanto a cliente experiencia estados expandidos.
+  </div>
+
+  <h3>3.3 — Ambiente Multissensorial</h3>
+  <p>
+    A preparação do ambiente para a Êxtase Total é ela mesma um ritual de 60–90 minutos antes da chegada da cliente:
+  </p>
+  <div class="cards">
+    <div class="card">
+      <span class="c-icon">🌡️</span>
+      <h3>Temperatura em Camadas</h3>
+      <p>Sala a 28°C. Manta morna disponível. Compressas quentes (44°C) e frias (16°C) alternadas em algumas fases da sessão — o contraste térmico amplifica a percepção sensorial de forma exponencial.</p>
+    </div>
+    <div class="card">
+      <span class="c-icon">🕯️</span>
+      <h3>Iluminação Dramática</h3>
+      <p>Velas em quantidades maiores (7–9), distribuídas em diferentes alturas. Algumas atrás de vidros coloridos (âmbar ou rubi) para criar efeito de halos. O ambiente deve ser imersivo e ligeiramente teatral — como o interior de um templo.</p>
+    </div>
+    <div class="card">
+      <span class="c-icon">🎵</span>
+      <h3>Paisagem Sonora Evolutiva</h3>
+      <p>A música evolui ao longo da sessão: começa com frequências theta (4–7 Hz) de 38 dB; mid-session introduz percussão suave e melodia de drone (44 dB); no pico, expande para tigelas tibetanas e drones overtone (50 dB); no retorno, dissolve em silêncio com apenas frequência 432 Hz suave.</p>
+    </div>
+    <div class="card">
+      <span class="c-icon">🌺</span>
+      <h3>Ritual Aromático</h3>
+      <p>Blend especialmente preparado: Ylang-ylang (2g) + Incenso (2g) + Patchouli (1g) + Rosa absoluta (1g) em 100ml de óleo de jojoba. Aroma terroso, floral e profundo — associado neurológica e culturalmente a estados de intimidade sagrada.</p>
+    </div>
+    <div class="card">
+      <span class="c-icon">🌹</span>
+      <h3>Pétalas e Cristais</h3>
+      <p>Pétalas de rosas espalhadas sobre a maca e no piso ao redor. Quartzo rosa e ametista posicionados nos quatro cantos da maca. Opcional: mandala de flores e cristais elaborada ao redor do espaço de atendimento.</p>
+    </div>
+    <div class="card">
+      <span class="c-icon">💨</span>
+      <h3>Respiração Guiada</h3>
+      <p>A sessão começa com 10 minutos de respiração conectada guiada pelo profissional antes do primeiro toque — esse preparo amplifica a receptividade do sistema nervoso em toda a sessão subsequente.</p>
+    </div>
+  </div>
+
+  <h3>3.4 — Técnicas da Êxtase Total</h3>
+  <p>
+    A Êxtase Total combina técnicas de diferentes tradições — tântrica, ayurvédica, bioenergética e neuropresença — numa sequência orquestrada que conduz a cliente por três fases psicofisiológicas: preparação (ativação), imersão (dissolução) e integração (síntese).
+  </p>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-label">Fase 1 · 0–15 min · Preparação</div>
+      <h4>Respiração Conectada + Abertura Energética</h4>
+      <p>Cliente deitada, olhos fechados. Profissional guia 10 minutos de respiração conectada circular (sem pausa entre inspira e expira). Em seguida, posiciona as mãos sobre os pés e sobe lentamente até a cabeça, permanecendo 30 segundos em cada chakra para sentir e despertar o campo energético. Apenas contato leve, sem pressão.</p>
+    </div>
+    <div class="step">
+      <div class="step-label">Fase 2 · 15–40 min · Ativação Corporal</div>
+      <h4>Ondas de Toque — Do Periférico ao Central</h4>
+      <p>Alternância rápida entre effleurage amplo de todo o corpo e toque pontual intenso em regiões específicas. O ritmo acelera e desacelera intencionalmente — criando a experiência de "ondas" de sensação que percorrem o corpo. Inclui: toque leve nos braços / pressão firme na lombar / toque de pluma na face / pressão profunda nos glúteos — tudo em sequência fluida e sem interrupções.</p>
+    </div>
+    <div class="step">
+      <div class="step-label">Fase 3 · 40–70 min · Imersão Profunda</div>
+      <h4>Sincronização Respiratória + Compressas Térmicas</h4>
+      <p>O profissional sincroniza conscientemente seu ritmo respiratório com o da cliente — criando coerência cardíaca e amplificando a conexão energética. Enquanto toca, aplica alternativamente compressas quentes (costas/lombar) e frias (nuca/pulsos) — o contraste térmico dissolve qualquer resistência residual do sistema nervoso. A intensidade do toque nessa fase pode aumentar para níveis de trabalho profundo em regiões acordadas previamente.</p>
+    </div>
+    <div class="step">
+      <div class="step-label">Fase 4 · 70–85 min · Pico</div>
+      <h4>Toque Total — Toda a Superfície Simultaneamente</h4>
+      <p>O profissional usa braços, antebraços e palmas para cobrir a maior área possível do corpo da cliente ao mesmo tempo — peito + pernas + braços em contato simultâneo. Combinado com pressão moderada, respiração sincronizada e som em pico. O objetivo: a cliente não sente mais "partes do corpo sendo tocadas" — sente o corpo inteiro como um campo unificado de sensação. Esse é o estado de êxtase somático.</p>
+    </div>
+    <div class="step">
+      <div class="step-label">Fase 5 · 85–105 min · Dissolução e Retorno</div>
+      <h4>Toque de Retirada + Ancoragem</h4>
+      <p>Gradualmente, o toque vai se tornando mais leve, mais lento, mais espaçado — como a maré que recua. Ao final, apenas as palmas sobre o coração e o ventre. Então a retirada: as mãos se afastam lentamente, mantendo a intenção de contato até o último milímetro. Cobertura com manta. 15–20 minutos de silêncio total para integração — não interromper esse período.</p>
+    </div>
+  </div>
+
+  <h3>3.5 — Pós-Sessão: Integração e Acolhimento</h3>
+  <p>
+    A Êxtase Total frequentemente mobiliza liberações emocionais intensas: choro profundo, risos, tremores, revelações, estados de profunda paz ou euforia. O profissional deve estar preparado para acolher qualquer resposta sem julgamento.
+  </p>
+  <div class="block">
+    <span class="block-label">Protocolo de Integração Pós-Êxtase</span>
+    <p><strong>15–20 min após o encerramento do toque:</strong> Ofereça água e chá morno de camomila. Permita que a cliente fale ou permaneça em silêncio — ela que determina o ritmo do retorno.</p>
+    <p><strong>Escuta ativa:</strong> Se a cliente quiser compartilhar o que viveu, receba sem analisar ou interpretar. "Fico feliz que você tenha vivido isso" é suficiente. Evite entrar em explicações ou teorias durante esse momento.</p>
+    <p><strong>Ancoragem corporal:</strong> Peça que a cliente pressione suavemente os pés no chão, respire profundamente 3 vezes, e nomeie mentalmente 5 coisas que ela consegue ver ao redor — protocolo de ancoragem sensorial que estabiliza o retorno ao estado ordinário de consciência.</p>
+    <p><strong>Orientações para as próximas 24h:</strong> Evitar álcool e substâncias; priorizar alimentação leve; descanso; diário ou expressão criativa para integrar o que emergiu.</p>
+  </div>
+
+  <div class="summary">
+    <h4>📌 Essência da Êxtase Total</h4>
+    <ul class="styled">
+      <li>Orquestração multissensorial: temperatura, toque, aroma, som, respiração e energia em simultâneo</li>
+      <li>Objetiva estados expandidos de consciência (flow somático, êxtase tântrico) — não gratificação sexual</li>
+      <li>Pré-requisito: sessão anterior + contrato de experiência + anamnese aprofundada</li>
+      <li>Fases: respiração → ativação → imersão → pico → dissolução → integração</li>
+      <li>Rigor ético máximo: a cliente em êxtase somático é vulnerável; o profissional mantém plena integridade</li>
+      <li>Duração ideal: 105–120 minutos + 30 minutos de integração pós-sessão</li>
+      <li>Indicação: clientes com experiência prévia; buscas de cura profunda; liberação de traumas ancorados no sistema nervoso; expansão espiritual</li>
+    </ul>
+  </div>
+</section>
+
+<div class="chapter-sep">· · · · ·</div>
+
+<!-- ═══════════════════ CAP 4 — YONI MASSAGEM ═══════════════════ -->
+<section id="yoni" class="yoni">
+  <div class="ch-header">
+    <span class="ch-icon">🌙</span>
+    <div class="ch-text">
+      <span class="ch-badge">Capítulo 4 · Yoni Massagem</span>
+      <h2>Yoni Massagem</h2>
+    </div>
+  </div>
+
+  <div class="block violet-tint">
+    <span class="block-label">Essência desta Massagem</span>
+    <p>
+      <em>Yoni</em> é uma palavra sânscrita que significa "fonte sagrada", "passagem divina", "útero do universo". No Tantra, a yoni — o complexo genital feminino — não é apenas um órgão biológico: é o portal pelo qual toda a vida entra no mundo, e o espelho mais íntimo da relação da mulher com seu próprio poder, prazer, dor e sabedoria.
+    </p>
+    <p>
+      A Yoni Massagem é uma prática terapêutica profunda voltada especificamente para a região pélvica e genital feminina. Seu propósito não é sexual no sentido convencional: é liberar tensões musculares profundas no assoalho pélvico, dissolver traumas emocionais e físicos armazenados nessa região, restaurar a sensibilidade, promover cura de disfunções e reconectar a mulher com sua própria sexualidade de forma consciente, respeitosa e sagrada.
+    </p>
+  </div>
+
+  <div class="sacred">
+    <strong>🌙 Contexto Sagrado:</strong> A Yoni Massagem é a prática que mais exige preparo, ética e clareza de intenção de todos os capítulos deste e-book. Ela só deve ser realizada por profissionais com formação específica, experiência comprovada e profundo compromisso ético. Sem esses elementos, não é uma prática tântrica sagrada — é uma violação. Este capítulo destina-se a profissionais em formação avançada.
+  </div>
+
+  <h3>4.1 — Filosofia e Propósito Terapêutico</h3>
+  <p>
+    No corpo feminino, a região pélvica e genital é uma das que mais concentra tensão, bloqueio e memória emocional. Investigações em neurologia e psicossomática revelam que o assoalho pélvico — o grupo de músculos que sustenta os órgãos pélvicos — é um dos principais repositórios de tensão crônica no corpo feminino, especialmente em mulheres que vivenciaram traumas sexuais, partos difíceis, cirurgias pélvicas, vergonha em relação à sexualidade ou pressão sobre o desempenho sexual.
+  </p>
+  <p>
+    Essa tensão se manifesta como: vaginismo, dispareunia (dor na relação sexual), anorgasmia, incontinência urinária de esforço, dor pélvica crônica, e desconexão da mulher com sua própria sensibilidade sexual. A Yoni Massagem, ao trabalhar diretamente essa região com toque consciente, respiração e intenção terapêutica, pode produzir liberações profundas — físicas, emocionais e energéticas — que outras abordagens não alcançam.
+  </p>
+
+  <blockquote class="sacred-quote">
+    "A yoni é o templo mais íntimo da mulher. Entrar nesse espaço requer mais do que técnica — requer reverência. O profissional que não sente reverência verdadeira não deve cruzar esse limiar."
+    <cite>— Escola de Formação em Tantra Terapêutico</cite>
+  </blockquote>
+
+  <h3>4.2 — Pré-requisitos Absolutos</h3>
+  <p>
+    A Yoni Massagem nunca é realizada como primeiro atendimento ou de forma isolada. Os seguintes pré-requisitos são inegociáveis:
+  </p>
+  <ul class="styled">
+    <li><strong>Formação específica:</strong> O profissional deve ter concluído formação em terapia tântrica com módulo específico de Yoni Massagem, incluindo prática supervisionada</li>
+    <li><strong>Relacionamento terapêutico estabelecido:</strong> Mínimo de 3 sessões anteriores com a cliente (Sensitive + Muscular e Energética + Êxtase Total ou equivalentes)</li>
+    <li><strong>Consentimento documentado em múltiplas camadas:</strong> Ficha de anamnese detalhada + Termo de Consentimento Específico para Yoni Massagem (descrevendo cada etapa, cada região, cada tipo de toque) assinado pela cliente</li>
+    <li><strong>Entrevista prévia dedicada:</strong> Sessão verbal (não de toque) para explorar o histórico emocional, sexual e físico da cliente em relação à sua região pélvica; suas intenções; seus limites; e seu sistema de suporte emocional</li>
+    <li><strong>Palavra de segurança ativa:</strong> A cliente define uma palavra ou gesto (ex.: três batidas na maca) que interrompe tudo imediatamente, sem necessidade de explicação</li>
+  </ul>
+
+  <div class="alert">
+    <strong>🚨 Atenção Legal:</strong> No Brasil, qualquer toque nas regiões genitais sem consentimento explícito e documentado configura crime. Mesmo com consentimento, qualquer toque que exceda o escopo acordado constitui violação. O profissional deve compreender que a Yoni Massagem existe em uma zona legal que exige rigor absoluto de documentação, postura e intenção. Em caso de dúvida, consulte um advogado especializado em direito à intimidade antes de oferecer essa modalidade.
+  </div>
+
+  <h3>4.3 — Anatomia Pélvica para o Profissional</h3>
+  <p>
+    O profissional de Yoni Massagem deve ter conhecimento anatômico detalhado da região pélvica feminina:
+  </p>
+  <table class="tantric">
+    <thead>
+      <tr><th>Estrutura</th><th>Localização</th><th>Relevância Terapêutica</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Assoalho pélvico (Levantador do ânus, Isquiocavernoso, Bulboesponjoso)</td><td>Base da pelve, sustentando útero, bexiga e reto</td><td>Principal região de tensão crônica; liberação promove alívio de dor pélvica e melhora de disfunções sexuais</td></tr>
+      <tr><td>Clitóris (incluindo ramos internos)</td><td>Parte visível: acima da abertura vaginal; extensão interna: ao longo da parede vaginal anterior</td><td>Estrutura de prazer com 8 000+ terminações nervosas; centro do prazer feminino; sensível ao toque consciente e respira com a energia</td></tr>
+      <tr><td>Ponto G (zona de Gräfenberg)</td><td>Parede anterior da vagina, 5–7 cm da entrada</td><td>Região de alta concentração de tecido erétil; estimulação pode liberar tensões emocionais profundas e ativar resposta orgásmica</td></tr>
+      <tr><td>Colo uterino</td><td>Porção inferior do útero, fundo da vagina</td><td>Região de memória emocional intensa; toque inadequado pode retraumatizar; toque consciente pode liberar</td></tr>
+      <tr><td>Grandes e pequenos lábios</td><td>Estruturas externas da vulva</td><td>Região de alta vascularização e sensibilidade; ponto de início do trabalho externo</td></tr>
+    </tbody>
+  </table>
+
+  <h3>4.4 — Higiene e Proteção</h3>
+  <ul class="styled">
+    <li><strong>Luvas cirúrgicas de nitrila</strong> (não látex — alergia frequente): obrigatórias para qualquer contato com a região interna. Trocar a cada nova região trabalhada</li>
+    <li><strong>Unhas do profissional:</strong> Cortadas rente à pele e lixadas — zero bordas que possam causar microlesões internas</li>
+    <li><strong>Óleo lubrificante:</strong> Exclusivamente óleos de base orgânicos sem essenciais (mucosa vaginal é extremamente sensível). Recomendado: óleo de coco virgem orgânico ou óleo de amêndoa sem aditivos. Verificar compatibilidade com a microbiota vaginal da cliente</li>
+    <li><strong>Descartáveis:</strong> Toalha descartável sobre a maca na região pélvica; recipiente fechado para descarte de materiais usados</li>
+    <li><strong>Mãos do profissional:</strong> Lavagem completa com sabonete neutro por 60 segundos antes do início e após o término</li>
+  </ul>
+
+  <h3>4.5 — Preparação do Ambiente</h3>
+  <p>
+    O ambiente para a Yoni Massagem deve ser o mais sagrado e acolhedor de todos — pois a cliente será convidada a ser profundamente vulnerável:
+  </p>
+  <div class="block violet-tint">
+    <span class="block-label">Elementos do Ambiente Sagrado</span>
+    <p><strong>Temperatura:</strong> 28–29°C. A região pélvica precisa de calor para relaxar completamente.</p>
+    <p><strong>Luz:</strong> Muito tênue — apenas velas (5–7). Nenhuma luz direta. A penumbra cria condições de segurança para a abertura vulnerável.</p>
+    <p><strong>Aroma:</strong> Rosa absoluta + Sândalo + Jasmim em difusor ultrassônico. Esses aromas têm associação neurológica com feminilidade, abertura e segurança em diferentes culturas.</p>
+    <p><strong>Som:</strong> Cantos tântricos femininos, mantras à Devi, ou sons de tigelas. Volume muito baixo: 30–35 dB. O silêncio interno é o objetivo — o som é apenas suporte.</p>
+    <p><strong>Ritual de entrada:</strong> Início com lavagem dos pés da cliente com água morna e pétalas — gesto de reverência que sinaliza: "Você é sagrada aqui."</p>
+  </div>
+
+  <h3>4.6 — Sequência da Sessão</h3>
+  <div class="steps">
+    <div class="step">
+      <div class="step-label">0–20 min · Preparação Corporal</div>
+      <h4>Massagem Corporal Abrangente — Ativação da Energia</h4>
+      <p>A sessão começa LONGE da região yônica. Massagem completa de costas, pernas, abdômen e ombros — exatamente como nas sessões anteriores. O objetivo é relaxar o sistema nervoso, elevar a energia e criar um estado de abertura e confiança que só pode ser construído gradualmente. Nunca iniciar a Yoni Massagem sem esta fase.</p>
+    </div>
+    <div class="step">
+      <div class="step-label">20–30 min · Aproximação</div>
+      <h4>Trabalho no Abdômen e Quadris</h4>
+      <p>Massagem suave em círculos no abdômen inferior (sentido horário). Trabalho nos quadris, glúteos e adutores. Toque leve na região interna das coxas. Respiração guiada: "Inspire e direcione a respiração para o ventre... deixe a barriga expandir..." Este trabalho move a energia em direção à pelve e prepara a região yônica para receber toque.</p>
+    </div>
+    <div class="step">
+      <div class="step-label">30–35 min · Convite</div>
+      <h4>Pausa e Comunicação</h4>
+      <p>Antes de qualquer toque na região yônica, o profissional faz uma pausa completa, coloca as palmas sobre o abdômen da cliente e faz um check verbal: "Seu corpo está pronto para receber o trabalho na região sagrada?" A cliente responde conscientemente. Se houver qualquer hesitação, retornar ao trabalho corporal por mais tempo. Nunca avançar sem resposta afirmativa clara.</p>
+    </div>
+    <div class="step">
+      <div class="step-label">35–60 min · Trabalho Externo</div>
+      <h4>Toque Yônico Externo</h4>
+      <p>Com luvas e óleo, iniciar pelo trabalho nos grandes lábios: pressão suave, circulação lenta, escuta do tecido. Avançar para os pequenos lábios com toque ainda mais delicado. Trabalho no monte pubiano e nas estruturas externas do clitóris — sempre com pressão mínima e movimentos lentos. Observar e nomear qualquer tensão: "Sinto tensão aqui — respira em direção a esse ponto..." Pausa frequente para check: "Ainda está bem?" Resposta da cliente orienta o andamento.</p>
+    </div>
+    <div class="step">
+      <div class="step-label">60–85 min · Trabalho Interno (se consentido)</div>
+      <h4>Toque Vaginal Terapêutico</h4>
+      <p>Apenas mediante consentimento específico reafirmado. Entrada muito lenta, um dedo com ampla lubrificação. Trabalho no assoalho pélvico: pressão suave nos pontos de tensão, aguardando a liberação do músculo antes de avançar. Trabalho na parede anterior (região do ponto G): pressão suave e estacionária — observar resposta somática (tremor, calor, emoção). Nenhum movimento de fricção sexual — o objetivo é terapêutico. Manter comunicação verbal contínua e suave durante todo esse período.</p>
+    </div>
+    <div class="step">
+      <div class="step-label">85–105 min · Integração</div>
+      <h4>Retorno ao Corpo Inteiro e Fechamento</h4>
+      <p>Encerramento do trabalho na região yônica com toque suave de "despedida" — palmas sobre a vulva em repouso por 60 segundos, intencionando gratidão e fechamento. Remover as luvas. Retornar a massagem suave para o abdômen e as pernas. Posicionar uma palma sobre o útero e uma sobre o coração — esse gesto conecta o centro sexual ao centro amoroso. Cobertura com manta. 20 minutos de silêncio de integração — não negociável.</p>
+    </div>
+  </div>
+
+  <h3>4.7 — Respostas Comuns e Como Acolhê-las</h3>
+  <div class="cards">
+    <div class="card violet-card">
+      <span class="c-icon">💧</span>
+      <h3>Choro</h3>
+      <p>Muito frequente. É liberação emocional saudável. Não interromper o toque — apenas suavizá-lo. Não pedir que a cliente "pare de chorar" ou que "tudo ficará bem". Simplesmente estar presente: "Estou aqui. Deixa vir."</p>
+    </div>
+    <div class="card violet-card">
+      <span class="c-icon">⚡</span>
+      <h3>Tremores Involuntários</h3>
+      <p>Resposta somática de liberação de tensão crônica do sistema nervoso. Normal e saudável. Informar a cliente previamente para que não se assuste. Apoiar com toque firme nas pernas ou ombros se necessário.</p>
+    </div>
+    <div class="card violet-card">
+      <span class="c-icon">😰</span>
+      <h3>Flashbacks ou Memórias</h3>
+      <p>Podem emergir durante o trabalho na região pélvica em clientes com histórico de trauma. Sinalizar a palavra de segurança e suspender o toque imediatamente. Mover as mãos para a cabeça da cliente e guiar respiração lenta. Oferecer suporte verbal calmo e não analítico.</p>
+    </div>
+    <div class="card violet-card">
+      <span class="c-icon">🔥</span>
+      <h3>Excitação Sexual</h3>
+      <p>Pode ocorrer — o corpo não distingue automaticamente intenção terapêutica de estimulação física. Não é errado nem perturbador. O profissional mantém presença e intenção terapêutica sem alterar a técnica. Não comentar sobre a excitação da cliente. Se a cliente tentar desviar para o terreno erótico, clareza gentil: "Este é um espaço de cura — a sessão continua nessa intenção."</p>
+    </div>
+    <div class="card violet-card">
+      <span class="c-icon">✨</span>
+      <h3>Orgasmo</h3>
+      <p>Pode ocorrer como resposta ao trabalho profundo na região yônica — especialmente em clientes que raramente experienciam orgasmo em outros contextos. O profissional mantém calma e presença, continuando o trabalho ou suavizando se a cliente preferir. O orgasmo terapêutico é uma forma de liberação energética profunda, não o objetivo da sessão.</p>
+    </div>
+    <div class="card violet-card">
+      <span class="c-icon">😶</span>
+      <h3>Entorpecimento ou Dissociação</h3>
+      <p>Indica que a cliente saiu do corpo emocionalmente. Reduzir intensidade do trabalho interno, trazer o toque para as extremidades (pés, mãos), guiar respiração profunda com olhos abertos, ancoragem sensorial. Encerrara fase interna nessa sessão.</p>
+    </div>
+  </div>
+
+  <div class="warn">
+    <strong>⚠️ Encaminhamento Profissional:</strong> Casos que envolvam trauma sexual grave, histórico de abuso, disfunções com componente psicológico significativo ou respostas dissociativas intensas devem ser acompanhados em paralelo por psicoterapeuta especializada em trauma. A Yoni Massagem não substitui psicoterapia — ela a complementa. Construa uma rede de parceiros terapêuticos para encaminhar nesses casos.
+  </div>
+
+  <h3>4.8 — Ética e Limites Inegociáveis</h3>
+  <ul class="styled">
+    <li><strong>Jamais realizar sem consentimento explícito, informado e documentado em cada etapa</strong></li>
+    <li><strong>Jamais realizar em primeiro atendimento</strong> — independentemente do pedido da cliente</li>
+    <li><strong>Jamais realizar com intenção sexual própria</strong> — se houver qualquer excitação sexual por parte do profissional, suspender a sessão imediatamente e encaminhar a cliente</li>
+    <li><strong>Jamais ir além do combinado</strong> — mesmo que a cliente na sessão sugira ou peça. O contrato pré-sessão é o guia</li>
+    <li><strong>Jamais realizar sem formação e supervisão adequadas</strong> — a incompetência técnica é tão danosa quanto a má-fé nessa prática</li>
+    <li><strong>Sempre documentar:</strong> ficha de anamnese, termo de consentimento, registro de cada sessão com data, técnicas usadas e respostas observadas</li>
+    <li><strong>Sempre oferecer encaminhamento psicoterápico</strong> quando emergirem conteúdos traumáticos que excedam o escopo do trabalho corporal</li>
+  </ul>
+
+  <div class="summary violet-summary">
+    <h4>📌 Essência da Yoni Massagem</h4>
+    <ul class="styled">
+      <li>Yoni = "fonte sagrada" no sânscrito; o complexo genital feminino como templo de poder e cura</li>
+      <li>Propósito terapêutico: liberar tensão no assoalho pélvico, curar traumas, restaurar sensibilidade, reconectar a mulher com sua sexualidade</li>
+      <li>Pré-requisitos: formação específica + mínimo 3 sessões anteriores + consentimento documentado em múltiplas camadas</li>
+      <li>Sequência: preparação corporal → aproximação → convite → trabalho externo → trabalho interno (se consentido) → integração</li>
+      <li>Respostas comuns: choro, tremores, memórias, excitação, orgasmo — todas válidas e tratadas com presença e ética</li>
+      <li>Duração ideal: 105–120 minutos + 25 minutos de integração pós-sessão</li>
+      <li>A Yoni Massagem é um ato de reverência ao sagrado feminino — nunca uma prática de gratificação erótica</li>
+    </ul>
+  </div>
+</section>
+
+<div class="chapter-sep">· · · · ·</div>
+
+<!-- ═══════════════════ ENCERRAMENTO ═══════════════════ -->
+<section id="fechamento" style="margin-top:80px; scroll-margin-top:56px;">
+  <div class="intro-wrap" style="background: linear-gradient(135deg, #1a0a00, #120a1e);">
+    <h2>🪷 Palavras Finais</h2>
+    <p>
+      Cada massagem descrita neste e-book é uma linguagem. A Sensitive fala em sussurros; a Muscular e Energética fala em profundidade; a Êxtase Total fala em orquestras; a Yoni fala em silêncio sagrado. Dominar essas linguagens não é acumular técnicas — é cultivar uma qualidade de presença, respeito e intenção que transforma qualquer toque em cura.
+    </p>
+    <p>
+      O profissional que oferece essas experiências carrega uma responsabilidade singular: a de ser guardião do espaço mais íntimo de outra pessoa. Essa responsabilidade não é um peso — é uma honra. E honras se portam com leveza, integridade e permanente aprendizado.
+    </p>
+    <p>
+      Que cada sessão seja um ato de serviço, cada toque uma oração, e cada cliente uma maestra do seu próprio despertar.
+    </p>
+  </div>
+</section>
+
+</main>
+
+<!-- ═══════════════════ FOOTER ═══════════════════ -->
+<footer>
+  <span class="footer-logo">🌺</span>
+  <p>MASSAGENS — E-Book Tântrico &nbsp;·&nbsp; Conteúdo educativo e profissional</p>
+  <p style="margin-top:8px;">Elaborado com <span>♥</span> e reverência &nbsp;·&nbsp; Projeto-01</p>
+</footer>
+
+<!-- ═══════════════════ SCROLL TOP ═══════════════════ -->
+<button id="toTop" title="Voltar ao topo" aria-label="Voltar ao topo">↑</button>
+
+<script>
+  // Smooth scroll for nav links
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.querySelector(link.getAttribute('href'));
+      if (target) target.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
+  // Scroll-to-top button
+  const toTop = document.getElementById('toTop');
+  window.addEventListener('scroll', () => {
+    toTop.classList.toggle('visible', window.scrollY > 400);
+  });
+  toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+</script>
+
+</body>
+</html>
