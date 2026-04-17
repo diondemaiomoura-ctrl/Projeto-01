@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PROMPT – Gerador de E-Book: Massagem Tântrica Completa</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Georgia', serif;
+      background: #0d0d0d;
+      color: #e8dcc8;
+      line-height: 1.8;
+    }
+
+    /* ── hero ── */
+    header {
+      position: relative;
+      text-align: center;
+      padding: 80px 24px 60px;
+      background: linear-gradient(160deg, #1a0a00 0%, #3b1200 50%, #1a0a00 100%);
+      overflow: hidden;
+    }
+    header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 0%, rgba(180,90,0,.25) 0%, transparent 70%);
+    }
+    header .mandala {
+      font-size: 4rem;
+      display: block;
+      margin-bottom: 18px;
+      filter: drop-shadow(0 0 12px rgba(200,130,30,.6));
+    }
+    header h1 {
+      font-size: clamp(1.8rem, 5vw, 3.2rem);
+      font-weight: normal;
+      letter-spacing: .05em;
+      color: #d4a05a;
+      text-shadow: 0 2px 18px rgba(200,120,20,.5);
+      position: relative;
+    }
+    header p.subtitle {
+      margin-top: 16px;
+      font-size: 1.05rem;
+      color: #b89060;
+      letter-spacing: .06em;
+      position: relative;
+    }
+
+    /* ── layout ── */
+    main {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 48px 24px 100px;
+    }
+
+    /* ── intro card ── */
+    .intro-box {
+      background: linear-gradient(135deg, #1e0e02, #2a1200);
+      border: 1px solid #5a2e0a;
+      border-radius: 12px;
+      padding: 32px 36px;
+      margin-bottom: 48px;
+    }
+    .intro-box h2 {
+      color: #d4a05a;
+      font-size: 1.3rem;
+      font-weight: normal;
+      margin-bottom: 14px;
+      letter-spacing: .04em;
+    }
+    .intro-box p { color: #d0c0a8; margin-bottom: 12px; }
+    .intro-box p:last-child { margin-bottom: 0; }
+
+    /* ── copy-to-clipboard area ── */
+    .copy-wrap {
+      position: relative;
+      margin-bottom: 56px;
+    }
+    .copy-btn {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: #8b4513;
+      color: #f0d8a8;
+      border: none;
+      border-radius: 6px;
+      padding: 8px 18px;
+      font-family: 'Georgia', serif;
+      font-size: .85rem;
+      letter-spacing: .04em;
+      cursor: pointer;
+      transition: background .25s;
+      z-index: 10;
+    }
+    .copy-btn:hover { background: #a0521a; }
+    .copy-btn.copied { background: #2a6e2a; }
+
+    textarea#prompt-text {
+      width: 100%;
+      min-height: 640px;
+      background: #110700;
+      color: #ddd0ba;
+      border: 1px solid #5a2e0a;
+      border-radius: 12px;
+      padding: 56px 28px 28px;
+      font-family: 'Georgia', serif;
+      font-size: .95rem;
+      line-height: 1.85;
+      resize: vertical;
+      outline: none;
+    }
+    textarea#prompt-text:focus {
+      border-color: #8b4513;
+      box-shadow: 0 0 0 3px rgba(139,69,19,.25);
+    }
+
+    /* ── chapter guide ── */
+    .chapter-guide {
+      margin-top: 64px;
+    }
+    .chapter-guide h2 {
+      font-size: clamp(1.3rem, 3vw, 1.9rem);
+      font-weight: normal;
+      color: #d4a05a;
+      border-left: 4px solid #8b4513;
+      padding-left: 16px;
+      margin-bottom: 32px;
+    }
+    .chapter-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .chapter-item {
+      background: linear-gradient(160deg, #1e0e02, #2e1504);
+      border: 1px solid #5a2e0a;
+      border-radius: 10px;
+      padding: 22px 28px;
+    }
+    .chapter-item .ch-num {
+      font-size: .78rem;
+      color: #8b4513;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 6px;
+    }
+    .chapter-item h3 {
+      color: #d4a05a;
+      font-size: 1.05rem;
+      font-weight: normal;
+      margin-bottom: 8px;
+    }
+    .chapter-item p {
+      font-size: .9rem;
+      color: #c0b090;
+    }
+
+    /* ── footer ── */
+    footer {
+      text-align: center;
+      padding: 32px 24px;
+      font-size: .82rem;
+      color: #6a5540;
+      border-top: 1px solid #2a1200;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════ HERO ═══════════════════ -->
+<header>
+  <span class="mandala">🕉</span>
+  <h1>PROMPT — Gerador de E-Book</h1>
+  <p class="subtitle">Massagem Tântrica Completa · Formação Profissional</p>
+</header>
+
+<!-- ═══════════════════ MAIN ═══════════════════ -->
+<main>
+
+  <!-- Intro -->
+  <div class="intro-box">
+    <h2>Como usar este PROMPT</h2>
+    <p>
+      Copie o texto abaixo e cole diretamente em qualquer IA generativa
+      (ChatGPT, Claude, Gemini etc.). A IA irá criar um E-Book completo,
+      organizado em capítulos, capaz de capacitar um profissional iniciante
+      a realizar uma massagem tântrica feminina com excelência.
+    </p>
+    <p>
+      O prompt já inclui todas as variáveis essenciais: origem, etimologia,
+      filosofia, materiais, ambiente, iluminação, acústica, diálogo, gatilhos
+      mentais, sequência de toque, técnicas corporais detalhadas por região e
+      encerramento da sessão.
+    </p>
+  </div>
+
+  <!-- Copy area -->
+  <div class="copy-wrap">
+    <button class="copy-btn" id="copyBtn" onclick="copyPrompt()">📋 Copiar Prompt</button>
+    <textarea id="prompt-text" readonly>
+Você é um especialista em terapias corporais, tantra, bem-estar feminino e redação técnica de alta qualidade. Sua tarefa é criar um E-Book completo, profissional e extremamente detalhado sobre MASSAGEM TÂNTRICA EM MULHERES.
+
+O E-Book deve ser escrito em português brasileiro, com linguagem clara, elegante e instrutiva. O objetivo final é que um profissional — mesmo sem nenhuma experiência prévia em massagem — consiga realizar a massagem tântrica com plena excelência após ler o material, sem precisar assistir a nenhum vídeo.
+
+═══════════════════════════════════════════════
+IDENTIDADE E PROPÓSITO DO E-BOOK
+═══════════════════════════════════════════════
+
+Título sugerido: "Arte Tântrica: Guia Completo de Formação em Massagem Tântrica Feminina"
+
+Público-alvo: Profissionais iniciantes ou em transição de carreira que desejam atuar com massagem tântrica feminina de forma ética, técnica e transformadora.
+
+Tom: Sério, respeitoso, profissional e sensível. Nunca vulgar. O tantra é uma arte sagrada e deve ser tratado como tal.
+
+═══════════════════════════════════════════════
+ESTRUTURA GERAL DO E-BOOK (CAPÍTULOS)
+═══════════════════════════════════════════════
+
+O E-Book deve ser dividido em capítulos claramente separados e ordenados de forma lógica e progressiva. Para CADA capítulo, siga obrigatoriamente esta estrutura interna:
+
+1. POR QUÊ — Explique o propósito e a importância desse capítulo/etapa dentro do processo total.
+2. COMO — Explique o método, a técnica ou o conhecimento de forma clara e aplicável.
+3. APLICAÇÃO PRÁTICA — Descreva exatamente como o profissional deve executar na sessão real.
+
+═══════════════════════════════════════════════
+CAPÍTULOS OBRIGATÓRIOS E SEU CONTEÚDO
+═══════════════════════════════════════════════
+
+──────────────────────────────────────────────
+CAPÍTULO 1 — ORIGEM, ETIMOLOGIA E FILOSOFIA DO TANTRA
+──────────────────────────────────────────────
+• Origem histórica e cultural do Tantra (Índia, textos sagrados Tantras e Agamas)
+• Etimologia da palavra "Tantra" (sânscrito: tan = expandir + tra = liberar/instrumento)
+• Diferença entre Tantra espiritual e tantra ocidentalizado
+• A visão do corpo feminino no Tantra: sagrado, receptor de energia Shakti
+• Por que a massagem tântrica é considerada uma prática terapêutica e não sexual
+• O papel do massagista como canal de energia, não como protagonista
+• Ética profissional, limites e consentimento: a base de tudo
+• Legislação e posicionamento profissional no Brasil
+
+──────────────────────────────────────────────
+CAPÍTULO 2 — LISTA DE MATERIAIS E EQUIPAMENTOS
+──────────────────────────────────────────────
+• Liste TODOS os itens necessários, com descrição do porquê de cada um
+• Maca ou tatame profissional (dimensões recomendadas, espessura, cobertura)
+• Óleos essenciais e de base: quais, marcas sugeridas, como diluir, quantidade por sessão
+• Incensos, difusores e aromatizadores: tipos, aroma por objetivo (relaxamento, sensualização, conexão)
+• Velas e iluminação adicional: tipos de vela, posicionamento, cores recomendadas
+• Toalhas, lençóis e cobertores: quantidades, texturas, função de cada um
+• Travesseiros de apoio: quantidades e posicionamentos durante a sessão
+• Música e equipamento de áudio: tipo de caixa de som, volume recomendado, posicionamento
+• Temperatura do ambiente: faixa ideal em graus Celsius, aquecedor ou ar condicionado
+• Utensílios de higiene: sabonetes, papel toalha, álcool, avental profissional
+• Termos de consentimento e ficha de anamnese
+• Itens opcionais que enriquecem a experiência (pétalas, cristais, taças, chá)
+
+──────────────────────────────────────────────
+CAPÍTULO 3 — PREPARAÇÃO DO AMBIENTE
+──────────────────────────────────────────────
+• Layout do espaço: como dispor cada elemento no ambiente (diagrama descritivo)
+• Iluminação: intensidade (lúmens sugeridos), cor da luz (tom quente), posicionamento das fontes de luz, uso de velas
+• Temperatura: aquecimento do ambiente antes da chegada da cliente, temperatura do óleo
+• Aromaterapia: quando acender/ligar, quanto tempo antes, quais aromas para abertura e para o auge da sessão
+• Acústica e música: playlist sugerida por fase da sessão (acolhimento, aquecimento, aprofundamento, retorno), BPM recomendado por fase, volume em decibéis aproximados
+• Privacidade e segurança: porta trancada, celular no silencioso, aviso de "sessão em andamento"
+• Limpeza energética do espaço: defumação ou banho de sal antes de cada cliente
+• Higiene do profissional: banho, unhas, fragrância neutra, roupas confortáveis e limpas
+• Preparação mental do profissional: breve meditação de centragem (roteiro sugerido)
+
+──────────────────────────────────────────────
+CAPÍTULO 4 — RECEPÇÃO, ANAMNESE E CONSTRUÇÃO DO VÍNCULO
+──────────────────────────────────────────────
+• Como receber a cliente: tom de voz, postura corporal, contato visual, sorriso genuíno
+• A entrevista inicial (anamnese): perguntas obrigatórias (saúde, contraindicações, histórico emocional, objetivos), como anotar sem quebrar o vínculo
+• Explicação do que é e o que não é a massagem tântrica: palavras exatas sugeridas
+• Como identificar o estado emocional e energético da cliente ao chegar
+• Como adaptar o início da sessão ao estado emocional percebido
+• Termos de consentimento: como apresentar, explicar e solicitar a assinatura de forma natural
+• Gatilhos de confiança verbal: frases que criam segurança, acolhimento e abertura
+• O que NÃO dizer na recepção: erros comuns e como evitá-los
+
+──────────────────────────────────────────────
+CAPÍTULO 5 — TIMING E ESTRUTURA DA SESSÃO
+──────────────────────────────────────────────
+• Duração total recomendada da sessão (90 a 120 minutos) e por quê
+• Distribuição do tempo por fase:
+  – Recepção e anamnese: 10–15 min
+  – Preparação e ritual de entrada: 10 min
+  – Massagem corporal geral (dorso, pernas, braços): 30–40 min
+  – Massagem tântrica aprofundada (zonas de energia): 25–35 min
+  – Integração e retorno: 10–15 min
+  – Encerramento e pós-sessão: 5–10 min
+• Como ajustar o tempo se a cliente estiver muito tensa ou muito aberta
+• Sinais físicos e verbais que indicam necessidade de mais tempo em determinada região
+• Uso de temporizador invisível: estratégias para controlar o tempo sem quebrar o clima
+
+──────────────────────────────────────────────
+CAPÍTULO 6 — RITUAL DE ENTRADA E PREPARAÇÃO DA CLIENTE
+──────────────────────────────────────────────
+• O banho ou limpeza inicial: como orientar a cliente antes de deitar
+• Posicionamento inicial na maca: decúbito ventral (de bruços) como ponto de partida e por quê
+• Cobrir e descobrir: como usar o lençol com respeito, criando moldura energética
+• A primeira respiração guiada: roteiro completo de instrução de respiração para relaxamento profundo
+• A ativação sensorial: como despertar os sentidos da cliente de forma não invasiva (toque leve de apresentação, som, aroma)
+• O toque de abertura: mãos nas costas, pressão, duração, intenção
+
+──────────────────────────────────────────────
+CAPÍTULO 7 — O DIÁLOGO DURANTE A SESSÃO
+──────────────────────────────────────────────
+• Quando falar e quando manter silêncio: o mapa de silêncio da sessão
+• Tom de voz: timbre, velocidade, volume em cada fase da sessão
+• Gatilhos mentais de relaxamento: frases que ativam o sistema nervoso parassimpático
+• Gatilhos mentais de permissão e expansão: frases que ampliam a entrega e a confiança
+• Script de diálogo completo para cada fase da sessão (frases sugeridas, palavra por palavra):
+  – Abertura ("Você está em segurança, pode respirar fundo...")
+  – Transição entre regiões do corpo ("Agora vou mover minha atenção para...")
+  – Pedido de permissão antes de zonas mais íntimas ("Posso continuar em direção a...")
+  – Reforço de presença ("Sinta... perceba... deixe...")
+  – Retorno e integração ("Venha voltando aos poucos, sinta o peso do corpo...")
+• Como responder se a cliente fizer perguntas durante a sessão
+• Como lidar com choro, riso ou outras liberações emocionais
+• O que fazer se a cliente quiser encerrar antes do tempo
+
+──────────────────────────────────────────────
+CAPÍTULO 8 — SEQUÊNCIA COMPLETA DA MASSAGEM (VISÃO GERAL)
+──────────────────────────────────────────────
+• Apresente um RESUMO DA SEQUÊNCIA em formato de mapa visual descritivo:
+  Início nas costas (região sacral) → coluna → ombros → nuca → braços → mãos
+  → retorno às costas → glúteos → coxas posteriores → panturrilhas → pés
+  → virada para decúbito dorsal → pés (retomada) → pernas frontais → abdômen
+  → tórax → colo → pescoço → rosto → couro cabeludo
+  → integração final → encerramento
+• Explique o porquê desta sequência: fluxo energético (nadi), circulação, progressão de confiança
+• Identifique os pontos-chave de transição onde o nível de profundidade aumenta
+
+──────────────────────────────────────────────
+CAPÍTULO 9 — TÉCNICAS DETALHADAS REGIÃO POR REGIÃO
+──────────────────────────────────────────────
+Para CADA região do corpo listada abaixo, escreva uma seção completa contendo:
+a) Por que começar/trabalhar esta região
+b) Posição do profissional em relação à maca
+c) Qual parte do corpo do massagista usar (palmas, dedos, cotovelos, antebraços, punhos)
+d) Pressão exata (leve / média / profunda) e como aplicar
+e) Movimentos específicos (deslizamento, amassamento, fricção, compressão, vibração, effleurage, petrissage)
+f) Duração recomendada
+g) O que observar na resposta corporal da cliente
+h) Frases de diálogo sugeridas durante esta região
+
+REGIÕES A DETALHAR:
+1. Região sacral e base da coluna
+2. Coluna vertebral (técnica paravertebral)
+3. Região entre as escápulas (medial superior)
+4. Ombros e trapézio
+5. Nuca e base do crânio
+6. Braços e mãos
+7. Glúteos (com orientações éticas claras)
+8. Coxa posterior e jarrete (atrás do joelho)
+9. Panturrilha e tendão de Aquiles
+10. Pés e dedos dos pés (reflexologia tântrica)
+11. Transição para decúbito dorsal (como virar a cliente)
+12. Pés e pernas frontais
+13. Região inguinal (com orientações éticas e consentimento)
+14. Abdômen (técnica de respiração e liberação emocional)
+15. Tórax (esterno, costelas, sem toque nas mamas salvo consentimento expresso)
+16. Colo (clavículas, pescoço frontal)
+17. Rosto (têmporas, maxilares, fronte, orbiculares)
+18. Couro cabeludo (técnica de pressão e deslizamento)
+
+──────────────────────────────────────────────
+CAPÍTULO 10 — ZONAS DE ENERGIA TÂNTRICA E CHAKRAS
+──────────────────────────────────────────────
+• Mapeie os 7 chakras principais e sua localização no corpo feminino
+• Para cada chakra: como o desequilíbrio se manifesta fisicamente e emocionalmente
+• Técnicas específicas de estimulação de cada chakra por meio do toque
+• O caminho da kundalini: como o trabalho na base (muladhara) progride até o topo (sahasrara)
+• Movimentos de "ativação de canal": técnica de deslizamento ao longo da coluna vertebral para ativar o fluxo de energia
+
+──────────────────────────────────────────────
+CAPÍTULO 11 — INTEGRAÇÃO E ENCERRAMENTO DA SESSÃO
+──────────────────────────────────────────────
+• Como sinalizar o início do encerramento sem quebrar o estado de transe/relaxamento
+• O toque de fechamento: mãos na sola dos pés e na testa simultaneamente (ancoragem)
+• Respiração guiada de retorno: roteiro completo
+• Como cobrir a cliente e garantir conforto térmico no retorno
+• Tempo de silêncio pós-massagem: quanto tempo, o que fazer o profissional neste período
+• O momento de "acordar": como chamar a cliente de volta com voz e toque suaves
+• Hidratação pós-sessão: oferecer água ou chá, por quê e como
+• A conversa pós-sessão: o que perguntar, como acolher relatos emocionais
+• Como orientar a cliente sobre cuidados nas próximas 24 horas
+• Estratégias de fidelização: como fechar o próximo agendamento de forma natural
+
+──────────────────────────────────────────────
+CAPÍTULO 12 — CONTRAINDICAÇÕES, ÉTICA E SEGURANÇA
+──────────────────────────────────────────────
+• Contraindicações absolutas (febre, inflamações ativas, trombose, gravidez de risco, feridas abertas, etc.)
+• Contraindicações relativas e como adaptar a sessão
+• Sinais de alerta durante a sessão: o que fazer se a cliente passar mal
+• Limites éticos intransponíveis: o que nunca fazer, o que nunca prometer
+• Gerenciamento de transferência emocional/afetiva: como manter profissionalismo
+• Sigilo profissional e proteção de dados da cliente
+• Como lidar com situações de assédio ou desrespeito dos limites pela cliente
+
+──────────────────────────────────────────────
+CAPÍTULO 13 — DESENVOLVIMENTO CONTÍNUO DO PROFISSIONAL
+──────────────────────────────────────────────
+• Práticas de autocuidado do profissional: como "limpar" a energia absorvida após cada sessão
+• Meditações e respirações recomendadas para o profissional antes e após atender
+• Leituras e estudos recomendados para aprofundamento
+• Como evoluir do nível iniciante para especialista
+• Construção de portfólio, precificação e posicionamento de mercado
+
+═══════════════════════════════════════════════
+REQUISITOS DE QUALIDADE PARA TODO O E-BOOK
+═══════════════════════════════════════════════
+
+• Cada seção deve ser DETALHADA o suficiente para substituir 100% a observação de um vídeo.
+• Use linguagem precisa, sensível e profissional. Nunca use termos vulgares ou inadequados.
+• Sempre que descrever uma técnica manual, especifique: qual parte do corpo do massagista executa (palma, dedos, cotovelo, antebraço), a direção do movimento, a velocidade (lenta, média), a pressão (gramas/quilos de pressão ou descrição vivencial), e o efeito esperado no corpo da cliente.
+• Inclua DICAS PRÁTICAS destacadas ao longo de cada capítulo (ex: "💡 Dica do Profissional: ...").
+• Inclua ALERTAS DE ATENÇÃO para pontos críticos de ética, técnica ou segurança (ex: "⚠️ Atenção: ...").
+• Os scripts de diálogo devem ser escritos entre aspas, exatamente como devem ser falados, com indicação de tom de voz (ex: [voz suave e pausada]).
+• A acústica deve ser descrita com nomes de faixas, artistas ou estilos musicais específicos (músicas instrumentais, frequências binaurais, cantos tibetanos, sons da natureza, etc.) e o momento exato em que cada tipo deve ser usado.
+• A iluminação deve ser descrita com nível de intensidade, cor, fonte (vela, lâmpada, led) e posicionamento no espaço.
+• O E-Book deve ter no mínimo 15.000 palavras para garantir a completude necessária.
+• Ao final de cada capítulo, inclua um RESUMO EM TÓPICOS com os pontos-chave do capítulo.
+• Ao final do E-Book, inclua um GLOSSÁRIO com os principais termos do Tantra e da massagem utilizados ao longo do texto.
+
+═══════════════════════════════════════════════
+RESULTADO ESPERADO
+═══════════════════════════════════════════════
+
+Um E-Book tão completo, preciso e detalhado que um profissional iniciante — sem nenhuma experiência prévia em massagem, sem ter assistido a nenhum vídeo — consiga realizar uma sessão de massagem tântrica feminina com excelência técnica, ética inabalável e capacidade de proporcionar uma experiência transformadora para a cliente.
+
+Comece agora com o Capítulo 1 e prossiga em sequência até o Capítulo 13, seguido do Glossário final.
+    </textarea>
+  </div>
+
+  <!-- Chapter guide -->
+  <div class="chapter-guide">
+    <h2>📚 Estrutura de Capítulos do E-Book</h2>
+    <div class="chapter-list">
+
+      <div class="chapter-item">
+        <span class="ch-num">Capítulo 1</span>
+        <h3>Origem, Etimologia e Filosofia do Tantra</h3>
+        <p>Raízes históricas, significado da palavra Tantra, visão sagrada do corpo feminino, ética profissional e base filosófica.</p>
+      </div>
+
+      <div class="chapter-item">
+        <span class="ch-num">Capítulo 2</span>
+        <h3>Lista de Materiais e Equipamentos</h3>
+        <p>Todos os itens necessários com justificativa de uso: maca, óleos, incensos, velas, toalhas, música, temperatura, higiene e itens opcionais.</p>
+      </div>
+
+      <div class="chapter-item">
+        <span class="ch-num">Capítulo 3</span>
+        <h3>Preparação do Ambiente</h3>
+        <p>Layout do espaço, iluminação, temperatura, aromaterapia, acústica por fase, privacidade, limpeza energética e preparação mental do profissional.</p>
+      </div>
+
+      <div class="chapter-item">
+        <span class="ch-num">Capítulo 4</span>
+        <h3>Recepção, Anamnese e Construção do Vínculo</h3>
+        <p>Como receber a cliente, entrevista inicial, apresentação da prática, termos de consentimento, gatilhos de confiança e erros a evitar.</p>
+      </div>
+
+      <div class="chapter-item">
+        <span class="ch-num">Capítulo 5</span>
+        <h3>Timing e Estrutura da Sessão</h3>
+        <p>Duração total (90–120 min), distribuição de tempo por fase, adaptações e controle do tempo sem quebrar o clima.</p>
+      </div>
+
+      <div class="chapter-item">
+        <span class="ch-num">Capítulo 6</span>
+        <h3>Ritual de Entrada e Preparação da Cliente</h3>
+        <p>Posicionamento inicial, uso do lençol, primeira respiração guiada, ativação sensorial e toque de abertura.</p>
+      </div>
+
+      <div class="chapter-item">
+        <span class="ch-num">Capítulo 7</span>
+        <h3>O Diálogo Durante a Sessão</h3>
+        <p>Scripts completos de fala, gatilhos mentais de relaxamento e permissão, tom de voz por fase, como lidar com liberações emocionais.</p>
+      </div>
+
+      <div class="chapter-item">
+        <span class="ch-num">Capítulo 8</span>
+        <h3>Sequência Completa da Massagem — Visão Geral</h3>
+        <p>Mapa descritivo da sequência corpo a corpo, justificativa energética do percurso e pontos-chave de transição.</p>
+      </div>
+
+      <div class="chapter-item">
+        <span class="ch-num">Capítulo 9</span>
+        <h3>Técnicas Detalhadas Região por Região</h3>
+        <p>18 regiões do corpo com descrição exata: parte do corpo do massagista usada, pressão, movimentos, duração, observações e frases sugeridas.</p>
+      </div>
+
+      <div class="chapter-item">
+        <span class="ch-num">Capítulo 10</span>
+        <h3>Zonas de Energia Tântrica e Chakras</h3>
+        <p>Os 7 chakras no corpo feminino, técnicas de ativação pelo toque, caminho da kundalini e movimento de ativação de canal energético.</p>
+      </div>
+
+      <div class="chapter-item">
+        <span class="ch-num">Capítulo 11</span>
+        <h3>Integração e Encerramento da Sessão</h3>
+        <p>Toque de fechamento, respiração de retorno, silêncio pós-sessão, hidratação, conversa pós-sessão e fidelização da cliente.</p>
+      </div>
+
+      <div class="chapter-item">
+        <span class="ch-num">Capítulo 12</span>
+        <h3>Contraindicações, Ética e Segurança</h3>
+        <p>Contraindicações absolutas e relativas, sinais de alerta, limites éticos intransponíveis, transferência emocional e sigilo profissional.</p>
+      </div>
+
+      <div class="chapter-item">
+        <span class="ch-num">Capítulo 13</span>
+        <h3>Desenvolvimento Contínuo do Profissional</h3>
+        <p>Autocuidado pós-sessão, meditações recomendadas, evolução da carreira, precificação e posicionamento de mercado.</p>
+      </div>
+
+      <div class="chapter-item">
+        <span class="ch-num">Glossário Final</span>
+        <h3>Termos do Tantra e da Massagem</h3>
+        <p>Todos os principais termos em sânscrito e técnicos utilizados no E-Book com definições claras e objetivas.</p>
+      </div>
+
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  PROMPT — Gerador de E-Book · Massagem Tântrica Feminina · Uso Profissional
+</footer>
+
+<script>
+  function copyPrompt() {
+    const ta = document.getElementById('prompt-text');
+    ta.select();
+    ta.setSelectionRange(0, 99999);
+    try {
+      navigator.clipboard.writeText(ta.value).then(() => {
+        markCopied();
+      }).catch(() => {
+        document.execCommand('copy');
+        markCopied();
+      });
+    } catch (e) {
+      document.execCommand('copy');
+      markCopied();
+    }
+  }
+
+  function markCopied() {
+    const btn = document.getElementById('copyBtn');
+    btn.textContent = '✅ Copiado!';
+    btn.classList.add('copied');
+    setTimeout(() => {
+      btn.textContent = '📋 Copiar Prompt';
+      btn.classList.remove('copied');
+    }, 2500);
+  }
+</script>
+
+</body>
+</html>
