@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arte Tântrica — Guia Completo de Formação em Massagem Tântrica Feminina</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --gold:   #d4a05a;
+      --amber:  #c8702a;
+      --brown:  #8b4513;
+      --deep:   #5a2e0a;
+      --bg:     #0d0d0d;
+      --bg2:    #1a0a00;
+      --bg3:    #2a1200;
+      --text:   #e8dcc8;
+      --muted:  #c0b090;
+      --faint:  #7a6040;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Georgia', serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.85;
+    }
+
+    /* ── HERO ── */
+    header {
+      position: relative;
+      text-align: center;
+      padding: 96px 24px 72px;
+      background: linear-gradient(160deg, #130800 0%, #3b1200 50%, #130800 100%);
+      overflow: hidden;
+    }
+    header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 0%, rgba(180,90,0,.35) 0%, transparent 70%);
+    }
+    .hero-mandala {
+      font-size: 4.5rem;
+      display: block;
+      margin-bottom: 20px;
+      filter: drop-shadow(0 0 18px rgba(200,130,30,.75));
+      position: relative;
+    }
+    header h1 {
+      font-size: clamp(2.2rem, 5.5vw, 3.8rem);
+      font-weight: normal;
+      letter-spacing: .06em;
+      color: var(--gold);
+      text-shadow: 0 2px 24px rgba(200,120,20,.6);
+      position: relative;
+    }
+    header .hero-sub {
+      margin-top: 16px;
+      font-size: 1.1rem;
+      color: #b89060;
+      letter-spacing: .08em;
+      position: relative;
+    }
+    .hero-pills {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 40px;
+      position: relative;
+    }
+    .pill {
+      background: rgba(139,69,19,.25);
+      border: 1px solid var(--deep);
+      border-radius: 20px;
+      padding: 8px 20px;
+      font-size: .8rem;
+      color: var(--muted);
+      letter-spacing: .08em;
+    }
+    .pill strong { color: var(--gold); }
+
+    /* ── NAV ── */
+    nav {
+      background: var(--bg2);
+      border-bottom: 1px solid #2e1000;
+      position: sticky;
+      top: 0;
+      z-index: 200;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    nav ul li a {
+      display: block;
+      padding: 12px 14px;
+      color: #c8965a;
+      text-decoration: none;
+      font-size: .78rem;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      transition: color .2s, background .2s;
+    }
+    nav ul li a:hover { color: #f0c070; background: rgba(180,100,20,.15); }
+
+    /* ── LAYOUT ── */
+    main { max-width: 900px; margin: 0 auto; padding: 0 24px 120px; }
+
+    /* ── SECTION ── */
+    section {
+      margin-top: 80px;
+      scroll-margin-top: 60px;
+    }
+    section > h2 {
+      font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+      font-weight: normal;
+      color: var(--gold);
+      border-left: 4px solid var(--brown);
+      padding-left: 18px;
+      margin-bottom: 36px;
+    }
+    section > h3 {
+      font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+      font-weight: normal;
+      color: var(--amber);
+      margin: 40px 0 16px;
+      padding-bottom: 6px;
+      border-bottom: 1px dashed rgba(139,69,19,.4);
+    }
+    section p {
+      margin-bottom: 18px;
+      color: #ddd0ba;
+    }
+
+    /* ── CHAPTER BADGE ── */
+    .ch-badge {
+      display: inline-block;
+      font-family: 'Courier New', monospace;
+      font-size: .7rem;
+      letter-spacing: .2em;
+      color: var(--amber);
+      border: 1px solid var(--brown);
+      padding: 3px 12px;
+      border-radius: 20px;
+      margin-bottom: 18px;
+      text-transform: uppercase;
+    }
+
+    /* ── CONTENT BLOCKS ── */
+    .block {
+      background: linear-gradient(135deg, #1e0e02, #2a1200);
+      border: 1px solid var(--deep);
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin: 28px 0;
+      position: relative;
+    }
+    .block-label {
+      font-family: 'Courier New', monospace;
+      font-size: .68rem;
+      letter-spacing: .2em;
+      color: var(--amber);
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      display: block;
+    }
+    .block h3 {
+      color: var(--gold);
+      font-size: 1rem;
+      font-weight: normal;
+      margin-bottom: 12px;
+    }
+    .block p { color: #d0c0a8; margin-bottom: 12px; }
+    .block p:last-child { margin-bottom: 0; }
+
+    /* ── TIP / WARNING BOXES ── */
+    .tip, .warn, .alert {
+      border-radius: 10px;
+      padding: 18px 22px;
+      margin: 24px 0;
+      font-size: .93rem;
+    }
+    .tip {
+      background: rgba(20,60,20,.4);
+      border-left: 4px solid #4a9a4a;
+      color: #b0d8b0;
+    }
+    .warn {
+      background: rgba(80,40,0,.5);
+      border-left: 4px solid var(--amber);
+      color: #d8b888;
+    }
+    .alert {
+      background: rgba(80,10,10,.5);
+      border-left: 4px solid #c04040;
+      color: #d89090;
+    }
+    .tip strong  { color: #7acf7a; }
+    .warn strong { color: var(--gold); }
+    .alert strong { color: #e07070; }
+
+    /* ── LISTS ── */
+    ul.styled, ol.styled {
+      margin: 16px 0 16px 0;
+      padding-left: 0;
+      list-style: none;
+    }
+    ul.styled li, ol.styled li {
+      padding: 7px 0 7px 28px;
+      position: relative;
+      color: #ddd0ba;
+      border-bottom: 1px solid rgba(90,46,10,.25);
+      font-size: .95rem;
+    }
+    ul.styled li:last-child, ol.styled li:last-child { border-bottom: none; }
+    ul.styled li::before {
+      content: '✦';
+      position: absolute;
+      left: 0;
+      color: var(--amber);
+      font-size: .75rem;
+      top: 10px;
+    }
+    ol.styled { counter-reset: styled-counter; }
+    ol.styled li { counter-increment: styled-counter; }
+    ol.styled li::before {
+      content: counter(styled-counter) '.';
+      position: absolute;
+      left: 0;
+      color: var(--amber);
+      font-size: .85rem;
+      font-weight: bold;
+      top: 8px;
+    }
+
+    /* ── TABLE ── */
+    table.tantric {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      font-size: .9rem;
+    }
+    table.tantric th {
+      background: var(--bg3);
+      color: var(--gold);
+      padding: 12px 16px;
+      text-align: left;
+      font-weight: normal;
+      letter-spacing: .06em;
+      border-bottom: 2px solid var(--deep);
+    }
+    table.tantric td {
+      padding: 10px 16px;
+      color: var(--muted);
+      border-bottom: 1px solid rgba(90,46,10,.3);
+    }
+    table.tantric tr:nth-child(even) td { background: rgba(26,8,0,.4); }
+
+    /* ── SCRIPT QUOTE ── */
+    blockquote.script {
+      border-left: 3px solid var(--brown);
+      margin: 20px 0;
+      padding: 14px 22px;
+      font-style: italic;
+      color: #c8b898;
+      background: rgba(139,69,19,.08);
+      border-radius: 0 8px 8px 0;
+    }
+    blockquote.script .voice-note {
+      display: block;
+      font-size: .78rem;
+      color: var(--faint);
+      font-style: normal;
+      margin-top: 6px;
+      letter-spacing: .06em;
+    }
+
+    /* ── SUMMARY BOX ── */
+    .summary {
+      background: rgba(90,46,10,.2);
+      border: 1px solid var(--deep);
+      border-radius: 12px;
+      padding: 24px 28px;
+      margin-top: 48px;
+    }
+    .summary h4 {
+      color: var(--gold);
+      font-size: 1rem;
+      font-weight: normal;
+      margin-bottom: 14px;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    /* ── SEPARATOR ── */
+    .chapter-sep {
+      text-align: center;
+      color: var(--deep);
+      margin: 72px 0 0;
+      font-size: 1.4rem;
+      letter-spacing: .5em;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 40px 24px;
+      background: #080300;
+      color: #604030;
+      font-size: .82rem;
+      letter-spacing: .07em;
+      border-top: 1px solid #2a1000;
+    }
+    footer span { color: var(--amber); }
+
+    /* ── SCROLL TO TOP ── */
+    #toTop {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: var(--brown);
+      color: #f0d0a0;
+      border: none;
+      font-size: 1.1rem;
+      cursor: pointer;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .3s, transform .3s;
+      box-shadow: 0 4px 16px rgba(0,0,0,.5);
+    }
+    #toTop.visible { opacity: 1; pointer-events: auto; }
+    #toTop:hover   { transform: translateY(-3px); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 640px) {
+      nav ul li a { font-size: .7rem; padding: 10px 9px; }
+      .block { padding: 20px 18px; }
+      table.tantric th, table.tantric td { padding: 8px 10px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════ HERO ═══════════════════ -->
+<header>
+  <span class="hero-mandala">🪷</span>
+  <h1>Arte Tântrica</h1>
+  <p class="hero-sub">Guia Completo de Formação em Massagem Tântrica Feminina</p>
+  <div class="hero-pills">
+    <div class="pill"><strong>13</strong> Capítulos</div>
+    <div class="pill"><strong>18</strong> Regiões Corporais</div>
+    <div class="pill"><strong>7</strong> Chakras</div>
+    <div class="pill"><strong>15 000+</strong> Palavras</div>
+    <div class="pill">Português Brasileiro · Uso Profissional</div>
+  </div>
+</header>
+
+<!-- ═══════════════════ NAV ═══════════════════ -->
+<nav>
+  <ul>
+    <li><a href="#cap1">Cap. 1 — Filosofia</a></li>
+    <li><a href="#cap2">Cap. 2 — Materiais</a></li>
+    <li><a href="#cap3">Cap. 3 — Ambiente</a></li>
+    <li><a href="#cap4">Cap. 4 — Recepção</a></li>
+    <li><a href="#cap5">Cap. 5 — Timing</a></li>
+    <li><a href="#cap6">Cap. 6 — Ritual</a></li>
+    <li><a href="#cap7">Cap. 7 — Diálogo</a></li>
+    <li><a href="#cap8">Cap. 8 — Sequência</a></li>
+    <li><a href="#cap9">Cap. 9 — Técnicas</a></li>
+    <li><a href="#cap10">Cap. 10 — Chakras</a></li>
+    <li><a href="#cap11">Cap. 11 — Encerramento</a></li>
+    <li><a href="#cap12">Cap. 12 — Ética</a></li>
+    <li><a href="#cap13">Cap. 13 — Desenvolvimento</a></li>
+    <li><a href="#glossario">Glossário</a></li>
+  </ul>
+</nav>
+
+<main>
+
+<!-- ════════════════════════════════════════════
+     CAPÍTULO 1 — ORIGEM, ETIMOLOGIA E FILOSOFIA
+     ════════════════════════════════════════════ -->
+<section id="cap1">
+  <span class="ch-badge">Capítulo 1 · Filosofia</span>
+  <h2>🕉 Origem, Etimologia e Filosofia do Tantra</h2>
+
+  <div class="block">
+    <span class="block-label">Por Quê — Propósito deste Capítulo</span>
+    <p>
+      Antes de tocar qualquer pessoa, o profissional precisa compreender profundamente a origem e a filosofia que fundamentam a massagem tântrica. Sem esse alicerce, o trabalho corporal se torna mera manipulação técnica, desprovida de intenção, de ética e de capacidade transformadora. Conhecer as raízes do Tantra é o que diferencia um técnico de um terapeuta completo.
+    </p>
+  </div>
+
+  <h3>1.1 — Raízes Históricas e Culturais do Tantra</h3>
+  <p>
+    O Tantra é um dos sistemas filosóficos e espirituais mais antigos da humanidade, com raízes que remontam à <strong>civilização do Vale do Indo</strong> (aproximadamente 3000–1500 a.C.), nas regiões que hoje correspondem ao Paquistão e ao noroeste da Índia. Artefatos encontrados em sítios arqueológicos de Mohenjo-daro e Harappa revelam figuras associadas a deusas-mãe, rituais de fertilidade e cultos ao corpo feminino como fonte de vida e regeneração.
+  </p>
+  <p>
+    Os primeiros textos escritos que sistematizam as práticas tântricas — os chamados <strong>Tantras</strong> e <strong>Āgamas</strong> — surgem entre os séculos V e XII d.C., redigidos em sânscrito na forma de diálogos entre as divindades Shiva e Shakti. Esses textos abrangem cosmologia, medicina, rituais corporais, meditação e práticas de toque consciente como vias de acesso à iluminação e à saúde plena.
+  </p>
+  <p>
+    Com o tempo, o Tantra se ramificou em várias correntes: o <em>Tantra da Mão Esquerda</em> (<em>Vāmācāra</em>), que incorporava práticas mais transgressor para dissolução do ego; e o <em>Tantra da Mão Direita</em> (<em>Dakṣiṇācāra</em>), mais conservador e compatível com a vida doméstica. Ambas as vertentes reconhecem o corpo como veículo sagrado de transformação, e não como obstáculo à espiritualidade.
+  </p>
+
+  <div class="block">
+    <span class="block-label">Como — A Trajetória do Tantra pelo Mundo</span>
+    <p>
+      Do subcontinente indiano, o Tantra se propagou pelo Tibet (gerando o <em>Vajrayāna</em>, budismo tântrico), pela China, pelo Japão e, a partir do século XIX, pelo Ocidente. Na Europa e nas Américas, porém, a recepção foi frequentemente distorcida: a palavra "Tantra" foi reduzida a sinônimo de práticas sexuais exóticas — uma simplificação perigosa e incorreta que prejudica profissionais sérios até hoje.
+    </p>
+    <p>
+      A <strong>massagem tântrica contemporânea</strong> ocidental é uma síntese moderna que extrai princípios filosóficos e técnicas de toque dos antigos ensinamentos tântricos, adaptando-os ao contexto terapêutico e ao direito individual. No Brasil, ela é praticada no âmbito da terapia holística e do bem-estar, e exige do profissional formação técnica, postura ética inabalável e profundo respeito pela integridade da cliente.
+    </p>
+  </div>
+
+  <h3>1.2 — Etimologia da Palavra "Tantra"</h3>
+  <p>
+    Em sânscrito, a palavra <em>tantra</em> deriva de duas raíces:
+  </p>
+  <ul class="styled">
+    <li><strong>Tan</strong> (तन्) — expandir, tecer, estender. Refere-se à expansão da consciência e da energia vital além dos limites habituais do ego e do corpo físico.</li>
+    <li><strong>Tra</strong> (त्र) — instrumento, proteção, liberação. Indica que o Tantra é um instrumento de liberação da ignorância e das limitações condicionadas.</li>
+  </ul>
+  <p>
+    Portanto, <em>Tantra</em> pode ser traduzido como <em>"o tecido que expande e liberta"</em> ou <em>"o instrumento que expande a consciência"</em>. O corpo, nessa visão, é o tear no qual os fios da energia vital são entrelaçados para criar a tapeçaria da experiência consciente.
+  </p>
+
+  <div class="tip">
+    <strong>💡 Dica do Profissional:</strong> Ao explicar o Tantra a uma cliente, use a etimologia como porta de entrada. Dizer "Tantra significa expansão e liberação" já orienta a expectativa com precisão, sem exigir que a cliente conheça filosofia indiana. Esse vocabulário cria curiosidade saudável e respeito imediato pelo trabalho.
+  </div>
+
+  <h3>1.3 — Tantra Espiritual vs. Tantra Ocidentalizado</h3>
+  <p>
+    É imprescindível que o profissional compreenda e saiba explicar com clareza a diferença entre o Tantra em sua essência filosófica e o que o Ocidente popularizou como "tantra":
+  </p>
+  <table class="tantric">
+    <thead>
+      <tr><th>Aspecto</th><th>Tantra Espiritual (Original)</th><th>Tantra Ocidentalizado (Popular)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Foco</td><td>Expansão da consciência, liberação espiritual</td><td>Prazer sensorial e desempenho sexual</td></tr>
+      <tr><td>Corpo</td><td>Veículo sagrado de energia divina</td><td>Objeto de prazer e experiência</td></tr>
+      <tr><td>Sexualidade</td><td>Uma das muitas formas de energia vital, utilizada com intenção e consciência</td><td>Objetivo central da prática</td></tr>
+      <tr><td>Relação</td><td>Yogi/praticante e divindade; terapeuta como canal</td><td>Parceiros em busca de conexão erótica</td></tr>
+      <tr><td>Ética</td><td>Rigorosa; o corpo da outra pessoa é sagrado e inviolável</td><td>Frequentemente ambígua ou ausente</td></tr>
+    </tbody>
+  </table>
+  <p>
+    A massagem tântrica terapêutica que este guia apresenta se alinha ao Tantra espiritual: o corpo da cliente é tratado como um espaço sagrado, o profissional age como canal de energia consciente, e qualquer interpretação sexual por parte do profissional representa violação ética grave.
+  </p>
+
+  <h3>1.4 — A Visão do Corpo Feminino no Tantra</h3>
+  <p>
+    No Tantra, o corpo feminino é uma manifestação direta de <em>Shakti</em> — a energia cósmica primordial, criativa e dinâmica. Diferentemente de tradições que enxergam o corpo como fonte de tentação ou impureza, o Tantra o celebra como o maior templo existente: o local onde o divino se manifesta de forma mais completa e tangível.
+  </p>
+  <p>
+    A mulher, nesse sistema, é vista como <em>Devi</em> (deusa) incorporada na matéria. Seu corpo carrega canais de energia (<em>nāḍī</em>) que, quando trabalhados com toque consciente, respiração e intenção, liberam bloqueios físicos, emocionais e energéticos acumulados ao longo da vida. A massagem tântrica feminina é, portanto, um ato de reverência e cura — não de entretenimento.
+  </p>
+
+  <div class="warn">
+    <strong>⚠️ Atenção:</strong> O profissional deve compreender que "reverência pelo corpo feminino" não é apenas uma postura filosófica — é uma proteção ética concreta. Qualquer toque que ultrapasse os limites acordados, qualquer insinuação sexual ou qualquer quebra de consentimento representa não apenas uma falha ética, mas um crime previsto em lei. A filosofia tântrica não justifica nem tolera abusos.
+  </div>
+
+  <h3>1.5 — Por que a Massagem Tântrica é Terapêutica, Não Sexual</h3>
+  <p>
+    A massagem tântrica legítima trabalha com o corpo energético da cliente para:
+  </p>
+  <ul class="styled">
+    <li>Liberar tensões neuromusculares profundas acumuladas no sistema nervoso autônomo</li>
+    <li>Ativar a resposta parassimpática (descanso e regeneração) por meio de toque lento, contínuo e intencional</li>
+    <li>Promover a reconexão da pessoa com seu próprio corpo, muitas vezes dissociado por traumas, estresse crônico ou vergonha</li>
+    <li>Equilibrar o fluxo de energia vital através dos chakras e dos meridianos energéticos</li>
+    <li>Criar condições para liberações emocionais — choro, riso, tremores — que são parte natural do processo de cura somática</li>
+  </ul>
+  <p>
+    Nenhum desses objetivos tem relação com satisfação sexual. O profissional que confunde ou mistura essas dimensões está cometendo desvio ético e potencialmente crime.
+  </p>
+
+  <h3>1.6 — O Papel do Profissional como Canal de Energia</h3>
+  <p>
+    No Tantra, o terapeuta não é protagonista: ele é <em>canal</em>. Isso significa que sua função é criar as condições ideais — ambientais, corporais, energéticas e relacionais — para que a cliente acesse seu próprio potencial de cura. O ego do profissional deve ser colocado de lado. Suas preferências pessoais, julgamentos e estado emocional não têm lugar no espaço sagrado da sessão.
+  </p>
+  <p>
+    Antes de cada atendimento, o profissional deve centrar-se por meio de meditação ou respiração consciente (ver Capítulo 3), com a intenção explícita de servir com integridade. Ao final da sessão, ele deve realizar sua própria limpeza energética para não acumular o que foi liberado pela cliente.
+  </p>
+
+  <h3>1.7 — Ética Profissional, Limites e Consentimento</h3>
+  <p>
+    O consentimento é a fundação inegociável de todo trabalho tântrico profissional. Sem consentimento claro, informado e contínuo, não existe massagem tântrica — existe abuso. O consentimento deve ser:
+  </p>
+  <ul class="styled">
+    <li><strong>Informado:</strong> A cliente sabe exatamente o que será feito, em quais regiões do corpo e com que intenção</li>
+    <li><strong>Livre:</strong> Sem pressão, sem manipulação emocional, sem expectativa de reciprocidade</li>
+    <li><strong>Contínuo:</strong> Pode ser retirado a qualquer momento, mesmo durante a sessão, sem consequências para a cliente</li>
+    <li><strong>Documentado:</strong> Registrado em ficha de anamnese e termo de consentimento assinado</li>
+  </ul>
+
+  <h3>1.8 — Legislação e Posicionamento Profissional no Brasil</h3>
+  <p>
+    No Brasil, a massagem tântrica é exercida no âmbito das terapias complementares e integrativas, sem regulamentação profissional específica de nível federal. Isso significa que qualquer pessoa pode oferecer o serviço, mas também que o profissional é inteiramente responsável pela segurança e dignidade de sua cliente, respondendo civil e criminalmente por qualquer dano.
+  </p>
+  <p>
+    Recomendações legais e profissionais:
+  </p>
+  <ul class="styled">
+    <li>Jamais prometer curas ou resultados garantidos — isso configura propaganda enganosa</li>
+    <li>Emitir nota fiscal ou recibo de pagamento, demonstrando regularidade fiscal</li>
+    <li>Manter ficha de anamnese e termo de consentimento assinado para cada cliente</li>
+    <li>Nunca realizar qualquer prática que possa ser classificada como ato médico, psicológico ou sexual sem a habilitação correspondente</li>
+    <li>Posicionar-se claramente como terapeuta holístico, distinguindo-se de serviços de entretenimento adulto</li>
+    <li>Considerar a obtenção de seguro de responsabilidade civil profissional</li>
+  </ul>
+
+  <div class="block">
+    <span class="block-label">Aplicação Prática — Como Usar esse Conhecimento no Atendimento</span>
+    <p>
+      Na prática, o domínio da filosofia tântrica se manifesta em como o profissional fala, se posiciona e conduz a sessão. Use o vocabulário correto: "trabalho energético", "terapia corporal", "liberação de tensões", "conexão mente-corpo". Evite termos ambíguos ou erotizantes.
+    </p>
+    <p>
+      Quando a cliente fizer perguntas sobre o que esperar da sessão, responda com clareza: "É uma terapia que combina toque consciente, respiração e atenção aos centros de energia do corpo. O objetivo é liberar tensões profundas, promover reconexão com o corpo e criar um estado de profundo relaxamento e bem-estar. Não é uma massagem erótica nem sexual."
+    </p>
+    <p>
+      Essa clareza na comunicação é, ela mesma, um ato de respeito tântrico — honrar a inteligência e a autonomia da cliente.
+    </p>
+  </div>
+
+  <div class="summary">
+    <h4>📌 Resumo — Capítulo 1</h4>
+    <ul class="styled">
+      <li>O Tantra tem raízes de 5 000 anos na Índia, fundamentado nos Tantras e Āgamas</li>
+      <li><em>Tantra</em> = <em>tan</em> (expandir) + <em>tra</em> (liberar): instrumento de expansão da consciência</li>
+      <li>O corpo feminino é sagrado no Tantra, manifestação de Shakti — energia criativa cósmica</li>
+      <li>A massagem tântrica terapêutica é completamente distinta de serviços eróticos ou sexuais</li>
+      <li>O profissional age como canal, não como protagonista</li>
+      <li>Consentimento informado, livre, contínuo e documentado é inegociável</li>
+      <li>No Brasil, o profissional responde civil e criminalmente por qualquer dano à cliente</li>
+    </ul>
+  </div>
+</section>
+
+<div class="chapter-sep">· · · · ·</div>
+
+<!-- ════════════════════════════════════════════
+     CAPÍTULO 2 — MATERIAIS E EQUIPAMENTOS
+     ════════════════════════════════════════════ -->
+<section id="cap2">
+  <span class="ch-badge">Capítulo 2 · Equipamentos</span>
+  <h2>🛠️ Lista de Materiais e Equipamentos</h2>
+
+  <div class="block">
+    <span class="block-label">Por Quê — Propósito deste Capítulo</span>
+    <p>
+      A experiência tântrica é totalmente sensorial. Cada detalhe do ambiente — o toque do lençol, o aroma do óleo, a temperatura da sala, o som da música — contribui para criar ou destruir o estado de confiança e abertura que a cliente precisa alcançar. Profissionais que negligenciam os materiais chegam ao atendimento com improviso: esse improviso é sentido pela cliente como descaso e instabilidade, bloqueando o relaxamento profundo desde o início.
+    </p>
+  </div>
+
+  <h3>2.1 — Maca ou Tatame Profissional</h3>
+  <p>
+    A superfície de trabalho é o elemento estrutural central. As opções são:
+  </p>
+  <table class="tantric">
+    <thead>
+      <tr><th>Item</th><th>Especificação Recomendada</th><th>Função</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Maca portátil ou fixa</td><td>70–80 cm de largura, 180–200 cm de comprimento, altura regulável entre 65–85 cm</td><td>Permite acesso ergonômico do profissional por todos os lados</td></tr>
+      <tr><td>Espuma da maca</td><td>Mínimo 5 cm de espessura, densidade D-33 ou superior</td><td>Conforto prolongado sem afundamento excessivo</td></tr>
+      <tr><td>Capa de maca impermeável</td><td>PU ou PVC, cor neutra (bege ou branco)</td><td>Higiene; fácil limpeza com álcool 70%</td></tr>
+      <tr><td>Tatame japonês</td><td>100–120 cm × 200 cm, espessura mínima 5 cm</td><td>Alternativa para trabalho no solo; permite posições específicas do profissional</td></tr>
+    </tbody>
+  </table>
+
+  <div class="tip">
+    <strong>💡 Dica do Profissional:</strong> A altura ideal da maca é aquela em que, ao posicionar a mão aberta sobre a superfície com o braço estendido ao lado do corpo, os nós dos dedos tocam a superfície. Isso garante postura correta durante toda a sessão, prevenindo lesões lombares no profissional.
+  </div>
+
+  <h3>2.2 — Óleos Essenciais e de Base</h3>
+  <p>
+    O óleo é o veículo do toque tântrico. Ele reduz o atrito, aquece a pele, libera aromas terapêuticos e cria uma continuidade sensorial que aprofunda o relaxamento. Nunca use óleos essenciais puros diretamente na pele — sempre diluídos em óleo de base.
+  </p>
+  <table class="tantric">
+    <thead>
+      <tr><th>Óleo de Base</th><th>Textura</th><th>Indicação</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Óleo de semente de uva</td><td>Leve, seco</td><td>Ideal para início de sessão; absorção rápida; sem resíduo</td></tr>
+      <tr><td>Óleo de amêndoas doces</td><td>Médio, nutritivo</td><td>Excelente para massagem corporal geral; suaviza a pele</td></tr>
+      <tr><td>Óleo de coco fracionado</td><td>Leve, fluido</td><td>Estável; absorção controlada; levemente perfumado</td></tr>
+      <tr><td>Óleo de jojoba</td><td>Médio, sedoso</td><td>Semelhante ao sebo humano; hipoalergênico; ideal para peles sensíveis</td></tr>
+    </tbody>
+  </table>
+  <p>
+    <strong>Óleos essenciais recomendados por objetivo:</strong>
+  </p>
+  <ul class="styled">
+    <li><strong>Relaxamento profundo:</strong> Lavanda (Lavandula angustifolia) — 2–3 gotas por 30 ml de base; Camomila romana — 1–2 gotas por 30 ml</li>
+    <li><strong>Abertura e confiança:</strong> Ylang-ylang — 2 gotas por 30 ml; Rosa (absoluta ou otto) — 1 gota por 30 ml</li>
+    <li><strong>Enraizamento e segurança:</strong> Sândalo — 3 gotas por 30 ml; Vetiver — 2 gotas por 30 ml</li>
+    <li><strong>Elevação e clareza:</strong> Incenso (Frankincense/Olíbano) — 3 gotas por 30 ml; Neroli — 2 gotas por 30 ml</li>
+  </ul>
+  <p>
+    <strong>Quantidade por sessão:</strong> Prepare 60–80 ml de óleo diluído para uma sessão completa de 90–120 minutos. Aqueça o óleo a 36–38°C (temperatura corporal) antes de aplicar — nunca aplique óleo frio diretamente na pele da cliente.
+  </p>
+
+  <div class="warn">
+    <strong>⚠️ Atenção:</strong> Sempre verifique alergias, sensibilidades cutâneas e histórico de asma ou rinite alérgica na anamnese antes de selecionar os óleos. Tenha à disposição um óleo de base neutro (sem essencial) para clientes com restrições.
+  </div>
+
+  <h3>2.3 — Incensos, Difusores e Aromatizadores</h3>
+  <ul class="styled">
+    <li><strong>Difusor ultrassônico:</strong> Preferencial. Dispersa micropartículas de óleo essencial sem queimar, preservando as propriedades terapêuticas. Posicione a 1,5–2 m da maca, ao nível do rosto da cliente quando deitada</li>
+    <li><strong>Incenso em bastão (natural):</strong> Use somente incensos naturais (sem componentes sintéticos). Acenda 15–20 minutos antes do início e apague antes de a cliente entrar — o perfume persiste sem fumaça ativa</li>
+    <li><strong>Aromas por fase da sessão:</strong> Abertura (lavanda + sândalo) → Aprofundamento (ylang-ylang + incenso) → Retorno (hortelã-pimenta suave ou neroli)</li>
+  </ul>
+
+  <h3>2.4 — Velas e Iluminação</h3>
+  <ul class="styled">
+    <li><strong>Velas de cera de soja ou de abelha:</strong> Queimam de forma mais limpa, sem fuligem. Evite velas de parafina — liberam compostos tóxicos ao queimar. Posicione em suportes seguros, jamais próximo a tecidos</li>
+    <li><strong>Quantidade:</strong> 3–5 velas distribuídas no ambiente criam luminosidade suficiente sem ofuscamento</li>
+    <li><strong>Cores recomendadas:</strong> Branco (pureza e neutralidade), âmbar/laranja (calor e sensualidade sagrada), roxo (espiritualidade)</li>
+    <li><strong>Luminária com dimmer ou lâmpada LED warm white (2 700–3 000 K):</strong> Complementa as velas para segurança; mantenha a intensidade em 10–20% do máximo (equivalente a 50–80 lux)</li>
+  </ul>
+
+  <h3>2.5 — Toalhas, Lençóis e Cobertores</h3>
+  <table class="tantric">
+    <thead>
+      <tr><th>Item</th><th>Quantidade</th><th>Especificação</th><th>Função</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Lençol de cobre</td><td>2</td><td>100% algodão, fio 200+, tom neutro (bege/branco)</td><td>Cobre a maca; cobre a cliente durante a sessão</td></tr>
+      <tr><td>Toalha grande</td><td>3</td><td>70×140 cm, algodão macio</td><td>Cobertura parcial por região trabalhada; manuseio do óleo</td></tr>
+      <tr><td>Toalha pequena</td><td>2</td><td>50×90 cm</td><td>Apoio para os pés; proteção de travesseiros</td></tr>
+      <tr><td>Cobertor ou manta</td><td>1</td><td>Lã fina ou polar suave, tom quente</td><td>Conforto térmico no retorno (pós-massagem)</td></tr>
+    </tbody>
+  </table>
+
+  <h3>2.6 — Travesseiros de Apoio</h3>
+  <p>
+    O uso correto de travesseiros elimina pontos de tensão que impediriam o relaxamento completo:
+  </p>
+  <ul class="styled">
+    <li><strong>Travesseiro cilíndrico (bolster) sob os tornozelos:</strong> Em decúbito ventral (de bruços), eleva os pés 10–15 cm, descomprimindo a coluna lombar</li>
+    <li><strong>Travesseiro plano sob o abdômen:</strong> Para clientes com lordose acentuada; posicionar logo abaixo do umbigo</li>
+    <li><strong>Travesseiro pequeno sob a cabeça:</strong> Em decúbito dorsal (de costas), manter a cervical em posição neutra</li>
+    <li><strong>Travesseiro sob os joelhos:</strong> Em decúbito dorsal, reduz a tensão na região lombar; alivía clientes com dores nas costas</li>
+  </ul>
+
+  <h3>2.7 — Equipamento de Áudio</h3>
+  <ul class="styled">
+    <li><strong>Caixa de som Bluetooth ou com fio:</strong> Potência mínima de 20W; qualidade de reprodução que não distorça em volumes baixos. Evite fones de ouvido ou speakers de celular — a qualidade sonora afeta diretamente o estado meditativo</li>
+    <li><strong>Posicionamento:</strong> Dois ângulos opostos da sala, à altura de 1–1,5 m do chão, criando som envolvente sem foco direcional</li>
+    <li><strong>Volume recomendado:</strong> 35–45 dB (conversa suave); suficiente para ser percebido mas não distorcer o silêncio interior</li>
+  </ul>
+
+  <h3>2.8 — Temperatura do Ambiente</h3>
+  <ul class="styled">
+    <li><strong>Temperatura ideal:</strong> 26–28°C. A cliente ficará parcialmente exposta e imóvel por períodos prolongados; mesmo em dias quentes, o corpo resfria rapidamente sem proteção</li>
+    <li><strong>Aquecimento do óleo:</strong> Utilize um aquecedor de óleo elétrico (disponível em lojas de estética) a 36–38°C, ou aqueça nas palmas das mãos antes de cada aplicação</li>
+    <li><strong>Precaução:</strong> Nunca use estufa ou aquecedor de resistência próximo à cliente — risco de queimaduras e dessecação do ar</li>
+  </ul>
+
+  <h3>2.9 — Utensílios de Higiene e EPIs</h3>
+  <ul class="styled">
+    <li>Álcool gel 70% e sabonete neutro (para as mãos do profissional antes e após a sessão)</li>
+    <li>Papel toalha descartável (para limpeza de óleo em excesso das mãos)</li>
+    <li>Avental profissional ou roupa de trabalho limpa e confortável (calças de linho, camiseta de algodão)</li>
+    <li>Descartáveis de proteção da maca (papel tissue ou capa descartável) como camada extra de higiene</li>
+    <li>Recipiente com tampa para descarte de materiais usados</li>
+  </ul>
+
+  <h3>2.10 — Termos de Consentimento e Ficha de Anamnese</h3>
+  <p>
+    Esses documentos são proteção legal e ética para ambos os lados. A ficha de anamnese deve incluir:
+  </p>
+  <ul class="styled">
+    <li>Nome completo, data de nascimento, contato de emergência</li>
+    <li>Histórico de saúde: cirurgias recentes, condições crônicas, medicamentos em uso</li>
+    <li>Histórico emocional relevante: traumas, fobias de toque, experiências anteriores com terapias corporais</li>
+    <li>Objetivos da sessão: relaxamento, liberação emocional, reconexão corporal, alívio de dor específica</li>
+    <li>Áreas que a cliente prefere que não sejam tocadas (além das restrições éticas já estabelecidas)</li>
+  </ul>
+  <p>
+    O <strong>Termo de Consentimento</strong> deve descrever explicitamente:
+  </p>
+  <ul class="styled">
+    <li>Natureza da massagem tântrica como terapia holística, não sexual</li>
+    <li>Regiões que serão trabalhadas e quais são invioláveis sem consentimento específico adicional</li>
+    <li>Direito da cliente de encerrar a sessão a qualquer momento sem justificativa</li>
+    <li>Política de confidencialidade</li>
+    <li>Data, local, assinatura da cliente e do profissional</li>
+  </ul>
+
+  <h3>2.11 — Itens Opcionais que Enriquecem a Experiência</h3>
+  <ul class="styled">
+    <li><strong>Pétalas de rosas ou flores frescas:</strong> Dispersas sobre a maca ou em recipiente decorativo; ativam o sentido visual e o olfativo na entrada da cliente</li>
+    <li><strong>Cristais:</strong> Quartzo rosa (amor e receptividade), ametista (espiritualidade), turmalina negra (proteção energética) — posicionados ao redor da maca, não em contato direto com o corpo</li>
+    <li><strong>Taças ou recipientes com água e flores:</strong> Elemento estético e purificador</li>
+    <li><strong>Chá de ervas:</strong> Camomila, melissa ou erva-doce preparado para oferecer no pré e pós-sessão</li>
+    <li><strong>Sino ou sino tibetano:</strong> Para marcar o início e o fim da sessão com som intencional</li>
+  </ul>
+
+  <div class="block">
+    <span class="block-label">Aplicação Prática — Checklist Pré-Sessão</span>
+    <p>Crie um checklist plastificado e revise-o antes de cada atendimento:</p>
+    <ol class="styled">
+      <li>Maca ou tatame posicionado e coberto; altura ajustada</li>
+      <li>Lençol limpo sobre a maca; toalhas disponíveis</li>
+      <li>Óleo aquecido e preparado no recipiente; testa no pulso para verificar temperatura</li>
+      <li>Difusor ligado com o blend escolhido; janelas fechadas</li>
+      <li>Música na playlist correta, volume testado</li>
+      <li>Temperatura do ambiente verificada (26–28°C)</li>
+      <li>Luminosidade ajustada (velas + dimmer)</li>
+      <li>Celular do profissional no modo avião ou silencioso</li>
+      <li>Ficha de anamnese e termo de consentimento preparados</li>
+      <li>Mãos lavadas; roupa de trabalho vestida</li>
+    </ol>
+  </div>
+
+  <div class="summary">
+    <h4>📌 Resumo — Capítulo 2</h4>
+    <ul class="styled">
+      <li>Maca entre 65–85 cm de altura; lençol e capa impermeável para higiene</li>
+      <li>Óleos de base (amêndoas, uva, coco) diluídos com essenciais: 60–80 ml por sessão, aquecidos a 36–38°C</li>
+      <li>Difusor ultrassônico, incenso natural apagado antes da chegada da cliente</li>
+      <li>3–5 velas de soja/abelha; luminárias com dimmer (50–80 lux / 2 700–3 000 K)</li>
+      <li>Temperatura do ambiente: 26–28°C; evitar frio durante a sessão</li>
+      <li>Ficha de anamnese + Termo de Consentimento: documentação obrigatória</li>
+      <li>Checklist pré-sessão plastificado: revise antes de cada atendimento</li>
+    </ul>
+  </div>
+</section>
+
+<div class="chapter-sep">· · · · ·</div>
+
+<!-- ════════════════════════════════════════════
+     CAPÍTULO 3 — PREPARAÇÃO DO AMBIENTE
+     ════════════════════════════════════════════ -->
+<section id="cap3">
+  <span class="ch-badge">Capítulo 3 · Ambiente</span>
+  <h2>🕯️ Preparação do Ambiente</h2>
+
+  <div class="block">
+    <span class="block-label">Por Quê — Propósito deste Capítulo</span>
+    <p>
+      O ambiente é o primeiro terapeuta que age sobre a cliente — antes mesmo que o profissional toque em seu corpo. Pesquisas em neurociência confirmam que o sistema nervoso humano processa inconscientemente temperatura, luz, som e cheiro nos primeiros segundos de entrada em um espaço, e essa avaliação automática determina se o corpo vai ou não permitir o relaxamento profundo. Um ambiente mal preparado cria resistência que nenhuma técnica manual consegue superar.
+    </p>
+  </div>
+
+  <h3>3.1 — Layout do Espaço</h3>
+  <p>
+    O espaço mínimo recomendado para uma sala de massagem tântrica é de <strong>12–16 m²</strong>. O layout deve seguir este princípio: a maca ao centro, com espaço de ao menos 80 cm de cada lado para movimentação do profissional, e os elementos de suporte (mesa auxiliar com óleos, difusor, luminária) posicionados na periferia.
+  </p>
+  <p>
+    <strong>Diagrama descritivo de posicionamento:</strong>
+  </p>
+  <ul class="styled">
+    <li>Maca centralizada longitudinalmente na sala, com a cabeceira voltada para o norte ou leste (preferência energética, não obrigatória)</li>
+    <li>Mesa auxiliar à direita da cabeceira: óleos, toalhas extras, ficha de anamnese</li>
+    <li>Difusor no canto nordeste, ao nível do ombro da cliente deitada</li>
+    <li>Caixas de som nos dois ângulos opostos do espaço, à altura de 1–1,2 m</li>
+    <li>Velas distribuídas em suportes seguros nas periferias — nunca sob a maca ou próximas a tecidos</li>
+    <li>Porta com chave ou ferrolho voltada para os pés da maca (o profissional tem visão da porta)</li>
+    <li>Nenhuma janela diretamente acima da cabeça da cliente (evitar sensação de exposição)</li>
+  </ul>
+
+  <h3>3.2 — Iluminação</h3>
+  <p>
+    A iluminação impacta diretamente a produção de melatonina e serotonina, influenciando o estado de relaxamento da cliente. A regra fundamental: luz quente, difusa e baixa.
+  </p>
+  <ul class="styled">
+    <li><strong>Temperatura de cor:</strong> 2 700–3 000 K (warm white). Nunca luz fria (5 000 K+), que ativa o estado de alerta</li>
+    <li><strong>Intensidade:</strong> 30–80 lux durante a sessão (equivalente a um cômodo iluminado apenas por velas). Use um aplicativo de luxímetro no smartphone para calibrar</li>
+    <li><strong>Fontes:</strong> Combinação de 3–5 velas + luminária com dimmer ou lâmpada regulável. Nenhuma luz direta no rosto da cliente</li>
+    <li><strong>Transição:</strong> Comece a sessão com luminosidade um pouco maior (80–100 lux) e vá reduzindo gradualmente à medida que a sessão aprofunda</li>
+  </ul>
+
+  <h3>3.3 — Temperatura e Aquecimento</h3>
+  <ul class="styled">
+    <li><strong>Temperatura da sala:</strong> Aqueça o ambiente para 26–28°C antes da chegada da cliente. Em dias frios, ligue o aquecedor 30–40 minutos antes</li>
+    <li><strong>Temperatura do óleo:</strong> Aquecedor elétrico de óleo ou aquecimento nas mãos. Teste sempre no pulso interior do profissional antes de aplicar</li>
+    <li><strong>Temperatura das toalhas:</strong> Opcional — toalha aquecida na abertura da sessão (passar no aquecedor ou usar saco com água quente) aumenta significativamente a receptividade</li>
+    <li><strong>Monitoramento:</strong> Mantenha um termômetro de parede no espaço. Em sessões longas, o metabolismo da cliente pode reduzir a temperatura corporal percebida</li>
+  </ul>
+
+  <h3>3.4 — Aromaterapia: Timing e Seleção</h3>
+  <ul class="styled">
+    <li><strong>Quando preparar:</strong> Ligue o difusor 20–30 minutos antes da chegada da cliente para que o aroma já impregne o ambiente sem ser excessivo</li>
+    <li><strong>Fase de abertura (recepção + ritual):</strong> Lavanda + Sândalo — induzem o sistema nervoso parassimpático e criam sensação de segurança</li>
+    <li><strong>Fase de aprofundamento (massagem corporal + tântrica):</strong> Ylang-ylang + Incenso (Olíbano) — expandem a percepção e aprofundam a entrega</li>
+    <li><strong>Fase de retorno (integração + encerramento):</strong> Neroli ou Hortelã-pimenta suave — estimulam suavemente a consciência sem quebrar o estado de relaxamento</li>
+  </ul>
+
+  <div class="tip">
+    <strong>💡 Dica do Profissional:</strong> Crie blends pré-diluídos em frascos numerados (1, 2, 3) para as três fases. Isso simplifica o processo e cria uma consistência olfativa que, ao longo de várias sessões, a cliente associará automaticamente a cada fase — aprofundando o efeito pavloviano do relaxamento.
+  </div>
+
+  <h3>3.5 — Acústica e Música por Fase da Sessão</h3>
+  <table class="tantric">
+    <thead>
+      <tr><th>Fase</th><th>Tipo de Música</th><th>BPM</th><th>Volume</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Acolhimento / Recepção</td><td>Música instrumental suave; sons da natureza (chuva, floresta, rio); cantos tibetanos sutis</td><td>60–70 BPM</td><td>35–38 dB</td></tr>
+      <tr><td>Ritual de Entrada / Aquecimento</td><td>Frequências binaurais alfa (8–12 Hz); música ambiente meditativa (Marconi Union, Ólafur Arnalds)</td><td>50–60 BPM</td><td>38–42 dB</td></tr>
+      <tr><td>Massagem Corporal Geral</td><td>Música instrumental contínua sem percussão acentuada; sons de tigelas tibetanas; sons oceânicos</td><td>55–65 BPM</td><td>40–45 dB</td></tr>
+      <tr><td>Massagem Tântrica Aprofundada</td><td>Silêncio quase total ou drone sonoro (Om, 432 Hz); música minimalista sem melodia evidente</td><td>40–50 BPM</td><td>30–38 dB</td></tr>
+      <tr><td>Integração / Retorno</td><td>Música suavemente ascendente; sinos ou flautas; Canto Gregoriano suave</td><td>60–70 BPM</td><td>35–42 dB</td></tr>
+    </tbody>
+  </table>
+  <p>
+    <strong>Playlists sugeridas:</strong> "Sleep" de Marconi Union (comprovadamente a música mais relaxante do mundo por pesquisa da Universidade de Sussex); tigelas tibetanas do álbum "Himalayan Bowls" de Karma Moffett; "Weightless" de Marconi Union; frequências binaurais theta (4–7 Hz) para o aprofundamento.
+  </p>
+
+  <h3>3.6 — Privacidade e Segurança</h3>
+  <ul class="styled">
+    <li><strong>Porta:</strong> Trancada por dentro durante toda a sessão; placa de "Sessão em Andamento — Não Perturbe" do lado externo</li>
+    <li><strong>Celulares:</strong> O do profissional em modo avião; orientar a cliente para deixar o dela fora da sala ou no silencioso</li>
+    <li><strong>Ruídos externos:</strong> Se o ambiente tiver ruído de rua ou de outros cômodos, a música deve ser suficientemente presente para mascarar sem predominar</li>
+    <li><strong>Câmeras de segurança:</strong> Nunca no interior da sala de atendimento — isso viola a privacidade da cliente e pode constituir crime</li>
+  </ul>
+
+  <h3>3.7 — Limpeza Energética do Espaço</h3>
+  <p>
+    O espaço de atendimento acumula energias das sessões anteriores. Antes de cada cliente, realize um breve ritual de limpeza energética:
+  </p>
+  <ul class="styled">
+    <li><strong>Defumação com palo santo ou sálvia branca:</strong> Percorra os cantos da sala com a fumaça, intencionando a limpeza e o acolhimento. Abra brevemente uma janela para saída das energias antes de fechar novamente</li>
+    <li><strong>Banho de sal no espaço:</strong> Tigelas com sal grosso nos quatro cantos da sala absorvem energias densas; trocar o sal a cada 7 dias ou após sessões de alta intensidade emocional</li>
+    <li><strong>Limpeza física:</strong> O espaço deve estar impecavelmente limpo. Poeira, desordem ou sujeira quebram a confiança da cliente na competência do profissional antes que qualquer palavra seja dita</li>
+  </ul>
+
+  <h3>3.8 — Higiene e Apresentação do Profissional</h3>
+  <ul class="styled">
+    <li><strong>Banho antes de cada atendimento:</strong> Obrigatório. O profissional ficará em contato próximo com a cliente por 90–120 minutos</li>
+    <li><strong>Unhas:</strong> Curtas, lixadas, sem esmalte. Unhas longas podem machucar a cliente e quebram o fluxo do toque</li>
+    <li><strong>Fragrância:</strong> Neutra. Evite perfumes fortes — o sistema olfativo da cliente estará amplificado durante a sessão e odores externos interferem com o blend terapêutico do ambiente</li>
+    <li><strong>Roupa de trabalho:</strong> Calças confortáveis (linho, malha) de tom neutro (preto, cinza, bege); camiseta de algodão ou camisa simples; nada que prenda a movimentação ou faça barulho ao andar</li>
+    <li><strong>Adereços:</strong> Sem anéis, pulseiras ou relógios. Apenas alianças simples e lisas são toleráveis</li>
+  </ul>
+
+  <h3>3.9 — Preparação Mental do Profissional</h3>
+  <p>
+    A qualidade energética do toque do profissional depende diretamente de seu estado interno no momento do atendimento. Uma meditação de centragem de 5–10 minutos antes de receber a cliente é fundamental.
+  </p>
+  <div class="block">
+    <span class="block-label">Roteiro de Meditação de Centragem (5–10 min)</span>
+    <p><strong>Posição:</strong> Sentado com a coluna ereta, pés no chão, mãos sobre as coxas.</p>
+    <p><strong>Passo 1 — Respiração de ancoragem (2 min):</strong> Inspire pelo nariz contando até 4; retenha por 2; expire pela boca contando até 6. Repita 10 vezes. Isso ativa o nervo vago e induz o estado parassimpático.</p>
+    <p><strong>Passo 2 — Intenção (1 min):</strong> Diga mentalmente ou em voz baixa: "Estou presente. Estou claro. Sou canal de cura para [nome da cliente]. Minha intenção é servir com integridade, amor e competência."</p>
+    <p><strong>Passo 3 — Ativação das mãos (2 min):</strong> Esfregue as palmas vigorosamente por 30 segundos; depois separe as mãos lentamente, sentindo o campo de calor e energia entre elas. Imagine esse campo se expandindo. Esse exercício não é apenas simbólico — aumenta a microcirculação e a sensibilidade tátil das mãos.</p>
+    <p><strong>Passo 4 — Gratidão (30 seg):</strong> Agradeça a oportunidade de servir. Isso reposiciona o ego e reduz a ansiedade de performance.</p>
+  </div>
+
+  <div class="block">
+    <span class="block-label">Aplicação Prática — Protocolo de Preparação do Ambiente (1h antes)</span>
+    <ol class="styled">
+      <li>Limpeza física do espaço (varrer, limpar superfícies)</li>
+      <li>Defumação energética; abertura e fechamento das janelas</li>
+      <li>Posicionamento dos cristais e elementos decorativos</li>
+      <li>Instalação da maca e lençóis; ajuste de altura</li>
+      <li>Preparação e aquecimento do óleo</li>
+      <li>Ligar aquecedor (meta: 27°C na chegada da cliente)</li>
+      <li>Ligar difusor com blend de abertura (lavanda + sândalo)</li>
+      <li>Preparar a playlist no player; testar volume</li>
+      <li>Ajustar iluminação (dimmer + velas preparadas para acender)</li>
+      <li>Meditação de centragem do profissional</li>
+    </ol>
+  </div>
+
+  <div class="summary">
+    <h4>📌 Resumo — Capítulo 3</h4>
+    <ul class="styled">
+      <li>O ambiente é o primeiro terapeuta: temperatura, luz, som e cheiro são configurados com precisão</li>
+      <li>Temperatura: 26–28°C; luz: warm white 2 700 K, 30–80 lux, sem incidência direta no rosto</li>
+      <li>Música calibrada por fase (BPM e volume específicos por etapa da sessão)</li>
+      <li>Limpeza energética antes de cada cliente; limpeza física impecável</li>
+      <li>Profissional: banho, unhas curtas, fragrância neutra, sem adereços</li>
+      <li>Meditação de centragem de 5–10 min antes de cada atendimento: respiração, intenção, ativação das mãos</li>
+    </ul>
+  </div>
+</section>
+
+<div class="chapter-sep">· · · · ·</div>
+
+<!-- ════════════════════════════════════════════
+     CAPÍTULO 4 — RECEPÇÃO, ANAMNESE E VÍNCULO
+     ════════════════════════════════════════════ -->
+<section id="cap4">
+  <span class="ch-badge">Capítulo 4 · Recepção</span>
+  <h2>🤝 Recepção, Anamnese e Construção do Vínculo</h2>
+
+  <div class="block">
+    <span class="block-label">Por Quê — Propósito deste Capítulo</span>
+    <p>
+      Os primeiros 10–15 minutos com a cliente definem o sucesso ou o fracasso de toda a sessão. O sistema nervoso humano decide, nos primeiros 7 segundos de contato, se o ambiente e a pessoa à sua frente são seguros. A recepção profissional tântrica não é mera cortesia — é uma sequência técnica de criação de vínculo, confiança e abertura. Sem ela, o corpo da cliente não relaxa completamente, independentemente de quão habilidosas sejam as mãos do profissional.
+    </p>
+  </div>
+
+  <h3>4.1 — Como Receber a Cliente</h3>
+  <p>
+    O momento em que a porta se abre é o primeiro toque tântrico — não físico, mas energético. O profissional deve estar presente, centrado e genuinamente receptivo.
+  </p>
+  <ul class="styled">
+    <li><strong>Tom de voz:</strong> Grave, calmo, pausado. Evite entonações agudas ou aceleradas, que ativam o sistema de alerta. Imagine que está falando com alguém que acabou de acordar de um sono profundo</li>
+    <li><strong>Postura corporal:</strong> Ereta mas relaxada; ombros para baixo e para trás; peito aberto; peso distribuído igualmente entre os dois pés. Essa postura transmite segurança sem dominância</li>
+    <li><strong>Contato visual:</strong> Direto mas suave — não fixo ou penetrante. Um olhar quente, presente, que diz "você está sendo vista e acolhida"</li>
+    <li><strong>Sorriso:</strong> Genuíno (Duchenne), envolvendo os olhos. Um sorriso apenas com os lábios é detectado como inautêntico pelo sistema neurológico de leitura social da cliente</li>
+    <li><strong>Aperto de mão ou saudação:</strong> Pergunte se a cliente está confortável com aperto de mão ou abraço — nunca presuma. Para algumas clientes, qualquer toque inicial sem permissão cria resistência. Um simples gesto de saudação com as mãos espalmadas ("namaste") é uma alternativa elegante</li>
+  </ul>
+
+  <blockquote class="script">
+    "Seja bem-vinda. Que bom que você está aqui. Estou à sua disposição para que esse tempo seja completamente seu. Entre e fique à vontade."
+    <span class="voice-note">[voz suave, pausada; entonação descendente no final — não ascendente, que cria expectativa]</span>
+  </blockquote>
+
+  <h3>4.2 — A Entrevista Inicial (Anamnese)</h3>
+  <p>
+    A anamnese é uma conversa, não um interrogatório. O profissional mantém postura aberta, bloco de anotações discretamente à mão ou tablet em modo discreto. O contato visual é mantido na maior parte do tempo.
+  </p>
+  <p><strong>Perguntas obrigatórias:</strong></p>
+  <ul class="styled">
+    <li>"Como você está chegando hoje — fisicamente e emocionalmente?" (pergunta aberta, não diretiva)</li>
+    <li>"Há alguma condição de saúde que você gostaria que eu soubesse — cirurgias recentes, inflamações, problemas circulatórios, gravidez?" (segurança; contraindicações)</li>
+    <li>"Você já realizou massagem tântrica antes? Como foi essa experiência para você?" (identificar expectativas e possíveis traumas prévios)</li>
+    <li>"Qual é seu objetivo principal para a sessão de hoje?" (alinhar expectativas)</li>
+    <li>"Há alguma região do corpo que você prefere que eu não trabalhe ou que precise de atenção especial?" (respeito à autonomia corporal)</li>
+    <li>"Você tem alguma alergia a óleos, aromas ou outros produtos?" (segurança)</li>
+  </ul>
+
+  <div class="tip">
+    <strong>💡 Dica do Profissional:</strong> Anote brevemente, mas não quebre o fluxo da conversa para escrever. Uma técnica eficaz: faça as perguntas mais importantes oralmente, ouça atentamente, e após a cliente ser convidada a entrar na sala e se preparar, complete as anotações com base no que lembrou. Isso preserva a naturalidade do vínculo.
+  </div>
+
+  <h3>4.3 — Explicação do Que É e o Que Não É a Massagem Tântrica</h3>
+  <p>
+    Este momento é de fundamental importância ética e profissional. A explicação deve ser dada de forma direta, sem pressa, sem rubor ou desconforto do profissional — porque qualquer insegurança ao abordar o tema será lida pela cliente como sinal de que há algo a esconder.
+  </p>
+  <blockquote class="script">
+    "Antes de começarmos, quero te explicar brevemente o que vamos fazer hoje para que você se sinta completamente segura. A massagem tântrica que pratico é uma terapia corporal holística — ela trabalha com o sistema nervoso, com os centros de energia do corpo e com a respiração para criar um estado profundo de relaxamento e bem-estar. Não é uma massagem erótica, e eu não toco em partes genitais. O que vamos trabalhar são todas as regiões do corpo que estão diretamente conectadas ao sistema energético: costas, coxas, abdômen, tórax, rosto. A qualquer momento, se você quiser encerrar ou pedir ajuste em qualquer coisa, pode e deve dizer. Você tem controle total. Tem alguma dúvida antes de começarmos?"
+    <span class="voice-note">[voz firme e tranquila; olhar direto; postura aberta; sem pressa]</span>
+  </blockquote>
+
+  <h3>4.4 — Como Identificar o Estado Emocional da Cliente</h3>
+  <p>
+    O profissional tântrico experiente lê o corpo antes de tocar. Na recepção, observe:
+  </p>
+  <ul class="styled">
+    <li><strong>Ombros elevados e contraídos:</strong> Tensão crônica, hipervigilância, ansiedade. Precisará de tempo extra no aquecimento</li>
+    <li><strong>Respiração curta e alta (torácica):</strong> Estado de estresse ativo. Priorize exercício de respiração logo no início da sessão</li>
+    <li><strong>Voz acelerada ou fala em excesso:</strong> Ansiedade de performance ou nervosismo. Acolha com presença, não com mais informação</li>
+    <li><strong>Olhar desviado, postura fechada (braços cruzados):</strong> Insegurança; necessidade de mais tempo de estabelecimento de vínculo verbal antes do toque</li>
+    <li><strong>Voz lenta, olhar pesado, movimentos lentos:</strong> Esgotamento profundo; a cliente possivelmente vai dormir durante a sessão — isso é positivo e deve ser acolhido, não interrompido</li>
+    <li><strong>Riso nervoso:</strong> Defesa típica para situações novas ou de vulnerabilidade. Normalize com gentileza: "É completamente normal sentir um pouco de nervosismo numa primeira vez."</li>
+  </ul>
+
+  <h3>4.5 — Como Adaptar o Início da Sessão ao Estado Emocional</h3>
+  <table class="tantric">
+    <thead>
+      <tr><th>Estado Identificado</th><th>Adaptação</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Ansiedade / Tensão</td><td>Comece com respiração guiada mais longa (5–7 min antes do primeiro toque); fale mais durante a fase inicial; toque mais lento e amplo</td></tr>
+      <tr><td>Esgotamento / Letargia</td><td>Ambiente mais silencioso; menos fala; inicie o toque mais cedo; pressões médias para despertar a circulação</td></tr>
+      <tr><td>Abertura / Receptividade</td><td>Pule a fase verbal extensa; confie na entrega da cliente; aprofunde o trabalho energético mais cedo</td></tr>
+      <tr><td>Resistência / Desconfiança</td><td>Mais tempo de conversa; apresente o term de consentimento com cuidado extra; comece pelos pés (ponto menos vulnerável) para construir confiança progressiva</td></tr>
+    </tbody>
+  </table>
+
+  <h3>4.6 — Termos de Consentimento: Apresentação Natural</h3>
+  <p>
+    O documento deve ser apresentado como parte natural e positiva do processo, não como burocracia ou como algo que o profissional está fazendo por medo de processo:
+  </p>
+  <blockquote class="script">
+    "Antes de começar, tenho aqui um formulário simples que uso com todas as minhas clientes. Ele registra o que conversamos sobre saúde, seus objetivos para a sessão e os limites que definimos juntas. É a minha forma de garantir que esse espaço seja completamente seguro e respeitoso para você. Pode ler com calma e me perguntar qualquer coisa."
+    <span class="voice-note">[entregue o documento, mantenha-se disponível mas não apressada]</span>
+  </blockquote>
+
+  <h3>4.7 — Gatilhos de Confiança Verbal</h3>
+  <p>
+    Certas frases ativam o sistema nervoso parassimpático e criam abertura genuína:
+  </p>
+  <ul class="styled">
+    <li>"Você está em segurança aqui." — âncora de proteção</li>
+    <li>"Não há expectativa nenhuma. Cada sessão é única." — eliminação de pressão de performance</li>
+    <li>"Seu corpo sabe exatamente o que precisa. Meu papel é apenas criar o espaço para isso acontecer." — devolver o protagonismo à cliente</li>
+    <li>"Se qualquer coisa não estiver confortável — pressão, temperatura, qualquer coisa — me diga imediatamente." — permissão explícita para se comunicar</li>
+    <li>"Pode respirar. Pode deixar ir." — instrução simples que já inicia o processo terapêutico</li>
+  </ul>
+
+  <h3>4.8 — O que NÃO Dizer na Recepção</h3>
+  <ul class="styled">
+    <li><strong>Não diga:</strong> "Pode relaxar, não vou fazer nada de errado" — indiretamente sugere que poderia fazer</li>
+    <li><strong>Não diga:</strong> "A maioria das clientes fica inibida no começo" — cria uma expectativa de inibição</li>
+    <li><strong>Não diga:</strong> "Isso é muito mais do que uma massagem normal" — cria expectativa vaga e potencialmente ansiogênica</li>
+    <li><strong>Não diga:</strong> "Você vai ter uma experiência incrível" — cria pressão de resultado</li>
+    <li><strong>Não diga:</strong> "Pode confiar em mim" — pedidos explícitos de confiança raramente a constroem; ações constroem</li>
+  </ul>
+
+  <div class="block">
+    <span class="block-label">Aplicação Prática — Roteiro Completo de Recepção (12–15 min)</span>
+    <ol class="styled">
+      <li><strong>0–1 min:</strong> Abrir a porta; saudação genuína; oferecer assento confortável (poltrona ou almofada, não cadeira de plástico)</li>
+      <li><strong>1–3 min:</strong> Oferecer chá (camomila, melissa); criar momento de transição entre o mundo externo e o espaço da sessão</li>
+      <li><strong>3–8 min:</strong> Realizar a anamnese conversacional; anotar pontos essenciais</li>
+      <li><strong>8–10 min:</strong> Explicação da sessão com as palavras exatas; apresentação e assinatura do termo de consentimento</li>
+      <li><strong>10–12 min:</strong> Conduzir a cliente à sala; orientar sobre como se preparar (que peças de roupa retirar, onde deixá-las, como se posicionar na maca); oferecer privacidade para a troca</li>
+      <li><strong>12–15 min:</strong> Cliente posicionada na maca; coberta pelo lençol; profissional reentra e inicia o ritual de entrada</li>
+    </ol>
+  </div>
+
+  <div class="summary">
+    <h4>📌 Resumo — Capítulo 4</h4>
+    <ul class="styled">
+      <li>Os primeiros 7 segundos definem se o corpo da cliente permitirá o relaxamento: postura, voz e olhar do profissional são essenciais</li>
+      <li>Anamnese é conversa, não interrogatório: 6 perguntas-chave, anotação discreta</li>
+      <li>Explicação da sessão: direta, firme, sem nervosismo — o que é e o que não é</li>
+      <li>Leitura do estado emocional guia a adaptação do início da sessão</li>
+      <li>Termo de consentimento apresentado como parte natural e positiva do processo</li>
+      <li>Gatilhos de confiança verbal ativam o sistema nervoso parassimpático antes do toque</li>
+      <li>Erros de comunicação na recepção podem bloquear o relaxamento por toda a sessão</li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<!-- ═══════════════════ FOOTER TEMPORÁRIO ═══════════════════ -->
+<footer>
+  <span>Arte Tântrica</span> · Guia Completo de Formação em Massagem Tântrica Feminina ·
+  Capítulos 1–4 de 13 · Em construção
+</footer>
+
+<button id="toTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Voltar ao topo">↑</button>
+
+<script>
+  const btn = document.getElementById('toTop');
+  window.addEventListener('scroll', () => {
+    btn.classList.toggle('visible', window.scrollY > 400);
+  });
+</script>
+
+</body>
+</html>
