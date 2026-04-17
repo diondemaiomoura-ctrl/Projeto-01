@@ -1,0 +1,1421 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BLUEPRINT – E-Book: Arte Tântrica</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --gold:   #d4a05a;
+      --amber:  #c8702a;
+      --brown:  #8b4513;
+      --deep:   #5a2e0a;
+      --bg:     #0d0d0d;
+      --bg2:    #1a0a00;
+      --bg3:    #2a1200;
+      --text:   #e8dcc8;
+      --muted:  #c0b090;
+      --faint:  #7a6040;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Georgia', serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.75;
+    }
+
+    /* ── HERO ── */
+    header {
+      position: relative;
+      text-align: center;
+      padding: 80px 24px 64px;
+      background: linear-gradient(160deg, #130800 0%, #3b1200 50%, #130800 100%);
+      overflow: hidden;
+    }
+    header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 0%, rgba(180,90,0,.3) 0%, transparent 70%);
+    }
+    header::after {
+      content: 'BLUEPRINT';
+      position: absolute;
+      bottom: 12px;
+      right: 24px;
+      font-size: .7rem;
+      letter-spacing: .3em;
+      color: rgba(200,112,42,.35);
+      font-family: 'Courier New', monospace;
+      font-weight: bold;
+    }
+    .hero-badge {
+      display: inline-block;
+      font-family: 'Courier New', monospace;
+      font-size: .72rem;
+      letter-spacing: .25em;
+      color: var(--amber);
+      border: 1px solid var(--brown);
+      padding: 4px 14px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+      position: relative;
+    }
+    .hero-icon {
+      font-size: 3.6rem;
+      display: block;
+      margin-bottom: 16px;
+      filter: drop-shadow(0 0 14px rgba(200,130,30,.7));
+      position: relative;
+    }
+    header h1 {
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      font-weight: normal;
+      letter-spacing: .06em;
+      color: var(--gold);
+      text-shadow: 0 2px 20px rgba(200,120,20,.55);
+      position: relative;
+    }
+    header p.subtitle {
+      margin-top: 14px;
+      font-size: 1.05rem;
+      color: #b89060;
+      letter-spacing: .07em;
+      position: relative;
+    }
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 24px;
+      margin-top: 36px;
+      position: relative;
+    }
+    .stat-pill {
+      background: rgba(139,69,19,.25);
+      border: 1px solid var(--deep);
+      border-radius: 8px;
+      padding: 10px 22px;
+      text-align: center;
+    }
+    .stat-pill .num {
+      display: block;
+      font-size: 1.5rem;
+      color: var(--gold);
+      letter-spacing: .03em;
+    }
+    .stat-pill .lbl {
+      font-size: .72rem;
+      color: var(--muted);
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    /* ── NAV ── */
+    nav {
+      background: var(--bg2);
+      border-bottom: 1px solid #2e1000;
+      position: sticky;
+      top: 0;
+      z-index: 200;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    nav ul li a {
+      display: block;
+      padding: 13px 18px;
+      color: #c8965a;
+      text-decoration: none;
+      font-size: .82rem;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      transition: color .2s, background .2s;
+    }
+    nav ul li a:hover { color: #f0c070; background: rgba(180,100,20,.15); }
+
+    /* ── LAYOUT ── */
+    main { max-width: 980px; margin: 0 auto; padding: 0 24px 100px; }
+
+    section { margin-top: 72px; scroll-margin-top: 65px; }
+
+    section > h2 {
+      font-size: clamp(1.3rem, 3vw, 1.95rem);
+      font-weight: normal;
+      color: var(--gold);
+      border-left: 4px solid var(--brown);
+      padding-left: 16px;
+      margin-bottom: 32px;
+    }
+
+    /* ── OVERVIEW CARDS ── */
+    .overview-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+      gap: 20px;
+    }
+    .ov-card {
+      background: linear-gradient(160deg, #1e0e02, #2e1504);
+      border: 1px solid var(--deep);
+      border-radius: 12px;
+      padding: 26px 24px;
+      transition: transform .3s, box-shadow .3s;
+    }
+    .ov-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 28px rgba(180,90,10,.3);
+    }
+    .ov-card .ov-icon { font-size: 2rem; margin-bottom: 10px; display: block; }
+    .ov-card h3 { color: var(--gold); font-size: 1rem; font-weight: normal; margin-bottom: 8px; }
+    .ov-card p  { font-size: .88rem; color: var(--muted); margin: 0; }
+
+    /* ── CHAPTER TREE ── */
+    .chapter-tree {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .ch-block {
+      background: linear-gradient(160deg, #1a0800, #2a1200);
+      border: 1px solid var(--deep);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .ch-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 18px 24px;
+      cursor: pointer;
+      user-select: none;
+      transition: background .2s;
+    }
+    .ch-header:hover { background: rgba(139,69,19,.18); }
+    .ch-num-badge {
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--brown);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Courier New', monospace;
+      font-size: .8rem;
+      color: #f0d0a0;
+      font-weight: bold;
+    }
+    .ch-title-wrap { flex: 1; }
+    .ch-title-wrap .ch-label {
+      font-size: .7rem;
+      color: var(--amber);
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      margin-bottom: 3px;
+    }
+    .ch-title-wrap h3 { color: var(--gold); font-size: 1rem; font-weight: normal; }
+    .ch-arrow {
+      color: var(--brown);
+      font-size: .9rem;
+      transition: transform .25s;
+    }
+    .ch-block.open .ch-arrow { transform: rotate(90deg); }
+    .ch-body {
+      display: none;
+      padding: 0 24px 22px 80px;
+    }
+    .ch-block.open .ch-body { display: block; }
+    .ch-body ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .ch-body ul li {
+      font-size: .88rem;
+      color: #c8b898;
+      padding: 5px 0 5px 20px;
+      position: relative;
+      border-bottom: 1px solid rgba(90,46,10,.25);
+    }
+    .ch-body ul li:last-child { border-bottom: none; }
+    .ch-body ul li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: var(--amber);
+      font-size: .75rem;
+      top: 7px;
+    }
+
+    /* ── SESSION TIMELINE ── */
+    .session-bar {
+      margin-top: 28px;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--deep);
+    }
+    .session-row {
+      display: flex;
+      align-items: stretch;
+      min-height: 52px;
+    }
+    .session-row + .session-row { border-top: 1px solid rgba(90,46,10,.4); }
+    .sr-phase {
+      flex: 0 0 220px;
+      padding: 12px 18px;
+      background: linear-gradient(90deg, #1e0e02, #2a1200);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .sr-phase .ph-name {
+      font-size: .88rem;
+      color: var(--gold);
+    }
+    .sr-phase .ph-time {
+      font-size: .72rem;
+      color: var(--amber);
+      letter-spacing: .06em;
+      margin-top: 2px;
+    }
+    .sr-track {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      padding: 10px 16px;
+      background: rgba(10,4,0,.45);
+    }
+    .sr-bar {
+      height: 10px;
+      background: linear-gradient(90deg, var(--brown), var(--amber));
+      border-radius: 6px;
+      box-shadow: 0 0 8px rgba(200,112,42,.35);
+      transition: width .4s;
+    }
+    .sr-desc {
+      flex: 0 0 260px;
+      padding: 12px 16px;
+      font-size: .82rem;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      border-left: 1px solid rgba(90,46,10,.35);
+    }
+
+    /* ── MASSAGE MAP ── */
+    .seq-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 12px;
+      margin-top: 8px;
+    }
+    .seq-step {
+      background: linear-gradient(160deg, #1e0e02, #2e1504);
+      border: 1px solid var(--deep);
+      border-radius: 10px;
+      padding: 14px 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      position: relative;
+    }
+    .seq-step .step-n {
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--brown);
+      font-family: 'Courier New', monospace;
+      font-size: .72rem;
+      font-weight: bold;
+      color: #f0d0a0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .seq-step .step-txt {
+      font-size: .86rem;
+      color: #d8c8a8;
+      line-height: 1.3;
+    }
+    .seq-divider {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 8px 0 4px;
+      font-size: .75rem;
+      color: var(--amber);
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      border-top: 1px dashed rgba(139,69,19,.4);
+    }
+
+    /* ── BODY REGION TABLE ── */
+    .region-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 14px;
+      margin-top: 8px;
+    }
+    .region-card {
+      background: linear-gradient(160deg, #1a0800, #281202);
+      border: 1px solid var(--deep);
+      border-radius: 10px;
+      padding: 16px 18px;
+    }
+    .region-card .rg-num {
+      font-size: .68rem;
+      color: var(--amber);
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      margin-bottom: 5px;
+    }
+    .region-card h4 {
+      color: var(--gold);
+      font-size: .95rem;
+      font-weight: normal;
+      margin-bottom: 8px;
+    }
+    .region-card .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .tag {
+      background: rgba(139,69,19,.3);
+      border: 1px solid var(--deep);
+      border-radius: 4px;
+      padding: 2px 9px;
+      font-size: .72rem;
+      color: #c8b090;
+      letter-spacing: .04em;
+    }
+
+    /* ── CHAKRA MAP ── */
+    .chakra-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 8px;
+    }
+    .chakra-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: linear-gradient(90deg, #1a0800, #2a1200);
+      border: 1px solid var(--deep);
+      border-radius: 10px;
+      padding: 12px 18px;
+    }
+    .ck-dot {
+      flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+    }
+    .ck-name { flex: 0 0 130px; font-size: .9rem; color: var(--gold); }
+    .ck-loc  { flex: 0 0 160px; font-size: .82rem; color: var(--muted); }
+    .ck-desc { font-size: .82rem; color: #b8a080; }
+
+    /* ── QUALITY BOX ── */
+    .quality-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 16px;
+    }
+    .q-card {
+      border: 1px solid var(--deep);
+      border-radius: 10px;
+      padding: 20px 22px;
+      background: rgba(26,8,0,.5);
+    }
+    .q-card .q-icon { font-size: 1.6rem; margin-bottom: 10px; display: block; }
+    .q-card h4 { color: var(--gold); font-size: .95rem; font-weight: normal; margin-bottom: 8px; }
+    .q-card p  { font-size: .85rem; color: var(--muted); margin: 0; }
+
+    /* ── GLOSSARY PREVIEW ── */
+    .gloss-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px;
+      margin-top: 8px;
+    }
+    .gloss-term {
+      background: linear-gradient(135deg, #1e0e02, #2a1200);
+      border: 1px solid var(--deep);
+      border-radius: 8px;
+      padding: 12px 16px;
+    }
+    .gloss-term dt { color: var(--amber); font-style: italic; font-size: .95rem; margin-bottom: 4px; }
+    .gloss-term dd { color: #c0b090; font-size: .82rem; margin: 0; }
+
+    /* ── INFO BAR ── */
+    .info-bar {
+      margin-top: 48px;
+      background: linear-gradient(135deg, #1e0e02, #2e1400);
+      border: 1px solid var(--deep);
+      border-radius: 12px;
+      padding: 28px 32px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 28px;
+      align-items: flex-start;
+    }
+    .info-bar .ib-group { flex: 1; min-width: 180px; }
+    .info-bar .ib-label {
+      font-size: .7rem;
+      color: var(--amber);
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .info-bar .ib-value {
+      font-size: .95rem;
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 32px 24px;
+      background: #080300;
+      color: #604030;
+      font-size: .8rem;
+      letter-spacing: .07em;
+      border-top: 1px solid #2a1000;
+    }
+    footer span { color: var(--amber); }
+
+    /* ── SCROLL TO TOP ── */
+    #toTop {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--brown);
+      color: #f0d0a0;
+      border: none;
+      font-size: 1.1rem;
+      cursor: pointer;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .3s, transform .3s;
+      box-shadow: 0 4px 16px rgba(0,0,0,.5);
+    }
+    #toTop.visible { opacity: 1; pointer-events: auto; }
+    #toTop:hover   { transform: translateY(-3px); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 700px) {
+      .sr-desc  { display: none; }
+      .sr-phase { flex: 0 0 140px; }
+      .ch-body  { padding-left: 24px; }
+    }
+    @media (max-width: 480px) {
+      .hero-stats { gap: 12px; }
+      nav ul li a { font-size: .74rem; padding: 11px 10px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════ HERO ═══════════════════ -->
+<header>
+  <span class="hero-badge">DOCUMENTO TÉCNICO · ARQUITETURA DO E-BOOK</span>
+  <span class="hero-icon">🗺️</span>
+  <h1>BLUEPRINT</h1>
+  <p class="subtitle">Arte Tântrica — Guia Completo de Formação em Massagem Tântrica Feminina</p>
+
+  <div class="hero-stats">
+    <div class="stat-pill">
+      <span class="num">13</span>
+      <span class="lbl">Capítulos</span>
+    </div>
+    <div class="stat-pill">
+      <span class="num">18</span>
+      <span class="lbl">Regiões Corporais</span>
+    </div>
+    <div class="stat-pill">
+      <span class="num">7</span>
+      <span class="lbl">Chakras</span>
+    </div>
+    <div class="stat-pill">
+      <span class="num">15 k+</span>
+      <span class="lbl">Palavras mínimas</span>
+    </div>
+    <div class="stat-pill">
+      <span class="num">90–120</span>
+      <span class="lbl">Min. por sessão</span>
+    </div>
+  </div>
+</header>
+
+<!-- ═══════════════════ NAV ═══════════════════ -->
+<nav>
+  <ul>
+    <li><a href="#visao-geral">Visão Geral</a></li>
+    <li><a href="#capitulos">Capítulos</a></li>
+    <li><a href="#sessao">Estrutura da Sessão</a></li>
+    <li><a href="#sequencia">Sequência</a></li>
+    <li><a href="#regioes">Regiões</a></li>
+    <li><a href="#chakras">Chakras</a></li>
+    <li><a href="#qualidade">Qualidade</a></li>
+    <li><a href="#glossario">Glossário</a></li>
+  </ul>
+</nav>
+
+<main>
+
+  <!-- ══════════════ VISÃO GERAL ══════════════ -->
+  <section id="visao-geral">
+    <h2>🌐 Visão Geral do E-Book</h2>
+    <div class="overview-grid">
+
+      <div class="ov-card">
+        <span class="ov-icon">🎯</span>
+        <h3>Objetivo</h3>
+        <p>Capacitar um profissional iniciante a realizar sessões de massagem tântrica feminina com excelência técnica e ética, sem depender de vídeos.</p>
+      </div>
+
+      <div class="ov-card">
+        <span class="ov-icon">👩‍⚕️</span>
+        <h3>Público-Alvo</h3>
+        <p>Profissionais iniciantes ou em transição de carreira que desejam atuar com massagem tântrica feminina de forma ética e transformadora.</p>
+      </div>
+
+      <div class="ov-card">
+        <span class="ov-icon">🖋️</span>
+        <h3>Tom &amp; Linguagem</h3>
+        <p>Sério, respeitoso, profissional e sensível. Nunca vulgar. Português brasileiro claro, elegante e instrutivo.</p>
+      </div>
+
+      <div class="ov-card">
+        <span class="ov-icon">📐</span>
+        <h3>Estrutura Interna de Cada Capítulo</h3>
+        <p><strong style="color:#d4a05a">1. Por Quê</strong> — propósito e importância<br>
+           <strong style="color:#d4a05a">2. Como</strong> — método e técnica<br>
+           <strong style="color:#d4a05a">3. Aplicação Prática</strong> — execução real</p>
+      </div>
+
+      <div class="ov-card">
+        <span class="ov-icon">📚</span>
+        <h3>Formato Final</h3>
+        <p>13 capítulos progressivos + Glossário final. Mínimo de 15.000 palavras para garantir completude total.</p>
+      </div>
+
+      <div class="ov-card">
+        <span class="ov-icon">🏆</span>
+        <h3>Resultado Esperado</h3>
+        <p>Um guia tão completo que o profissional consiga realizar uma sessão com excelência técnica e ética inabalável após a leitura.</p>
+      </div>
+
+    </div>
+
+    <div class="info-bar">
+      <div class="ib-group">
+        <div class="ib-label">Título Sugerido</div>
+        <div class="ib-value">Arte Tântrica: Guia Completo de Formação em Massagem Tântrica Feminina</div>
+      </div>
+      <div class="ib-group">
+        <div class="ib-label">Idioma</div>
+        <div class="ib-value">Português Brasileiro</div>
+      </div>
+      <div class="ib-group">
+        <div class="ib-label">Extensão Mínima</div>
+        <div class="ib-value">15.000 palavras</div>
+      </div>
+      <div class="ib-group">
+        <div class="ib-label">Gerado por</div>
+        <div class="ib-value">IA Generativa via PROMPT.html</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ CAPÍTULOS ══════════════ -->
+  <section id="capitulos">
+    <h2>📖 Arquitetura de Capítulos</h2>
+    <div class="chapter-tree">
+
+      <!-- CAP 1 -->
+      <div class="ch-block open">
+        <div class="ch-header" onclick="toggleChapter(this)">
+          <div class="ch-num-badge">01</div>
+          <div class="ch-title-wrap">
+            <div class="ch-label">Capítulo 1 · Filosofia</div>
+            <h3>Origem, Etimologia e Filosofia do Tantra</h3>
+          </div>
+          <span class="ch-arrow">▶</span>
+        </div>
+        <div class="ch-body">
+          <ul>
+            <li>Origem histórica e cultural do Tantra (Índia, textos Tantras e Agamas)</li>
+            <li>Etimologia: <em>tan</em> (expandir) + <em>tra</em> (liberar) em sânscrito</li>
+            <li>Diferença entre Tantra espiritual e tantra ocidentalizado</li>
+            <li>A visão do corpo feminino no Tantra: sagrado, receptor de energia Shakti</li>
+            <li>Por que a massagem tântrica é terapêutica e não sexual</li>
+            <li>O papel do massagista como canal de energia</li>
+            <li>Ética profissional, limites e consentimento</li>
+            <li>Legislação e posicionamento profissional no Brasil</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- CAP 2 -->
+      <div class="ch-block">
+        <div class="ch-header" onclick="toggleChapter(this)">
+          <div class="ch-num-badge">02</div>
+          <div class="ch-title-wrap">
+            <div class="ch-label">Capítulo 2 · Equipamentos</div>
+            <h3>Lista de Materiais e Equipamentos</h3>
+          </div>
+          <span class="ch-arrow">▶</span>
+        </div>
+        <div class="ch-body">
+          <ul>
+            <li>Maca ou tatame profissional (dimensões, espessura, cobertura)</li>
+            <li>Óleos essenciais e de base: marcas, diluição, quantidade por sessão</li>
+            <li>Incensos, difusores: tipos, aroma por objetivo</li>
+            <li>Velas e iluminação: tipos, posicionamento, cores</li>
+            <li>Toalhas, lençóis e cobertores: quantidades e funções</li>
+            <li>Travesseiros de apoio: posicionamentos durante a sessão</li>
+            <li>Equipamento de áudio: caixa de som, volume, posicionamento</li>
+            <li>Temperatura do ambiente: faixa ideal em graus Celsius</li>
+            <li>Utensílios de higiene e EPIs</li>
+            <li>Termos de consentimento e ficha de anamnese</li>
+            <li>Itens opcionais: pétalas, cristais, taças, chá</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- CAP 3 -->
+      <div class="ch-block">
+        <div class="ch-header" onclick="toggleChapter(this)">
+          <div class="ch-num-badge">03</div>
+          <div class="ch-title-wrap">
+            <div class="ch-label">Capítulo 3 · Ambiente</div>
+            <h3>Preparação do Ambiente</h3>
+          </div>
+          <span class="ch-arrow">▶</span>
+        </div>
+        <div class="ch-body">
+          <ul>
+            <li>Layout do espaço (diagrama descritivo de posicionamento)</li>
+            <li>Iluminação: lúmens, cor quente, fontes de luz, velas</li>
+            <li>Temperatura: aquecimento prévio, temperatura do óleo</li>
+            <li>Aromaterapia: momento, antecedência, aromas por fase</li>
+            <li>Acústica e música: playlist por fase, BPM, volume em dB</li>
+            <li>Privacidade e segurança: porta, celular, aviso de sessão</li>
+            <li>Limpeza energética: defumação ou banho de sal</li>
+            <li>Higiene do profissional: banho, unhas, fragrância neutra</li>
+            <li>Preparação mental: roteiro de meditação de centragem</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- CAP 4 -->
+      <div class="ch-block">
+        <div class="ch-header" onclick="toggleChapter(this)">
+          <div class="ch-num-badge">04</div>
+          <div class="ch-title-wrap">
+            <div class="ch-label">Capítulo 4 · Recepção</div>
+            <h3>Recepção, Anamnese e Construção do Vínculo</h3>
+          </div>
+          <span class="ch-arrow">▶</span>
+        </div>
+        <div class="ch-body">
+          <ul>
+            <li>Como receber a cliente: tom de voz, postura, contato visual</li>
+            <li>Anamnese: perguntas obrigatórias (saúde, contraindicações, objetivos)</li>
+            <li>Explicação do que é e o que não é a massagem tântrica</li>
+            <li>Como identificar o estado emocional ao chegar</li>
+            <li>Como adaptar o início da sessão ao estado emocional percebido</li>
+            <li>Termos de consentimento: apresentação e assinatura natural</li>
+            <li>Gatilhos de confiança verbal: frases de acolhimento</li>
+            <li>O que NÃO dizer na recepção</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- CAP 5 -->
+      <div class="ch-block">
+        <div class="ch-header" onclick="toggleChapter(this)">
+          <div class="ch-num-badge">05</div>
+          <div class="ch-title-wrap">
+            <div class="ch-label">Capítulo 5 · Tempo</div>
+            <h3>Timing e Estrutura da Sessão</h3>
+          </div>
+          <span class="ch-arrow">▶</span>
+        </div>
+        <div class="ch-body">
+          <ul>
+            <li>Duração total: 90–120 minutos e justificativa</li>
+            <li>Distribuição de tempo por fase (ver seção "Estrutura da Sessão")</li>
+            <li>Ajustes para clientes muito tensas ou muito abertas</li>
+            <li>Sinais físicos e verbais que pedem mais tempo em região</li>
+            <li>Estratégias de controle de tempo sem quebrar o clima</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- CAP 6 -->
+      <div class="ch-block">
+        <div class="ch-header" onclick="toggleChapter(this)">
+          <div class="ch-num-badge">06</div>
+          <div class="ch-title-wrap">
+            <div class="ch-label">Capítulo 6 · Ritual</div>
+            <h3>Ritual de Entrada e Preparação da Cliente</h3>
+          </div>
+          <span class="ch-arrow">▶</span>
+        </div>
+        <div class="ch-body">
+          <ul>
+            <li>Orientação de banho ou limpeza inicial</li>
+            <li>Posicionamento inicial: decúbito ventral e justificativa</li>
+            <li>Cobrir e descobrir: uso do lençol como moldura energética</li>
+            <li>Primeira respiração guiada: roteiro completo</li>
+            <li>Ativação sensorial não invasiva (toque leve, som, aroma)</li>
+            <li>Toque de abertura: mãos nas costas, pressão, duração, intenção</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- CAP 7 -->
+      <div class="ch-block">
+        <div class="ch-header" onclick="toggleChapter(this)">
+          <div class="ch-num-badge">07</div>
+          <div class="ch-title-wrap">
+            <div class="ch-label">Capítulo 7 · Diálogo</div>
+            <h3>O Diálogo Durante a Sessão</h3>
+          </div>
+          <span class="ch-arrow">▶</span>
+        </div>
+        <div class="ch-body">
+          <ul>
+            <li>Mapa de silêncio: quando falar e quando calar</li>
+            <li>Tom de voz: timbre, velocidade, volume por fase</li>
+            <li>Gatilhos mentais de relaxamento (sistema parassimpático)</li>
+            <li>Gatilhos mentais de permissão e expansão</li>
+            <li>Scripts completos por fase: abertura, transição, pedido de permissão, reforço, retorno</li>
+            <li>Como responder perguntas durante a sessão</li>
+            <li>Como lidar com choro, riso e outras liberações emocionais</li>
+            <li>O que fazer se a cliente quiser encerrar antes do tempo</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- CAP 8 -->
+      <div class="ch-block">
+        <div class="ch-header" onclick="toggleChapter(this)">
+          <div class="ch-num-badge">08</div>
+          <div class="ch-title-wrap">
+            <div class="ch-label">Capítulo 8 · Sequência</div>
+            <h3>Sequência Completa da Massagem — Visão Geral</h3>
+          </div>
+          <span class="ch-arrow">▶</span>
+        </div>
+        <div class="ch-body">
+          <ul>
+            <li>Mapa visual descritivo do percurso completo</li>
+            <li>Justificativa energética (nadi, circulação, progressão de confiança)</li>
+            <li>Pontos-chave de transição onde a profundidade aumenta</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- CAP 9 -->
+      <div class="ch-block">
+        <div class="ch-header" onclick="toggleChapter(this)">
+          <div class="ch-num-badge">09</div>
+          <div class="ch-title-wrap">
+            <div class="ch-label">Capítulo 9 · Técnicas</div>
+            <h3>Técnicas Detalhadas Região por Região</h3>
+          </div>
+          <span class="ch-arrow">▶</span>
+        </div>
+        <div class="ch-body">
+          <ul>
+            <li>18 regiões do corpo com cobertura completa (ver seção "Regiões Corporais")</li>
+            <li>Para cada região: posição do profissional, parte do corpo usada, pressão exata, movimentos, duração, resposta esperada, frases sugeridas</li>
+            <li>Movimentos: effleurage, petrissage, fricção, compressão, vibração, deslizamento</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- CAP 10 -->
+      <div class="ch-block">
+        <div class="ch-header" onclick="toggleChapter(this)">
+          <div class="ch-num-badge">10</div>
+          <div class="ch-title-wrap">
+            <div class="ch-label">Capítulo 10 · Energia</div>
+            <h3>Zonas de Energia Tântrica e Chakras</h3>
+          </div>
+          <span class="ch-arrow">▶</span>
+        </div>
+        <div class="ch-body">
+          <ul>
+            <li>Mapeamento dos 7 chakras no corpo feminino</li>
+            <li>Desequilíbrio físico e emocional de cada chakra</li>
+            <li>Técnicas de estimulação de cada chakra pelo toque</li>
+            <li>O caminho da kundalini: Muladhara → Sahasrara</li>
+            <li>Movimentos de "ativação de canal" ao longo da coluna vertebral</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- CAP 11 -->
+      <div class="ch-block">
+        <div class="ch-header" onclick="toggleChapter(this)">
+          <div class="ch-num-badge">11</div>
+          <div class="ch-title-wrap">
+            <div class="ch-label">Capítulo 11 · Encerramento</div>
+            <h3>Integração e Encerramento da Sessão</h3>
+          </div>
+          <span class="ch-arrow">▶</span>
+        </div>
+        <div class="ch-body">
+          <ul>
+            <li>Sinalização do encerramento sem quebrar o estado de transe</li>
+            <li>Toque de fechamento: ancoragem pés + testa</li>
+            <li>Respiração guiada de retorno: roteiro completo</li>
+            <li>Cobertura e conforto térmico no retorno</li>
+            <li>Tempo de silêncio pós-massagem: duração e conduta</li>
+            <li>O momento de "acordar": voz e toque suaves</li>
+            <li>Hidratação pós-sessão: água ou chá, como oferecer</li>
+            <li>Conversa pós-sessão e acolhimento de relatos emocionais</li>
+            <li>Orientações para as próximas 24 horas</li>
+            <li>Estratégias de fidelização e próximo agendamento</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- CAP 12 -->
+      <div class="ch-block">
+        <div class="ch-header" onclick="toggleChapter(this)">
+          <div class="ch-num-badge">12</div>
+          <div class="ch-title-wrap">
+            <div class="ch-label">Capítulo 12 · Ética e Segurança</div>
+            <h3>Contraindicações, Ética e Segurança</h3>
+          </div>
+          <span class="ch-arrow">▶</span>
+        </div>
+        <div class="ch-body">
+          <ul>
+            <li>Contraindicações absolutas: febre, trombose, gravidez de risco, feridas, inflamações ativas</li>
+            <li>Contraindicações relativas e adaptações da sessão</li>
+            <li>Sinais de alerta durante a sessão e conduta de emergência</li>
+            <li>Limites éticos intransponíveis: o que nunca fazer ou prometer</li>
+            <li>Gerenciamento de transferência emocional/afetiva</li>
+            <li>Sigilo profissional e proteção de dados</li>
+            <li>Como lidar com situações de assédio ou desrespeito</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- CAP 13 -->
+      <div class="ch-block">
+        <div class="ch-header" onclick="toggleChapter(this)">
+          <div class="ch-num-badge">13</div>
+          <div class="ch-title-wrap">
+            <div class="ch-label">Capítulo 13 · Desenvolvimento</div>
+            <h3>Desenvolvimento Contínuo do Profissional</h3>
+          </div>
+          <span class="ch-arrow">▶</span>
+        </div>
+        <div class="ch-body">
+          <ul>
+            <li>Práticas de autocuidado: como "limpar" a energia absorvida pós-sessão</li>
+            <li>Meditações e respirações recomendadas antes e após atender</li>
+            <li>Leituras e estudos para aprofundamento</li>
+            <li>Evolução do nível iniciante para especialista</li>
+            <li>Construção de portfólio, precificação e posicionamento de mercado</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- GLOSSARY -->
+      <div class="ch-block">
+        <div class="ch-header" onclick="toggleChapter(this)">
+          <div class="ch-num-badge">📖</div>
+          <div class="ch-title-wrap">
+            <div class="ch-label">Apêndice Final</div>
+            <h3>Glossário de Termos do Tantra e da Massagem</h3>
+          </div>
+          <span class="ch-arrow">▶</span>
+        </div>
+        <div class="ch-body">
+          <ul>
+            <li>Todos os principais termos em sânscrito utilizados ao longo do E-Book</li>
+            <li>Termos técnicos de massagem com definições claras e objetivas</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════ ESTRUTURA DA SESSÃO ══════════════ -->
+  <section id="sessao">
+    <h2>⏱️ Estrutura e Timing da Sessão (90–120 min)</h2>
+    <div class="session-bar">
+
+      <div class="session-row">
+        <div class="sr-phase">
+          <div class="ph-name">Recepção &amp; Anamnese</div>
+          <div class="ph-time">10 – 15 min</div>
+        </div>
+        <div class="sr-track"><div class="sr-bar" style="width:12%"></div></div>
+        <div class="sr-desc">Entrevista, consentimento, identificação do estado emocional</div>
+      </div>
+
+      <div class="session-row">
+        <div class="sr-phase">
+          <div class="ph-name">Ritual de Entrada</div>
+          <div class="ph-time">10 min</div>
+        </div>
+        <div class="sr-track"><div class="sr-bar" style="width:9%"></div></div>
+        <div class="sr-desc">Respiração guiada, ativação sensorial, toque de abertura</div>
+      </div>
+
+      <div class="session-row">
+        <div class="sr-phase">
+          <div class="ph-name">Massagem Corporal Geral</div>
+          <div class="ph-time">30 – 40 min</div>
+        </div>
+        <div class="sr-track"><div class="sr-bar" style="width:36%"></div></div>
+        <div class="sr-desc">Dorso, pernas, braços — construção de confiança e calor</div>
+      </div>
+
+      <div class="session-row">
+        <div class="sr-phase">
+          <div class="ph-name">Massagem Tântrica Profunda</div>
+          <div class="ph-time">25 – 35 min</div>
+        </div>
+        <div class="sr-track"><div class="sr-bar" style="width:30%"></div></div>
+        <div class="sr-desc">Zonas de energia, chakras, sequência energética aprofundada</div>
+      </div>
+
+      <div class="session-row">
+        <div class="sr-phase">
+          <div class="ph-name">Integração &amp; Retorno</div>
+          <div class="ph-time">10 – 15 min</div>
+        </div>
+        <div class="sr-track"><div class="sr-bar" style="width:12%"></div></div>
+        <div class="sr-desc">Respiração de retorno, ancoragem, silêncio pós-massagem</div>
+      </div>
+
+      <div class="session-row">
+        <div class="sr-phase">
+          <div class="ph-name">Encerramento &amp; Pós-Sessão</div>
+          <div class="ph-time">5 – 10 min</div>
+        </div>
+        <div class="sr-track"><div class="sr-bar" style="width:7%"></div></div>
+        <div class="sr-desc">Hidratação, conversa, orientações 24h, próximo agendamento</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════ SEQUÊNCIA DE MASSAGEM ══════════════ -->
+  <section id="sequencia">
+    <h2>🔄 Mapa da Sequência de Massagem</h2>
+    <div class="seq-grid">
+
+      <div class="seq-divider">— Fase 1: Decúbito Ventral (de Bruços) —</div>
+
+      <div class="seq-step">
+        <div class="step-n">1</div>
+        <div class="step-txt">Região sacral e base da coluna</div>
+      </div>
+      <div class="seq-step">
+        <div class="step-n">2</div>
+        <div class="step-txt">Coluna vertebral (paravertebral)</div>
+      </div>
+      <div class="seq-step">
+        <div class="step-n">3</div>
+        <div class="step-txt">Região entre as escápulas</div>
+      </div>
+      <div class="seq-step">
+        <div class="step-n">4</div>
+        <div class="step-txt">Ombros e trapézio</div>
+      </div>
+      <div class="seq-step">
+        <div class="step-n">5</div>
+        <div class="step-txt">Nuca e base do crânio</div>
+      </div>
+      <div class="seq-step">
+        <div class="step-n">6</div>
+        <div class="step-txt">Braços e mãos</div>
+      </div>
+      <div class="seq-step">
+        <div class="step-n">7</div>
+        <div class="step-txt">Glúteos</div>
+      </div>
+      <div class="seq-step">
+        <div class="step-n">8</div>
+        <div class="step-txt">Coxa posterior e jarrete</div>
+      </div>
+      <div class="seq-step">
+        <div class="step-n">9</div>
+        <div class="step-txt">Panturrilha e tendão de Aquiles</div>
+      </div>
+      <div class="seq-step">
+        <div class="step-n">10</div>
+        <div class="step-txt">Pés e dedos (reflexologia tântrica)</div>
+      </div>
+
+      <div class="seq-divider">— Transição para Decúbito Dorsal (de Costas) —</div>
+
+      <div class="seq-step">
+        <div class="step-n">11</div>
+        <div class="step-txt">Virada da cliente (técnica segura)</div>
+      </div>
+      <div class="seq-step">
+        <div class="step-n">12</div>
+        <div class="step-txt">Pés e pernas frontais</div>
+      </div>
+      <div class="seq-step">
+        <div class="step-n">13</div>
+        <div class="step-txt">Região inguinal</div>
+      </div>
+      <div class="seq-step">
+        <div class="step-n">14</div>
+        <div class="step-txt">Abdômen (liberação emocional)</div>
+      </div>
+      <div class="seq-step">
+        <div class="step-n">15</div>
+        <div class="step-txt">Tórax (esterno, costelas)</div>
+      </div>
+      <div class="seq-step">
+        <div class="step-n">16</div>
+        <div class="step-txt">Colo e pescoço frontal</div>
+      </div>
+      <div class="seq-step">
+        <div class="step-n">17</div>
+        <div class="step-txt">Rosto (têmporas, maxilar, fronte)</div>
+      </div>
+      <div class="seq-step">
+        <div class="step-n">18</div>
+        <div class="step-txt">Couro cabeludo</div>
+      </div>
+
+      <div class="seq-divider">— Fase de Encerramento —</div>
+
+      <div class="seq-step">
+        <div class="step-n">✦</div>
+        <div class="step-txt">Integração final e ancoragem</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════ REGIÕES CORPORAIS ══════════════ -->
+  <section id="regioes">
+    <h2>🖐️ Regiões Corporais — Capítulo 9</h2>
+    <p style="color:var(--muted);margin-bottom:20px;font-size:.9rem;">Para cada uma das 18 regiões o E-Book descreve: posição do profissional, parte do corpo usada, pressão, movimentos, duração, resposta esperada e frases sugeridas.</p>
+    <div class="region-grid">
+
+      <div class="region-card">
+        <div class="rg-num">Região 01</div>
+        <h4>Sacral e Base da Coluna</h4>
+        <div class="tags"><span class="tag">Palmas</span><span class="tag">Média–Profunda</span><span class="tag">Muladhara</span></div>
+      </div>
+
+      <div class="region-card">
+        <div class="rg-num">Região 02</div>
+        <h4>Coluna Vertebral (Paravertebral)</h4>
+        <div class="tags"><span class="tag">Polegares</span><span class="tag">Leve–Média</span><span class="tag">Nadi central</span></div>
+      </div>
+
+      <div class="region-card">
+        <div class="rg-num">Região 03</div>
+        <h4>Entre as Escápulas</h4>
+        <div class="tags"><span class="tag">Cotovelos</span><span class="tag">Média</span><span class="tag">Anahata</span></div>
+      </div>
+
+      <div class="region-card">
+        <div class="rg-num">Região 04</div>
+        <h4>Ombros e Trapézio</h4>
+        <div class="tags"><span class="tag">Palmas + Dedos</span><span class="tag">Petrissage</span><span class="tag">Vishuddha</span></div>
+      </div>
+
+      <div class="region-card">
+        <div class="rg-num">Região 05</div>
+        <h4>Nuca e Base do Crânio</h4>
+        <div class="tags"><span class="tag">Pontas dos dedos</span><span class="tag">Leve</span><span class="tag">Ajna</span></div>
+      </div>
+
+      <div class="region-card">
+        <div class="rg-num">Região 06</div>
+        <h4>Braços e Mãos</h4>
+        <div class="tags"><span class="tag">Effleurage</span><span class="tag">Reflexologia</span><span class="tag">Nadis</span></div>
+      </div>
+
+      <div class="region-card">
+        <div class="rg-num">Região 07</div>
+        <h4>Glúteos</h4>
+        <div class="tags"><span class="tag">Palmas</span><span class="tag">Profunda</span><span class="tag">Ética clara</span></div>
+      </div>
+
+      <div class="region-card">
+        <div class="rg-num">Região 08</div>
+        <h4>Coxa Posterior e Jarrete</h4>
+        <div class="tags"><span class="tag">Antebraços</span><span class="tag">Média</span><span class="tag">Drenagem</span></div>
+      </div>
+
+      <div class="region-card">
+        <div class="rg-num">Região 09</div>
+        <h4>Panturrilha e Tendão de Aquiles</h4>
+        <div class="tags"><span class="tag">Polegares</span><span class="tag">Fricção</span><span class="tag">Circulação</span></div>
+      </div>
+
+      <div class="region-card">
+        <div class="rg-num">Região 10</div>
+        <h4>Pés e Dedos dos Pés</h4>
+        <div class="tags"><span class="tag">Reflexologia tântrica</span><span class="tag">Pressão pontual</span></div>
+      </div>
+
+      <div class="region-card">
+        <div class="rg-num">Região 11</div>
+        <h4>Transição (Virada)</h4>
+        <div class="tags"><span class="tag">Técnica de segurança</span><span class="tag">Comunicação</span></div>
+      </div>
+
+      <div class="region-card">
+        <div class="rg-num">Região 12</div>
+        <h4>Pés e Pernas Frontais</h4>
+        <div class="tags"><span class="tag">Effleurage</span><span class="tag">Ascendente</span></div>
+      </div>
+
+      <div class="region-card">
+        <div class="rg-num">Região 13</div>
+        <h4>Região Inguinal</h4>
+        <div class="tags"><span class="tag">Consentimento expresso</span><span class="tag">Svadhisthana</span></div>
+      </div>
+
+      <div class="region-card">
+        <div class="rg-num">Região 14</div>
+        <h4>Abdômen</h4>
+        <div class="tags"><span class="tag">Respiração guiada</span><span class="tag">Liberação emocional</span><span class="tag">Manipura</span></div>
+      </div>
+
+      <div class="region-card">
+        <div class="rg-num">Região 15</div>
+        <h4>Tórax</h4>
+        <div class="tags"><span class="tag">Esterno</span><span class="tag">Costelas</span><span class="tag">Consentimento mamas</span></div>
+      </div>
+
+      <div class="region-card">
+        <div class="rg-num">Região 16</div>
+        <h4>Colo e Pescoço Frontal</h4>
+        <div class="tags"><span class="tag">Clavículas</span><span class="tag">Deslizamento leve</span></div>
+      </div>
+
+      <div class="region-card">
+        <div class="rg-num">Região 17</div>
+        <h4>Rosto</h4>
+        <div class="tags"><span class="tag">Têmporas</span><span class="tag">Maxilares</span><span class="tag">Fronte</span><span class="tag">Ajna</span></div>
+      </div>
+
+      <div class="region-card">
+        <div class="rg-num">Região 18</div>
+        <h4>Couro Cabeludo</h4>
+        <div class="tags"><span class="tag">Pressão + Deslizamento</span><span class="tag">Sahasrara</span></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════ CHAKRAS ══════════════ -->
+  <section id="chakras">
+    <h2>🔮 Mapa dos 7 Chakras — Capítulo 10</h2>
+    <div class="chakra-list">
+
+      <div class="chakra-row">
+        <div class="ck-dot" style="background:#c0392b"></div>
+        <div class="ck-name">Muladhara</div>
+        <div class="ck-loc">Base da coluna / sacral</div>
+        <div class="ck-desc">Segurança, sobrevivência, enraizamento. Início da kundalini.</div>
+      </div>
+
+      <div class="chakra-row">
+        <div class="ck-dot" style="background:#e67e22"></div>
+        <div class="ck-name">Svadhisthana</div>
+        <div class="ck-loc">Baixo ventre / sacro</div>
+        <div class="ck-desc">Criatividade, prazer, sexualidade sagrada, fluxo emocional.</div>
+      </div>
+
+      <div class="chakra-row">
+        <div class="ck-dot" style="background:#f1c40f"></div>
+        <div class="ck-name">Manipura</div>
+        <div class="ck-loc">Plexo solar / abdômen</div>
+        <div class="ck-desc">Poder pessoal, autoestima, digestão emocional.</div>
+      </div>
+
+      <div class="chakra-row">
+        <div class="ck-dot" style="background:#27ae60"></div>
+        <div class="ck-name">Anahata</div>
+        <div class="ck-loc">Centro do peito / coração</div>
+        <div class="ck-desc">Amor, compaixão, equilíbrio entre o material e o espiritual.</div>
+      </div>
+
+      <div class="chakra-row">
+        <div class="ck-dot" style="background:#2980b9"></div>
+        <div class="ck-name">Vishuddha</div>
+        <div class="ck-loc">Garganta / pescoço</div>
+        <div class="ck-desc">Expressão, comunicação, verdade pessoal e autenticidade.</div>
+      </div>
+
+      <div class="chakra-row">
+        <div class="ck-dot" style="background:#8e44ad"></div>
+        <div class="ck-name">Ajna</div>
+        <div class="ck-loc">Entre as sobrancelhas / terceiro olho</div>
+        <div class="ck-desc">Intuição, clareza mental, percepção expandida.</div>
+      </div>
+
+      <div class="chakra-row">
+        <div class="ck-dot" style="background:#9b59b6; background: linear-gradient(135deg,#9b59b6,#f8f8ff)"></div>
+        <div class="ck-name">Sahasrara</div>
+        <div class="ck-loc">Topo da cabeça / coroa</div>
+        <div class="ck-desc">Conexão espiritual, iluminação, integração total da kundalini.</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════ REQUISITOS DE QUALIDADE ══════════════ -->
+  <section id="qualidade">
+    <h2>✅ Requisitos de Qualidade do E-Book</h2>
+    <div class="quality-grid">
+
+      <div class="q-card">
+        <span class="q-icon">🎥</span>
+        <h4>Substitui 100% o Vídeo</h4>
+        <p>Cada seção deve ser detalhada o suficiente para dispensar qualquer material audiovisual.</p>
+      </div>
+
+      <div class="q-card">
+        <span class="q-icon">✋</span>
+        <h4>Descrição Técnica do Toque</h4>
+        <p>Para cada técnica: qual parte do corpo do massagista, direção, velocidade, pressão em kg/g ou vivencial, efeito esperado.</p>
+      </div>
+
+      <div class="q-card">
+        <span class="q-icon">💡</span>
+        <h4>Dicas Práticas Destacadas</h4>
+        <p>Ao longo de todos os capítulos, destaques com <em>"💡 Dica do Profissional:"</em> para insights aplicáveis.</p>
+      </div>
+
+      <div class="q-card">
+        <span class="q-icon">⚠️</span>
+        <h4>Alertas de Atenção</h4>
+        <p>Pontos críticos de ética, técnica ou segurança sinalizados com <em>"⚠️ Atenção:"</em> ao longo do texto.</p>
+      </div>
+
+      <div class="q-card">
+        <span class="q-icon">🗣️</span>
+        <h4>Scripts de Diálogo Exatos</h4>
+        <p>Frases entre aspas exatamente como devem ser faladas, com indicação de tom: <em>[voz suave e pausada]</em>.</p>
+      </div>
+
+      <div class="q-card">
+        <span class="q-icon">🎵</span>
+        <h4>Acústica Especificada</h4>
+        <p>Nomes de faixas, artistas ou estilos musicais com momento exato de uso e BPM por fase da sessão.</p>
+      </div>
+
+      <div class="q-card">
+        <span class="q-icon">💡</span>
+        <h4>Iluminação Especificada</h4>
+        <p>Nível de intensidade (lúmens), cor, fonte (vela, LED, lâmpada) e posicionamento exato no espaço.</p>
+      </div>
+
+      <div class="q-card">
+        <span class="q-icon">📋</span>
+        <h4>Resumo por Capítulo</h4>
+        <p>Ao final de cada capítulo, um resumo em tópicos com os pontos-chave para revisão rápida.</p>
+      </div>
+
+      <div class="q-card">
+        <span class="q-icon">📖</span>
+        <h4>Glossário Final</h4>
+        <p>Todos os termos em sânscrito e técnicos com definições claras ao final do E-Book.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════ GLOSSÁRIO (PRÉVIA) ══════════════ -->
+  <section id="glossario">
+    <h2>📝 Prévia do Glossário</h2>
+    <p style="color:var(--muted);margin-bottom:20px;font-size:.9rem;">Termos que o E-Book definirá no apêndice final.</p>
+    <div class="gloss-grid">
+      <dl class="gloss-term"><dt>Tantra</dt><dd>Expandir (tan) + liberar/instrumento (tra). Filosofia hindu que integra corpo, mente e espírito.</dd></dl>
+      <dl class="gloss-term"><dt>Shakti</dt><dd>Energia vital feminina primordial; força criativa do universo na cosmologia hindu.</dd></dl>
+      <dl class="gloss-term"><dt>Chakra</dt><dd>Centro de energia sutil no corpo. Do sânscrito: "roda" ou "disco".</dd></dl>
+      <dl class="gloss-term"><dt>Kundalini</dt><dd>Energia adormecida na base da coluna; ao despertar, sobe pelos chakras até Sahasrara.</dd></dl>
+      <dl class="gloss-term"><dt>Nadi</dt><dd>Canal energético sutil por onde flui o prana. Os três principais: Ida, Pingala e Sushumna.</dd></dl>
+      <dl class="gloss-term"><dt>Prana</dt><dd>Energia vital universal; equivalente ao Chi/Qi na medicina chinesa.</dd></dl>
+      <dl class="gloss-term"><dt>Effleurage</dt><dd>Deslizamento suave e contínuo das palmas; principal técnica de aquecimento e conexão.</dd></dl>
+      <dl class="gloss-term"><dt>Petrissage</dt><dd>Amassamento rítmico dos tecidos; dissolve tensões musculares profundas.</dd></dl>
+      <dl class="gloss-term"><dt>Anamnese</dt><dd>Entrevista clínica inicial para coleta de histórico de saúde e objetivos da cliente.</dd></dl>
+      <dl class="gloss-term"><dt>Muladhara</dt><dd>1º chakra; localizado na base da coluna. Governa segurança e enraizamento.</dd></dl>
+      <dl class="gloss-term"><dt>Sahasrara</dt><dd>7º chakra; localizado no topo da cabeça. Governa a conexão espiritual e iluminação.</dd></dl>
+      <dl class="gloss-term"><dt>Decúbito ventral</dt><dd>Posição de bruços (barriga para baixo). Posição inicial da sessão tântrica.</dd></dl>
+    </div>
+  </section>
+
+</main>
+
+<!-- ═══════════════════ FOOTER ═══════════════════ -->
+<footer>
+  BLUEPRINT · Arte Tântrica — Guia Completo de Formação · <span>Gerado a partir de PROMPT.html</span>
+</footer>
+
+<button id="toTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Voltar ao topo">↑</button>
+
+<script>
+  /* ── Expandir / Recolher capítulos ── */
+  function toggleChapter(header) {
+    const block = header.closest('.ch-block');
+    block.classList.toggle('open');
+  }
+
+  /* ── Scroll to top button ── */
+  const toTop = document.getElementById('toTop');
+  window.addEventListener('scroll', () => {
+    toTop.classList.toggle('visible', window.scrollY > 400);
+  });
+
+  /* ── Animate session bars on first scroll into view ── */
+  const bars = document.querySelectorAll('.sr-bar');
+  const widths = Array.from(bars).map(b => b.style.width);
+  bars.forEach(b => { b.dataset.w = b.style.width; b.style.width = '0'; });
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        bars.forEach(b => { b.style.width = b.dataset.w; });
+        observer.disconnect();
+      }
+    });
+  }, { threshold: 0.3 });
+
+  const sessionSection = document.getElementById('sessao');
+  if (sessionSection) observer.observe(sessionSection);
+</script>
+
+</body>
+</html>
