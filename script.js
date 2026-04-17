@@ -9,6 +9,7 @@ const filterBtns = document.querySelectorAll('.filter-btn');
 
 let todos = loadTodos();
 let currentFilter = 'all';
+let nextId = todos.reduce((max, t) => Math.max(max, t.id), 0) + 1;
 
 // ─── Persistence ────────────────────────────────────────────────────────────
 
@@ -83,7 +84,7 @@ function createItem(todo) {
 function addTodo(text) {
   const trimmed = text.trim();
   if (!trimmed) return;
-  todos.push({ id: Date.now(), text: trimmed, done: false });
+  todos.push({ id: nextId++, text: trimmed, done: false });
   saveTodos();
   render();
 }
