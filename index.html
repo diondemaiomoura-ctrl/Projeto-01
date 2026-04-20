@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projeto 01</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Lista de Tarefas</h1>
+      <p class="subtitle">Organize suas atividades do dia a dia</p>
+    </header>
+
+    <main>
+      <form id="todo-form" class="todo-form">
+        <input
+          type="text"
+          id="todo-input"
+          class="todo-input"
+          placeholder="Digite uma nova tarefa..."
+          maxlength="100"
+          required
+        />
+        <button type="submit" class="btn-add">Adicionar</button>
+      </form>
+
+      <div class="filters">
+        <button class="filter-btn active" data-filter="all">Todas</button>
+        <button class="filter-btn" data-filter="pending">Pendentes</button>
+        <button class="filter-btn" data-filter="done">Concluídas</button>
+      </div>
+
+      <ul id="todo-list" class="todo-list"></ul>
+
+      <div class="summary">
+        <span id="pending-count"></span>
+        <button id="clear-done" class="btn-clear">Limpar concluídas</button>
+      </div>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
